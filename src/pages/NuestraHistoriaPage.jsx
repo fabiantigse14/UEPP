@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './NuestraHistoriaPage.css';
 
 const NuestraHistoriaPage = () => {
-    const [activeTab, setActiveTab] = useState('timeline');
-
     // Scroll suave para pestañas flotantes
     const scrollToSection = (id) => {
         document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
