@@ -127,6 +127,13 @@ const Header = () => {
                         <i className="fas fa-times"></i>
                     </button>
                 </div>
+
+                {/* Mobile Logos (Visible only here on mobile) */}
+                <div className="mobile-menu-logos">
+                    <img src="/log2.png" alt="Logo UEGEA" className="mobile-logo-img" />
+                    <img src="/ani.png" alt="Mascota UEGEA" className="mobile-logo-mascot" />
+                </div>
+
                 <nav className="mobile-nav">
                     {[
                         { to: "/", label: "Inicio" },

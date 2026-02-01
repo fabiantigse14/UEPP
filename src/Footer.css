@@ -1,13 +1,14 @@
-/* Footer.css - Versión PRO: Animado, Glassmorphism, Tipografía Premium */
+/* Footer.css - Refactored for Official Palette */
 
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Poppins:wght@300;400;600;700&display=swap');
 
 .footer {
-    background: linear-gradient(135deg, #094b2f 0%, #0f7729 100%);
-    color: #e2e8f0;
+    background: linear-gradient(135deg, var(--c-azul) 0%, #0a1025 100%);
+    color: var(--c-blanco);
     font-family: 'Poppins', sans-serif;
     position: relative;
     overflow: hidden;
+    border-top: 4px solid var(--c-dorado); /* Gold top border for separation */
 }
 
 .footer::before {
@@ -15,8 +16,8 @@
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: radial-gradient(circle at 20% 80%, rgba(22, 163, 74, 0.1), transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(134, 239, 172, 0.1), transparent 50%);
+    background: radial-gradient(circle at 20% 80%, rgba(24, 38, 86, 0.4), transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 104, 55, 0.2), transparent 50%);
     z-index: 0;
     pointer-events: none;
 }
@@ -75,15 +76,15 @@
 .school-line1 {
     font-family: 'Alex Brush', cursive;
     font-size: 2.4rem;
-    color: #86efac;
+    color: var(--c-dorado);
     margin: 0;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .school-line2 {
     font-family: 'Alex Brush', cursive;
     font-size: 2rem;
-    color: #ffffff;
+    color: var(--c-blanco);
     margin: 0;
     font-weight: bold;
 }
@@ -95,7 +96,7 @@
 
 .info-title {
     font-size: 1.4rem;
-    color: #86efac;
+    color: var(--c-dorado);
     margin-bottom: 1rem;
     font-weight: 600;
     position: relative;
@@ -109,7 +110,7 @@
     left: 50%;
     width: 50px;
     height: 3px;
-    background: #16A34A;
+    background: var(--c-verde);
     transform: translateX(-50%);
     border-radius: 2px;
 }
@@ -129,13 +130,13 @@
 .info-address i,
 .info-phone i,
 .info-whatsapp i {
-    color: #16A34A;
+    color: var(--c-dorado);
     font-size: 1.1rem;
 }
 
 .info-phone a,
 .info-whatsapp a {
-    color: #e2e8f0;
+    color: var(--c-blanco);
     text-decoration: none;
     position: relative;
     transition: color 0.3s;
@@ -149,13 +150,13 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: #86efac;
+    background: var(--c-dorado);
     transition: width 0.4s ease;
 }
 
 .info-phone a:hover,
 .info-whatsapp a:hover {
-    color: #86efac;
+    color: var(--c-dorado);
 }
 
 .info-phone a:hover::after,
@@ -170,7 +171,7 @@
 
 .social-title {
     font-size: 1.4rem;
-    color: #86efac;
+    color: var(--c-dorado);
     margin-bottom: 1rem;
     font-weight: 600;
     position: relative;
@@ -184,7 +185,7 @@
     left: 50%;
     width: 50px;
     height: 3px;
-    background: #16A34A;
+    background: var(--c-verde);
     transform: translateX(-50%);
     border-radius: 2px;
 }
@@ -209,6 +210,7 @@
     position: relative;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .social-icon::before {
@@ -236,31 +238,32 @@
 .social-icon:hover {
     transform: translateY(-6px) scale(1.1);
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    border-color: var(--c-dorado);
 }
 
 .social-icon.facebook { background: #1877F2; }
 .social-icon.tiktok { background: #000000; }
 .social-icon.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
 .social-icon.youtube { background: #FF0000; }
-.social-icon.web { background: #02250f; }
+.social-icon.web { background: var(--c-verde); }
 
 /* COPYRIGHT */
 .footer-copyright {
     text-align: center;
     padding-top: 2rem;
     margin-top: 2rem;
-    border-top: 1px solid rgba(134, 239, 172, 0.3);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
     font-size: 0.9rem;
     color: #94a3b8;
 }
 
 .highlight {
-    color: #86efac;
+    color: var(--c-dorado);
     font-weight: 600;
 }
 
 .pulse {
-    color: #ef4444;
+    color: var(--c-rojo);
     animation: pulse 2s infinite;
 }
 

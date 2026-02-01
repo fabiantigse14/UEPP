@@ -1,17 +1,14 @@
-/* ContactPage.css - Redesigned with Independent Color Palettes per Section */
+/* ContactPage.css - Refactored for Official Palette */
 
-/* --- GLOBAL RESETS --- */
 :root {
-    --font-oswald: "Oswald", sans-serif;
-    --font-inter: "Inter", sans-serif;
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --radius: 1.5rem;
 }
 
 .contact-page {
-    background: #1f4529; /* Global backup */
+    background: var(--c-azul);
     font-family: var(--font-inter);
-    color: white;
+    color: var(--c-blanco);
     overflow-x: hidden;
 }
 
@@ -32,12 +29,13 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     position: relative;
+    color: var(--c-dorado);
 }
 
-/* --- HERO SECTION (Palette: Dark Navy #1f4529 & Gold #eed3b1) --- */
+/* --- HERO SECTION (Dark: Azul Alfaro) --- */
 .hero-section {
-    background: linear-gradient(135deg, #1f4529 0%, #1a3c24 100%);
-    color: #e8ecd7;
+    background: radial-gradient(circle at center, rgba(24, 38, 86, 0.8) 0%, rgba(10, 16, 37, 0.9) 100%);
+    color: var(--c-blanco);
     padding: 8rem 0 10rem;
     position: relative;
     overflow: hidden;
@@ -46,6 +44,7 @@
 .hero-background {
     position: absolute;
     inset: 0;
+    background: var(--c-azul);
 }
 
 .hero-background img {
@@ -66,7 +65,7 @@
 .hero-title {
     font-family: var(--font-oswald);
     font-size: 4rem;
-    color: #eed3b1; /* Gold */
+    color: var(--c-dorado);
     margin-bottom: 1rem;
     text-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
@@ -75,7 +74,7 @@
     font-size: 1.25rem;
     max-width: 800px;
     margin: 0 auto 2rem;
-    color: #ffffff;
+    color: var(--c-blanco);
 }
 
 .hero-tags {
@@ -86,29 +85,31 @@
 }
 
 .tag-pill {
-    background: rgba(71, 102, 59, 0.8);
+    background: var(--c-verde);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
     border: 1px solid rgba(255,255,255,0.2);
 }
 
-/* Hero Divider */
+/* Hero Divider - Leading to Contact Cards (Green) */
 .hero-section::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: 80px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%2347663b'/%3E%3C/svg%3E");
-    background-size: cover;
+    height: 100px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23006837' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100%;
     z-index: 2;
+    pointer-events: none;
 }
 
-/* --- CONTACT CARDS SECTION (Palette: Medium Green #47663b) --- */
+
+/* --- CONTACT CARDS SECTION (Dark: Verde Laurel #006837) --- */
 .contact-cards-section {
-    background: #47663b; /* Medium Green */
+    background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
     padding: 6rem 0;
     color: white;
     position: relative;
@@ -122,7 +123,7 @@
 }
 
 .contact-card {
-    background: rgba(31, 69, 41, 0.4);
+    background: rgba(24, 38, 86, 0.4); /* Azul transparent */
     padding: 2.5rem;
     border-radius: 1.5rem;
     text-align: center;
@@ -131,14 +132,14 @@
 }
 
 .contact-card:hover {
-    background: rgba(31, 69, 41, 0.7);
+    background: rgba(24, 38, 86, 0.7);
     transform: translateY(-5px);
-    border-color: #eed3b1;
+    border-color: var(--c-dorado);
 }
 
 .contact-icon {
     font-size: 2.5rem;
-    color: #eed3b1;
+    color: var(--c-dorado);
     margin-bottom: 1.5rem;
 }
 
@@ -146,7 +147,7 @@
     font-family: var(--font-oswald);
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: white;
+    color: var(--c-blanco);
 }
 
 .social-links {
@@ -160,7 +161,7 @@
     width: 40px;
     height: 40px;
     background: white;
-    color: #47663b;
+    color: var(--c-verde);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -170,29 +171,31 @@
 }
 
 .social-icon:hover {
-    background: #eed3b1;
-    color: #1f4529;
+    background: var(--c-dorado);
+    color: var(--c-azul);
     transform: scale(1.1);
 }
 
-/* Cards Divider */
+/* Cards Divider - Leading to Form (Cream) */
 .contact-cards-section::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: 80px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z' fill='%23e8ecd7'/%3E%3C/svg%3E");
-    background-size: cover;
+    height: 100px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23E8ECD7' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100%;
     z-index: 2;
+    pointer-events: none;
 }
 
-/* --- FORM SECTION (Palette: Light Beige #e8ecd7) --- */
+
+/* --- FORM SECTION (Light: Cream #E8ECD7) --- */
 .form-section {
-    background: #e8ecd7; /* Light Background */
+    background: var(--c-link-cream);
     padding: 6rem 0;
-    color: #1f4529; /* Dark Navy Text */
+    color: var(--c-azul);
     position: relative;
     z-index: 1;
 }
@@ -221,7 +224,7 @@
     font-family: var(--font-oswald);
     font-size: 1.8rem;
     margin: 0;
-    color: #1f4529;
+    color: var(--c-azul);
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -267,8 +270,8 @@
 }
 
 .submit-btn {
-    background: #1f4529;
-    color: #eed3b1;
+    background: var(--c-azul);
+    color: var(--c-dorado);
     border: none;
     padding: 1rem 2rem;
     border-radius: 0.5rem;
@@ -279,27 +282,28 @@
 }
 
 .submit-btn:hover {
-    background: #47663b;
+    background: var(--c-verde);
     transform: translateY(-2px);
 }
 
-/* Form Divider */
+/* Form Divider - Leading to Schedule (Blue) */
 .form-section::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: 80px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%231f4529'/%3E%3C/svg%3E");
-    background-size: cover;
+    height: 100px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23182656' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100%;
     z-index: 2;
+    pointer-events: none;
 }
 
 
-/* --- SCHEDULE SECTION (Palette: Dark Navy #1f4529) --- */
+/* --- SCHEDULE SECTION (Dark: Azul Alfaro #182656) --- */
 .schedule-section {
-    background: #1f4529; /* Dark Navy */
+    background: linear-gradient(135deg, var(--c-azul) 0%, #0a1025 100%);
     padding: 6rem 0;
     color: white;
     position: relative;
@@ -307,7 +311,7 @@
 }
 
 .schedule-section .section-title {
-    color: #eed3b1; /* Gold */
+    color: var(--c-dorado);
 }
 
 .schedule-grid {
@@ -326,7 +330,7 @@
 
 .schedule-item i {
     font-size: 2.5rem;
-    color: #eed3b1;
+    color: var(--c-dorado);
     margin-bottom: 1rem;
 }
 
@@ -336,22 +340,24 @@
     margin-bottom: 0.5rem;
 }
 
-/* Schedule Divider */
+/* Schedule Divider - Leading to Map (Green) */
 .schedule-section::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: 80px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z' fill='%2347663b'/%3E%3C/svg%3E");
-    background-size: cover;
+    height: 100px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23006837' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100%;
     z-index: 2;
+    pointer-events: none;
 }
 
-/* --- MAP SECTION (Palette: Medium Green #47663b) --- */
+
+/* --- MAP SECTION (Dark: Verde Laurel #006837) --- */
 .map-section {
-    background: #47663b;
+    background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
     padding: 6rem 0;
     color: white;
     position: relative;
@@ -368,27 +374,29 @@
 .map-link {
     display: inline-block;
     margin-top: 1rem;
-    color: #1f4529;
+    color: var(--c-azul);
     font-weight: 600;
     text-decoration: none;
 }
 
-/* Map Divider */
+/* Map Divider - Leading to CTA (Blue) */
 .map-section::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: 80px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%231f4529'/%3E%3C/svg%3E");
-    background-size: cover;
+    height: 100px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23182656' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100%;
     z-index: 2;
+    pointer-events: none;
 }
 
-/* --- CTA SECTION (Palette: Dark Navy #1f4529) --- */
+
+/* --- CTA SECTION (Dark: Azul Alfaro #1f4529) --- */
 .cta-section {
-    background: #1f4529;
+    background: linear-gradient(135deg, var(--c-azul) 0%, #0a1025 100%);
     padding: 6rem 0;
     color: white;
     text-align: center;
@@ -397,7 +405,7 @@
 .cta-title {
     font-family: var(--font-oswald);
     font-size: 3rem;
-    color: #eed3b1;
+    color: var(--c-dorado);
     margin-bottom: 3rem;
 }
 
@@ -428,7 +436,7 @@
 
 .cta-btn.phone {
     background: white;
-    color: #1f4529;
+    color: var(--c-azul);
 }
 
 .cta-stats {
@@ -440,10 +448,9 @@
 .stat-number {
     font-family: var(--font-oswald);
     font-size: 3rem;
-    color: #eed3b1;
+    color: var(--c-dorado);
 }
 
-/* Animations */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }

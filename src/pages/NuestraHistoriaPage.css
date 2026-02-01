@@ -1,17 +1,14 @@
-/* NuestraHistoriaPage.css - Redesigned with Independent Color Palettes per Section */
+/* NuestraHistoriaPage.css - Refactored for Official Palette */
 
-/* --- GLOBAL RESETS --- */
 :root {
-    --font-oswald: "Oswald", sans-serif;
-    --font-inter: "Inter", sans-serif;
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --radius: 1.5rem;
 }
 
 .nuestra-historia-page {
-    background: #1f4529; /* Global backup */
+    background: var(--c-azul);
     font-family: var(--font-inter);
-    color: white;
+    color: var(--c-blanco);
     overflow-x: hidden;
 }
 
@@ -32,12 +29,13 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     position: relative;
+    color: var(--c-dorado);
 }
 
-/* --- HERO SECTION (Palette: Dark Navy #1f4529 & Gold #eed3b1) --- */
+/* --- HERO SECTION (Dark: Azul Alfaro) --- */
 .hero-section {
-    background: linear-gradient(135deg, #1f4529 0%, #1a3c24 100%);
-    color: #e8ecd7;
+    background: radial-gradient(circle at center, rgba(24, 38, 86, 0.8) 0%, rgba(10, 16, 37, 0.9) 100%);
+    color: var(--c-blanco);
     padding: 8rem 0 10rem;
     position: relative;
     overflow: hidden;
@@ -46,6 +44,7 @@
 .hero-background {
     position: absolute;
     inset: 0;
+    background: var(--c-azul);
 }
 
 .hero-background img {
@@ -66,7 +65,7 @@
 .hero-title {
     font-family: var(--font-oswald);
     font-size: 4rem;
-    color: #eed3b1; /* Gold */
+    color: var(--c-dorado);
     margin-bottom: 1rem;
     text-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
@@ -82,8 +81,8 @@
     font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto 2rem;
-    color: #ffffff;
-    background: rgba(31, 69, 41, 0.6);
+    color: var(--c-blanco);
+    background: rgba(24, 38, 86, 0.6);
     padding: 2rem;
     border-radius: 1rem;
     border: 1px solid rgba(238, 211, 177, 0.2);
@@ -99,7 +98,7 @@
 }
 
 .tag-pill {
-    background: rgba(71, 102, 59, 0.8);
+    background: var(--c-verde);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
@@ -108,31 +107,32 @@
 
 .quote-box {
     background: rgba(238, 211, 177, 0.1);
-    border-left: 4px solid #eed3b1;
+    border-left: 4px solid var(--c-dorado);
     padding: 1.5rem;
     max-width: 800px;
     margin: 0 auto;
     font-style: italic;
-    color: #e8ecd7;
+    color: var(--c-link-cream);
 }
 
-/* Hero Divider */
+/* Hero Divider - Leading to Philosophy (Green) */
 .hero-section::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: 80px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%2347663b'/%3E%3C/svg%3E");
-    background-size: cover;
+    height: 100px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23006837' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100%;
     z-index: 2;
+    pointer-events: none;
 }
 
 
-/* --- PHILOSOPHY SECTION (Palette: Medium Green #47663b) --- */
+/* --- PHILOSOPHY SECTION (Dark: Verde Laurel #006837) --- */
 .philosophy-section {
-    background: #47663b; /* Medium Green */
+    background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
     padding: 6rem 0;
     color: white;
     position: relative;
@@ -140,7 +140,7 @@
 }
 
 .philosophy-section .section-title {
-    color: #eed3b1; /* Gold */
+    color: var(--c-dorado);
 }
 
 .philosophy-grid {
@@ -150,7 +150,7 @@
 }
 
 .philosophy-card {
-    background: rgba(31, 69, 41, 0.4);
+    background: rgba(24, 38, 86, 0.4);
     padding: 2.5rem;
     border-radius: 1.5rem;
     border: 1px solid rgba(255,255,255,0.1);
@@ -159,14 +159,14 @@
 }
 
 .philosophy-card:hover {
-    background: rgba(31, 69, 41, 0.7);
+    background: rgba(24, 38, 86, 0.7);
     transform: translateY(-5px);
-    border-color: #eed3b1;
+    border-color: var(--c-dorado);
 }
 
 .card-icon-placeholder {
     font-size: 3rem;
-    color: #eed3b1;
+    color: var(--c-dorado);
     margin-bottom: 1.5rem;
 }
 
@@ -174,34 +174,35 @@
     font-family: var(--font-oswald);
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: white;
+    color: var(--c-blanco);
 }
 
-/* Philosophy Divider */
+/* Philosophy Divider - Leading to Timeline (Cream) */
 .philosophy-section::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: 80px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z' fill='%23e8ecd7'/%3E%3C/svg%3E");
-    background-size: cover;
+    height: 100px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23E8ECD7' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100%;
     z-index: 2;
+    pointer-events: none;
 }
 
 
-/* --- TIMELINE SECTION (Palette: Light Beige #e8ecd7) --- */
+/* --- TIMELINE SECTION (Light: Cream #E8ECD7) --- */
 .timeline-section {
-    background: #e8ecd7; /* Light Background */
+    background: var(--c-link-cream);
     padding: 6rem 0;
-    color: #1f4529; /* Dark Navy Text */
+    color: var(--c-azul);
     position: relative;
     z-index: 1;
 }
 
 .timeline-section .section-title {
-    color: #1f4529;
+    color: var(--c-azul);
 }
 
 .timeline-container {
@@ -217,7 +218,7 @@
     bottom: 0;
     left: 50%;
     width: 4px;
-    background: #47663b;
+    background: var(--c-verde);
     transform: translateX(-50%);
 }
 
@@ -247,7 +248,7 @@
 .timeline-year {
     font-family: var(--font-oswald);
     font-size: 2rem;
-    color: #47663b;
+    color: var(--c-verde);
     font-weight: bold;
 }
 
@@ -264,29 +265,30 @@
     transform: translateX(-50%);
     width: 20px;
     height: 20px;
-    background: #eed3b1; /* Gold */
-    border: 4px solid #1f4529;
+    background: var(--c-dorado);
+    border: 4px solid var(--c-azul);
     border-radius: 50%;
     z-index: 2;
 }
 
-/* Timeline Divider */
+/* Timeline Divider - Leading to Pillars (Blue) */
 .timeline-section::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: 80px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%231f4529'/%3E%3C/svg%3E");
-    background-size: cover;
+    height: 100px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23182656' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100%;
     z-index: 2;
+    pointer-events: none;
 }
 
 
-/* --- PILLARS SECTION (Palette: Dark Navy #1f4529) --- */
+/* --- PILLARS SECTION (Dark: Azul Alfaro #182656) --- */
 .pillars-section {
-    background: #1f4529; /* Dark Navy */
+    background: linear-gradient(135deg, var(--c-azul) 0%, #0a1025 100%);
     padding: 6rem 0;
     color: white;
     position: relative;
@@ -294,7 +296,7 @@
 }
 
 .pillars-section .section-title {
-    color: #eed3b1; /* Gold */
+    color: var(--c-dorado);
 }
 
 .pillars-grid {
@@ -304,7 +306,7 @@
 }
 
 .pillar-card {
-    background: rgba(71, 102, 59, 0.3);
+    background: rgba(0, 104, 55, 0.3);
     padding: 2rem;
     border-radius: 1.5rem;
     text-align: center;
@@ -313,14 +315,14 @@
 }
 
 .pillar-card:hover {
-    background: rgba(71, 102, 59, 0.5);
-    border-color: #eed3b1;
+    background: rgba(0, 104, 55, 0.5);
+    border-color: var(--c-dorado);
     transform: scale(1.02);
 }
 
 .pillar-icon {
     font-size: 3rem;
-    color: #eed3b1;
+    color: var(--c-dorado);
     margin-bottom: 1.5rem;
 }
 
@@ -328,26 +330,27 @@
     font-family: var(--font-oswald);
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: white;
+    color: var(--c-blanco);
 }
 
-/* Pillars Divider */
+/* Pillars Divider - Leading to Awards (Green) */
 .pillars-section::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: 80px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z' fill='%2347663b'/%3E%3C/svg%3E");
-    background-size: cover;
+    height: 100px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23006837' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100%;
     z-index: 2;
+    pointer-events: none;
 }
 
 
-/* --- AWARDS SECTION (Palette: Medium Green #47663b) --- */
+/* --- AWARDS SECTION (Dark: Verde Laurel #006837) --- */
 .awards-section {
-    background: #47663b;
+    background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
     padding: 6rem 0;
     color: white;
     position: relative;
@@ -361,40 +364,41 @@
 }
 
 .award-item {
-    background: rgba(31, 69, 41, 0.4);
+    background: rgba(24, 38, 86, 0.4);
     padding: 1.5rem;
     border-radius: 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
-    border-left: 5px solid #eed3b1;
+    border-left: 5px solid var(--c-dorado);
     font-weight: 500;
 }
 
 .award-item i {
     font-size: 1.5rem;
-    color: #eed3b1;
+    color: var(--c-dorado);
 }
 
-/* Awards Divider */
+/* Awards Divider - Leading to Location (Blue) */
 .awards-section::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: 80px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%231f4529'/%3E%3C/svg%3E");
-    background-size: cover;
+    height: 100px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23182656' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100%;
     z-index: 2;
+    pointer-events: none;
 }
 
 
-/* --- LOCATION SECTION (Palette: Dark Navy #1f4529) --- */
+/* --- LOCATION SECTION (Dark: Azul Alfaro #182656) --- */
 .location-section {
-    background: #1f4529;
+    background: linear-gradient(135deg, var(--c-azul) 0%, #0a1025 100%);
     padding: 6rem 0;
-    color: #e8ecd7;
+    color: var(--c-link-cream);
     text-align: center;
 }
 
@@ -413,7 +417,7 @@
 
 .location-item i {
     font-size: 2rem;
-    color: #eed3b1;
+    color: var(--c-dorado);
     margin-bottom: 1rem;
 }
 
@@ -433,9 +437,9 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #1f4529;
-    border: 1px solid #eed3b1;
-    color: #eed3b1;
+    background: var(--c-azul);
+    border: 1px solid var(--c-dorado);
+    color: var(--c-dorado);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -444,11 +448,10 @@
 }
 
 .tab-btn:hover {
-    background: #eed3b1;
-    color: #1f4529;
+    background: var(--c-dorado);
+    color: var(--c-azul);
 }
 
-/* Animations */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
