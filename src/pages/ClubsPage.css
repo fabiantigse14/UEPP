@@ -1,0 +1,354 @@
+/* ClubsPage.css - Redesigned with Military Aesthetics */
+
+:root {
+    --color-primary-green: var(--color-military-green);
+    --color-primary-orange: var(--color-military-gold);
+    --color-bg-dark: var(--color-military-navy);
+    --color-accent: var(--color-military-green);
+
+    /* --- UNIQUE DARK GRADIENTS --- */
+    --gradient-clubs-hero: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+    /* Slate hero */
+    --gradient-clubs-stats: linear-gradient(180deg, #1e1b4b 0%, #172554 100%);
+    /* Deep Indigo Stats */
+    --gradient-clubs-cards: linear-gradient(135deg, #14532d 0%, #064e3b 100%);
+    /* Forest Cards */
+    --gradient-clubs-steps: linear-gradient(135deg, #4c1d95 0%, #2e1065 100%);
+    /* Deep Violet Steps */
+}
+
+
+.clubs-page {
+    background: var(--color-military-navy);
+    font-family: var(--font-inter);
+    color: var(--color-military-light);
+    overflow-x: hidden;
+}
+
+/* HERO */
+.hero-section {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(to right, var(--color-accent), #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 2rem 0;
+    color: #e2e8f0;
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 2rem 0;
+}
+
+.tag-pill {
+    background: rgba(30, 41, 59, 0.8);
+    color: #e2e8f0;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.tag-pill:hover {
+    background: var(--color-primary-green);
+    transform: translateY(-2px);
+}
+
+/* ESTADÍSTICAS */
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--color-primary-green);
+}
+
+.stat-item p {
+    color: #e2e8f0;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+/* FILTROS */
+.filters-section {
+    background: var(--color-bg-dark);
+}
+
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.filter-btn {
+    background: rgba(30, 41, 59, 0.8);
+    color: #e2e8f0;
+    /* Light gray text */
+    padding: 0.75rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(5px);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--color-primary-green);
+    color: white;
+    border-color: var(--color-primary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.3);
+}
+
+/* CARRUSEL / HORIZONTAL SCROLLER (dependency-free) */
+.club-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+}
+
+.club-scroll-track {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.club-slide {
+    flex: 0 0 320px;
+    scroll-snap-align: start;
+    padding: 0 0.5rem;
+}
+
+.club-card {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    height: 350px;
+    cursor: pointer;
+    background: #1e293b;
+}
+
+.club-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.club-card:hover img {
+    transform: scale(1.1);
+}
+
+.club-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
+    color: white;
+    padding: 2rem 1.5rem 1.5rem;
+    text-align: center;
+}
+
+.club-overlay h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.4rem;
+}
+
+.club-overlay p {
+    font-size: 0.95rem;
+    margin: 0 0 1rem;
+    opacity: 0.9;
+}
+
+.join-btn {
+    background: var(--color-primary-orange);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* BENEFICIOS */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+}
+
+.benefit-card {
+    background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #f1f5f9;
+    /* Body text color */
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    color: var(--color-primary-green);
+    margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+    color: var(--color-primary-orange);
+    margin-bottom: 0.75rem;
+}
+
+/* HORARIOS */
+.schedule-section {
+    background: var(--color-bg-dark);
+    color: white;
+    text-align: center;
+}
+
+.schedule-box {
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(30, 41, 59, 0.6);
+    padding: 3rem;
+    border-radius: 1.5rem;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.schedule-icon {
+    font-size: 4rem;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.schedule-box h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* PROCESO */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.step-card {
+    background: linear-gradient(135deg, #2e1065 0%, #1e1b4b 100%);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.step-number {
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: var(--color-primary-orange);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.step-card h3 {
+    color: var(--color-primary-green);
+    margin: 1rem 0 0.75rem;
+}
+
+/* SLICK CUSTOM */
+.slick-dots li button:before {
+    color: var(--color-primary-green);
+    font-size: 12px;
+}
+
+.slick-dots li.slick-active button:before {
+    color: var(--color-primary-orange);
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+
+    .benefits-grid,
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .benefits-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

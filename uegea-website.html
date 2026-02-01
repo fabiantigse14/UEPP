@@ -1,0 +1,656 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UEGEA - Unidad Educativa General Eloy Alfaro</title>
+    <script src="https://cdn.jsdelivr.net/npm/react@18.0.0/umd/react.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18.0.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .wave-shape {
+            position: relative;
+            overflow: hidden;
+        }
+        .wave-shape::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,229.3C672,235,768,213,864,186.7C960,160,1056,128,1152,122.7C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const App = () => {
+            return (
+                <div className="min-h-screen bg-white">
+                    {/* Header */}
+                    <header className="bg-white py-2 px-4 shadow-sm">
+                        <div className="container mx-auto flex justify-between items-center">
+                            <div className="flex items-center space-x-4">
+                                <a href="mailto:info@uegea.edu.ec" className="text-green-500 font-bold text-xl">Mail</a>
+                                <img src="https://placehold.co/150x30/FFD700/000000?text=UEGEA" alt="UEGEA Logo" className="h-8" />
+                            </div>
+                            <nav className="hidden md:flex space-x-6">
+                                <a href="#inicio" className="text-gray-800 hover:text-blue-500">Inicio</a>
+                                <a href="#admisiones" className="text-gray-800 hover:text-blue-500">Admisiones</a>
+                                <a href="#nosotros" className="text-gray-800 hover:text-blue-500">Sobre Nosotros</a>
+                                <a href="#contacto" className="text-gray-800 hover:text-blue-500">Contáctanos</a>
+                                <a href="https://uegea.edu.ec" target="_blank" className="text-gray-800 hover:text-blue-500">Sitio Web Oficial</a>
+                                <a href="#trabaja" className="text-gray-800 hover:text-blue-500">Trabaja con nosotros</a>
+                            </nav>
+                         
+                        </div>
+                    </header>
+
+                    {/* Hero Banner */}
+                    <section id="inicio" className="relative h-[400px]">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/ba/c5/56/mosteiro-de-sao-pedro.jpg?w=1400&h=500&s=1" alt="Campus UEGEA en Salcedo" className="w-full h-full object-cover" />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <h1 className="text-5xl font-bold text-white drop-shadow-lg">EDUCACIÓN CON VALORES</h1>
+                        </div>
+                    </section>
+
+                    {/* Primary Education Section */}
+                    <section className="py-12 bg-blue-400">
+                        <div className="container mx-auto px-4">
+                            <div className="flex flex-col md:flex-row items-center justify-between">
+                                <div className="md:w-1/2 mb-8 md:mb-0">
+                                    <span className="inline-block bg-orange-500 text-white px-3 py-1 rounded-full text-sm mb-4">Unidad Educativa Particular</span>
+                                    <h2 className="text-3xl font-bold text-white mb-4">Formando el futuro de Salcedo</h2>
+                                    <p className="text-white mb-6">EDUCACIÓN INTEGRAL - INICIAL, BÁSICA Y BACHILLERATO</p>
+                                    <div className="flex items-center text-white mb-3">
+                                        <i className="fas fa-phone-alt mr-2"></i>
+                                        <span>(03) 2729727 / +593 98 778 0902</span>
+                                    </div>
+                                    <div className="flex items-center text-white">
+                                        <i className="fas fa-envelope mr-2"></i>
+                                        <span>info@uegea.edu.ec</span>
+                                    </div>
+                                </div>
+                                <div className="md:w-1/2">
+                                    <img src="https://placehold.co/400x300/FFFFFF/000000?text=Estudiantes+UEGEA" alt="Estudiantes de UEGEA" className="rounded-lg shadow-lg" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Educational Philosophy */}
+                    <section className="py-12 bg-white">
+                        <div className="container mx-auto px-4">
+                            <div className="flex flex-col md:flex-row items-center justify-between">
+                                <div className="md:w-1/2 mb-8 md:mb-0">
+                                    <div className="bg-yellow-100 p-4 rounded-lg">
+                                        <img src="https://placehold.co/400x200/FFD700/000000?text=Campus+UEGEA" alt="Campus educativo" className="rounded-lg w-full" />
+                                    </div>
+                                </div>
+                                <div className="md:w-1/2">
+                                    <h2 className="text-3xl font-bold text-green-600 mb-4">Educamos para el FUTURO con valores y principios</h2>
+                                    <p className="text-gray-700 mb-4">#EducaciónDeCalidad #SalcedoCotopaxi</p>
+                                    <a href="https://uegea.edu.ec/index.php/inicio/index" target="_blank" className="inline-block bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition">Más información</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Gallery Section */}
+                    <section className="py-12 bg-white">
+                        <div className="container mx-auto px-4">
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <img src="https://placehold.co/300x200/CCCCCC/000000?text=Actividades+Educativas" alt="Estudiantes en actividades grupales" className="rounded-lg" />
+                                <img src="https://placehold.co/300x200/CCCCCC/000000?text=Deportes" alt="Actividades deportivas" className="rounded-lg" />
+                                <img src="https://placehold.co/300x200/CCCCCC/000000?text=Laboratorios" alt="Laboratorios modernos" className="rounded-lg" />
+                                <img src="https://placehold.co/300x200/CCCCCC/000000?text=Aulas" alt="Estudiantes en aulas" className="rounded-lg" />
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* More Activities */}
+                    <section className="py-12 bg-white">
+                        <div className="container mx-auto px-4">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <img src="https://placehold.co/400x250/CCCCCC/000000?text=Campus+Salcedo" alt="Campus en Salcedo" className="rounded-lg" />
+                                <img src="https://placehold.co/400x250/CCCCCC/000000?text=Aprendizaje" alt="Estudiantes aprendiendo" className="rounded-lg" />
+                                <img src="https://placehold.co/400x250/CCCCCC/000000?text=Eventos" alt="Eventos escolares" className="rounded-lg" />
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Video Section */}
+                    <section className="py-12 bg-white">
+                        <div className="container mx-auto px-4">
+                            <div className="max-w-2xl mx-auto bg-green-600 p-4 rounded-lg">
+                                <div className="aspect-w-16 aspect-h-9">
+                                    <img src="https://placehold.co/800x450/00AA55/FFFFFF?text=Video+Institucional+UEGEA" alt="Video promocional sobre UEGEA" className="rounded-lg w-full" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Education Features */}
+                    <section id="nosotros" className="py-12 bg-white">
+                        <div className="container mx-auto px-4">
+                            <h2 className="text-2xl font-bold text-center text-green-600 mb-8">Nuestra Propuesta Educativa</h2>
+                            <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12">Somos la Unidad Educativa General Eloy Alfaro, una institución particular ubicada en Salcedo, Cotopaxi. Ofrecemos educación de calidad desde Inicial hasta Bachillerato con enfoque en valores y excelencia académica.</p>
+                            
+                            <h3 className="text-xl font-semibold text-center text-green-600 mb-8">¿Por qué estudiar en UEGEA?</h3>
+                            
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                                <FeatureItem 
+                                    icon="fas fa-heart" 
+                                    color="bg-yellow-400" 
+                                    title="Educación en base a valores y principios" 
+                                />
+                                <FeatureItem 
+                                    icon="fas fa-graduation-cap" 
+                                    color="bg-blue-400" 
+                                    title="Formación integral desde Inicial hasta Bachillerato" 
+                                />
+                                <FeatureItem 
+                                    icon="fas fa-tools" 
+                                    color="bg-orange-400" 
+                                    title="Bachilleratos Técnicos especializados" 
+                                />
+                                <FeatureItem 
+                                    icon="fas fa-users" 
+                                    color="bg-green-400" 
+                                    title="Comunidad educativa comprometida" 
+                                />
+                            </div>
+                            
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                                <FeatureItem 
+                                    icon="fas fa-school" 
+                                    color="bg-blue-300" 
+                                    title="Campus moderno en Salcedo" 
+                                />
+                                <FeatureItem 
+                                    icon="fas fa-leaf" 
+                                    color="bg-green-300" 
+                                    title="Educación con responsabilidad social" 
+                                />
+                                <FeatureItem 
+                                    icon="fas fa-futbol" 
+                                    color="bg-pink-300" 
+                                    title="Actividades deportivas y culturales" 
+                                />
+                                <FeatureItem 
+                                    icon="fas fa-clock" 
+                                    color="bg-yellow-300" 
+                                    title="Jornada matutina (7:00 - 15:00)" 
+                                />
+                            </div>
+                            
+                            <div className="text-center mt-8">
+                                <a href="https://uegea.edu.ec/nosotros/" target="_blank" className="inline-block bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition">Más información sobre nosotros</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Educational Levels */}
+                    <section id="admisiones" className="py-12 bg-gray-100">
+                        <div className="container mx-auto px-4">
+                            <h2 className="text-2xl font-bold text-center text-gray-800 mb-12">Niveles Educativos</h2>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <EducationLevel 
+                                    title="EDUCACIÓN INICIAL" 
+                                    bgColor="bg-blue-300" 
+                                    image="https://placehold.co/400x250/CCCCCC/000000?text=Inicial" 
+                                    items={[
+                                        "Jardín I",
+                                        "Jardín II",
+                                        "Preparatoria"
+                                    ]} 
+                                />
+                                <EducationLevel 
+                                    title="EDUCACIÓN GENERAL BÁSICA" 
+                                    bgColor="bg-orange-400" 
+                                    image="https://placehold.co/400x250/CCCCCC/000000?text=Basica" 
+                                    items={[
+                                        "Primero de Básica",
+                                        "Segundo de Básica",
+                                        "Tercero de Básica",
+                                        "Cuarto de Básica",
+                                        "Quinto de Básica",
+                                        "Sexto de Básica",
+                                        "Séptimo de Básica",
+                                        "Octavo de Básica",
+                                        "Noveno de Básica",
+                                        "Décimo de Básica"
+                                    ]} 
+                                />
+                                <EducationLevel 
+                                    title="BACHILLERATO" 
+                                    bgColor="bg-teal-400" 
+                                    image="https://placehold.co/400x250/CCCCCC/000000?text=Bachillerato" 
+                                    items={[
+                                        "Bachillerato General Unificado",
+                                        "Bachillerato Técnico:",
+                                        "• Electromecánica Automotriz",
+                                        "• Producción Agropecuaria"
+                                    ]} 
+                                />
+                            </div>
+                            
+                            <div className="text-center mt-8">
+                                <a href="https://uegea.edu.ec/index.php/inicio/index" target="_blank" className="inline-block bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition">Ver más información</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Edutainment Section */}
+                    <section className="py-12 bg-indigo-900 text-white">
+                        <div className="container mx-auto px-4">
+                            <h2 className="text-3xl font-bold text-center mb-8">Metodología Innovadora</h2>
+                            <p className="text-center mb-8 max-w-3xl mx-auto">En UEGEA implementamos metodologías educativas modernas que combinan aprendizaje significativo con herramientas actuales, preparando a nuestros estudiantes para los desafíos del siglo XXI.</p>
+                            
+                            <div className="flex justify-center space-x-8 mb-8">
+                                <div className="text-center">
+                                    <i className="fas fa-laptop text-4xl mb-2"></i>
+                                    <p className="text-sm">Tecnología</p>
+                                </div>
+                                <div className="text-center">
+                                    <i className="fas fa-book-reader text-4xl mb-2"></i>
+                                    <p className="text-sm">Lectura</p>
+                                </div>
+                                <div className="text-center">
+                                    <i className="fas fa-flask text-4xl mb-2"></i>
+                                    <p className="text-sm">Ciencia</p>
+                                </div>
+                            </div>
+                            
+                            <div className="flex justify-center">
+                                <img src="https://placehold.co/600x300/333333/FFFFFF?text=Educacion+Moderna" alt="Estudiantes usando tecnología educativa" className="rounded-lg" />
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Pillars of Education */}
+                    <section className="py-12 bg-white">
+                        <div className="container mx-auto px-4">
+                            <h2 className="text-2xl font-bold text-center text-green-600 mb-8">Nuestros Pilares Fundamentales</h2>
+                            
+                            <div className="flex flex-wrap justify-center gap-8 mb-12">
+                                <PillarIcon color="bg-red-400" title="Valores" />
+                                <PillarIcon color="bg-blue-400" title="Excelencia" />
+                                <PillarIcon color="bg-pink-400" title="Compromiso" />
+                                <PillarIcon color="bg-yellow-400" title="Innovación" />
+                            </div>
+                            
+                            <div className="text-center">
+                                <h3 className="text-xl font-semibold mb-4">Comunícate con nosotros</h3>
+                                <a href="#contacto" className="inline-block bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition">Más información</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Campus Information */}
+                    <section className="py-12 bg-white">
+                        <div className="container mx-auto px-4">
+                            <h2 className="text-2xl font-bold text-center text-green-600 mb-12">Nuestro Campus en Salcedo</h2>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <CampusCard 
+                                    title="Campus Inicial" 
+                                    description="Espacios diseñados especialmente para los más pequeños, con ambientes seguros y acogedores donde desarrollan sus primeras habilidades sociales y académicas." 
+                                    image="https://placehold.co/600x350/CCCCCC/000000?text=Campus+Inicial" 
+                                />
+                                <CampusCard 
+                                    title="Campus de Básica" 
+                                    description="Instalaciones modernas que fomentan el aprendizaje colaborativo y el desarrollo integral de nuestros estudiantes de educación básica." 
+                                    image="https://placehold.co/600x350/CCCCCC/000000?text=Campus+Basica" 
+                                />
+                                <CampusCard 
+                                    title="Campus de Bachillerato" 
+                                    description="Áreas especializadas con laboratorios técnicos para Electromecánica Automotriz y Producción Agropecuaria, preparando profesionales competentes." 
+                                    image="https://placehold.co/600x350/CCCCCC/000000?text=Campus+Bachillerato" 
+                                />
+                                <CampusCard 
+                                    title="Ubicación Privilegiada" 
+                                    description="Calle Napo y San Miguel, Rumipamba Central, Salcedo, Cotopaxi. Un entorno tranquilo y seguro para el aprendizaje." 
+                                    image="https://placehold.co/600x350/CCCCCC/000000?text=Ubicacion" 
+                                />
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Environmental Responsibility */}
+                    <section className="py-12 bg-green-500 text-white">
+                        <div className="container mx-auto px-4">
+                            <div className="text-center mb-8">
+                                <i className="fas fa-leaf text-6xl mb-4"></i>
+                                <h2 className="text-3xl font-bold mb-4">Compromiso con la Comunidad y el Ambiente</h2>
+                                <p className="max-w-2xl mx-auto">En nuestro campus</p>
+                            </div>
+                            
+                            <div className="max-w-3xl mx-auto mb-12">
+                                <p className="text-center">Promovemos la responsabilidad social y el cuidado del medio ambiente como parte fundamental de nuestra formación integral.</p>
+                            </div>
+                            
+                            <h3 className="text-2xl font-bold text-center mb-8">BENEFICIOS de nuestra educación integral</h3>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <BenefitCard 
+                                    title="Formación en Valores" 
+                                    description="Desarrollamos estudiantes con sólidos principios éticos y morales, preparados para ser ciudadanos responsables." 
+                                />
+                                <BenefitCard 
+                                    title="Educación Técnica" 
+                                    description="Bachilleratos técnicos en Electromecánica Automotriz y Producción Agropecuaria con formación práctica especializada." 
+                                />
+                                <BenefitCard 
+                                    title="Desarrollo Integral" 
+                                    description="Educación que abarca aspectos académicos, deportivos, culturales y sociales para formar personas completas." 
+                                />
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Clubs Section */}
+                    <section className="py-12 bg-orange-500 text-white">
+                        <div className="container mx-auto px-4">
+                            <div className="text-center mb-8">
+                                <i className="fas fa-users text-6xl mb-4"></i>
+                                <h2 className="text-3xl font-bold mb-4">Actividades Extracurriculares</h2>
+                            </div>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                                <ClubCard title="Deportes" image="https://placehold.co/400x250/FFFFFF/000000?text=Deportes" />
+                                <ClubCard title="Arte y Cultura" image="https://placehold.co/400x250/FFFFFF/000000?text=Arte" />
+                                <ClubCard title="Clubes Técnicos" image="https://placehold.co/400x250/FFFFFF/000000?text=Tecnicos" />
+                            </div>
+                            
+                            <div className="text-center mb-8">
+                                <h3 className="text-2xl font-bold mb-4">Descubre nuestros mejores momentos</h3>
+                                <a href="https://www.facebook.com/uegea/" target="_blank" className="inline-block bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition">Ver Fotos en Facebook</a>
+                            </div>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <ClubImage image="https://placehold.co/400x250/CCCCCC/000000?text=Momento+1" />
+                                <ClubImage image="https://placehold.co/400x250/CCCCCC/000000?text=Momento+2" />
+                                <ClubImage image="https://placehold.co/400x250/CCCCCC/000000?text=Momento+3" />
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Partners Section */}
+                    <section className="py-12 bg-white">
+                        <div className="container mx-auto px-4">
+                            <h2 className="text-2xl font-bold text-center text-green-600 mb-12">Instituciones y Alianzas</h2>
+                            
+                            <div className="flex flex-wrap justify-center gap-8 mb-8">
+                                <PartnerLogo name="Ministerio de Educación" />
+                                <PartnerLogo name="Gobierno Provincial" />
+                                <PartnerLogo name="GAD Salcedo" />
+                                <PartnerLogo name="Comunidad" />
+                            </div>
+                            
+                            <div className="mt-12">
+                                <img src="https://placehold.co/1200x100/CCCCCC/000000?text=Equipo+Docente+UEGEA" alt="Equipo docente y administrativo" className="w-full rounded-lg" />
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* FAQ Section */}
+                    <section className="py-12 bg-white">
+                        <div className="container mx-auto px-4">
+                            <h2 className="text-2xl font-bold text-center text-green-600 mb-12">Preguntas Frecuentes</h2>
+                            
+                            <div className="max-w-4xl mx-auto">
+                                <FaqItem question="¿Cuál es el proceso de admisión?" answer="El proceso incluye solicitud de información, visita al campus, presentación de documentos, entrevista con autoridades y matrícula. Comunícate con nosotros al (03) 2729727 para más detalles." />
+                                <FaqItem question="¿Qué documentos se requieren para la inscripción?" answer="Copia de partida de nacimiento, certificado de estudios anteriores (promoción), cédula de identidad del estudiante y representante, carné de vacunación actualizado y fotos tamaño carnet." />
+                                <FaqItem question="¿Ofrecen transporte escolar?" answer="Consulta disponibilidad de transporte escolar contactando directamente a la institución. El servicio puede variar según la demanda y las rutas disponibles." />
+                                <FaqItem question="¿Cuáles son los horarios escolares?" answer="Jornada matutina de 7:00 AM a 3:00 PM, de lunes a viernes. Los horarios específicos pueden variar según el nivel educativo." />
+                                <FaqItem question="¿Qué bachilleratos técnicos ofrecen?" answer="Ofrecemos Bachillerato Técnico en Electromecánica Automotriz y Bachillerato Técnico en Producción Agropecuaria, además del Bachillerato General Unificado." />
+                                <FaqItem question="¿Ofrecen servicio de alimentación?" answer="Consulta sobre el servicio de cafetería y comedor contactando directamente a la institución al (03) 2729727." />
+                                <FaqItem question="¿Cómo puedo programar una visita?" answer="Puedes programar una visita llamando al (03) 2729727 o al +593 98 778 0902, o enviando un correo a info@uegea.edu.ec" />
+                                <FaqItem question="¿Dónde está ubicada la institución?" answer="Nos ubicamos en Calle Napo y San Miguel, Rumipamba Central, Salcedo, provincia de Cotopaxi, Ecuador." />
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Contact Form */}
+                    <section id="contacto" className="py-12 bg-pink-200">
+                        <div className="container mx-auto px-4">
+                            <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
+                                <h2 className="text-2xl font-bold text-center text-green-600 mb-8">Únete a la Familia UEGEA</h2>
+                                
+                                <div className="space-y-4">
+                                    <div>
+                                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Nombre completo *</label>
+                                        <input type="text" id="name" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required />
+                                    </div>
+                                    
+                                    <div>
+                                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Teléfono *</label>
+                                        <input type="tel" id="phone" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required />
+                                    </div>
+                                    
+                                    <div>
+                                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Correo electrónico *</label>
+                                        <input type="email" id="email" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required />
+                                    </div>
+                                    
+                                    <div>
+                                        <label htmlFor="grade" className="block text-sm font-medium text-gray-700 mb-1">Grado al que aplica el estudiante *</label>
+                                        <select id="grade" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                                            <option value="">Seleccione un grado</option>
+                                            <option value="jardin1">Jardín I</option>
+                                            <option value="jardin2">Jardín II</option>
+                                            <option value="preparatoria">Preparatoria</option>
+                                            <option value="primero">Primero de Básica</option>
+                                            <option value="segundo">Segundo de Básica</option>
+                                            <option value="tercero">Tercero de Básica</option>
+                                            <option value="cuarto">Cuarto de Básica</option>
+                                            <option value="quinto">Quinto de Básica</option>
+                                            <option value="sexto">Sexto de Básica</option>
+                                            <option value="septimo">Séptimo de Básica</option>
+                                            <option value="octavo">Octavo de Básica</option>
+                                            <option value="noveno">Noveno de Básica</option>
+                                            <option value="decimo">Décimo de Básica</option>
+                                            <option value="bachillerato1">Primer año de Bachillerato</option>
+                                            <option value="bachillerato2">Segundo año de Bachillerato</option>
+                                            <option value="bachillerato3">Tercer año de Bachillerato</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div>
+                                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+                                        <textarea id="message" rows="4" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                                    </div>
+                                    
+                                    <div className="text-center pt-4">
+                                        <button onClick={() => alert('Gracias por tu interés. Nos pondremos en contacto contigo pronto. Llámanos al (03) 2729727 para información inmediata.')} className="bg-green-600 text-white px-8 py-2 rounded-full hover:bg-green-700 transition">Enviar</button>
+                                    </div>
+                                </div>
+                                
+                                <div className="mt-6 pt-6 border-t border-gray-200 text-center">
+                                    <p className="text-gray-600 mb-2">O contáctanos directamente:</p>
+                                    <div className="flex flex-col space-y-2 text-sm">
+                                        <a href="tel:032729727" className="text-green-600 hover:text-green-700">
+                                            <i className="fas fa-phone mr-2"></i>(03) 2729727
+                                        </a>
+                                        <a href="tel:+593987780902" className="text-green-600 hover:text-green-700">
+                                            <i className="fas fa-mobile-alt mr-2"></i>+593 98 778 0902
+                                        </a>
+                                        <a href="mailto:info@uegea.edu.ec" className="text-green-600 hover:text-green-700">
+                                            <i className="fas fa-envelope mr-2"></i>info@uegea.edu.ec
+                                        </a>
+                                    </div>
+                                    <div className="mt-4">
+                                        <a href="https://uegea.edu.ec/contactanos/" target="_blank" className="inline-block text-green-600 hover:text-green-700 text-sm underline">
+                                            <i className="fas fa-external-link-alt mr-1"></i>Ir a página de contacto completa
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Footer */}
+                    <footer className="py-8 bg-green-500 text-white">
+                        <div className="container mx-auto px-4">
+                            <div className="flex flex-col md:flex-row justify-between items-center">
+                                <div className="mb-4 md:mb-0">
+                                    <img src="https://placehold.co/120x40/FFFFFF/000000?text=UEGEA" alt="UEGEA Logo" className="h-10" />
+                                    <p className="text-sm mt-2">Unidad Educativa General Eloy Alfaro</p>
+                                </div>
+                                <div className="text-center mb-4 md:mb-0">
+                                    <h3 className="font-semibold mb-2">Contacto</h3>
+                                    <p className="text-sm">Calle Napo y San Miguel</p>
+                                    <p className="text-sm">Rumipamba Central, Salcedo, Cotopaxi</p>
+                                    <p className="text-sm">Teléfono: (03) 2729727 / +593 98 778 0902</p>
+                                    <p className="text-sm">Email: info@uegea.edu.ec</p>
+                                </div>
+                                <div className="flex space-x-4">
+                                    <a href="https://www.facebook.com/uegea/" target="_blank" className="hover:text-green-200"><i className="fab fa-facebook-f"></i></a>
+                                    <a href="mailto:info@uegea.edu.ec" className="hover:text-green-200"><i className="fas fa-envelope"></i></a>
+                                    <a href="https://uegea.edu.ec" target="_blank" className="hover:text-green-200"><i className="fas fa-globe"></i></a>
+                                </div>
+                            </div>
+                            <div className="border-t border-green-400 mt-6 pt-6 text-center text-sm">
+                                <p>&copy; 2025 UEGEA - Unidad Educativa General Eloy Alfaro - Todos los derechos reservados</p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        // Feature Item Component
+        const FeatureItem = ({ icon, color, title }) => {
+            return (
+                <div className="text-center">
+                    <div className={`${color} w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4`}>
+                        <i className={`${icon} text-white text-2xl`}></i>
+                    </div>
+                    <p className="text-gray-600 text-sm">{title}</p>
+                </div>
+            );
+        };
+
+        // Education Level Component
+        const EducationLevel = ({ title, bgColor, image, items }) => {
+            return (
+                <div className={`${bgColor} rounded-lg overflow-hidden`}>
+                    <img src={image} alt={`${title} image`} className="w-full h-48 object-cover" />
+                    <div className="p-4">
+                        <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
+                        <ul className="space-y-2">
+                            {items.map((item, index) => (
+                                <li key={index} className="text-white flex items-start">
+                                    <i className="fas fa-circle text-xs mt-1.5 mr-2"></i>
+                                    <span className="text-sm">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            );
+        };
+
+        // Campus Card Component
+        const CampusCard = ({ title, description, image }) => {
+            return (
+                <div className="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src={image} alt={`${title} campus`} className="w-full h-48 object-cover" />
+                    <div className="p-4">
+                        <h3 className="text-xl font-bold text-green-600 mb-2">{title}</h3>
+                        <p className="text-gray-600 text-sm">{description}</p>
+                    </div>
+                </div>
+            );
+        };
+
+        // Benefit Card Component
+        const BenefitCard = ({ title, description }) => {
+            return (
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                    <h4 className="text-lg font-semibold text-green-600 mb-2">{title}</h4>
+                    <p className="text-gray-600 text-sm">{description}</p>
+                </div>
+            );
+        };
+
+        // Club Card Component
+        const ClubCard = ({ title, image }) => {
+            return (
+                <div className="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src={image} alt={`${title} club`} className="w-full h-32 object-cover" />
+                    <div className="p-4">
+                        <h3 className="text-lg font-semibold text-orange-600">{title}</h3>
+                    </div>
+                </div>
+            );
+        };
+
+        // Club Image Component
+        const ClubImage = ({ image }) => {
+            return (
+                <div className="bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src={image} alt="Club activity" className="w-full h-32 object-cover" />
+                </div>
+            );
+        };
+
+        // Partner Logo Component
+        const PartnerLogo = ({ name }) => {
+            return (
+                <div className="text-center">
+                    <img src={`https://placehold.co/120x40/CCCCCC/000000?text=${name}`} alt={`${name} logo`} className="h-8 mx-auto" />
+                </div>
+            );
+        };
+
+        // Pillar Icon Component
+        const PillarIcon = ({ color, title }) => {
+            return (
+                <div className="text-center">
+                    <div className={`${color} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-2`}>
+                        <i className="fas fa-user-graduate text-white text-xl"></i>
+                    </div>
+                    {title && <p className="text-gray-700 font-medium text-sm">{title}</p>}
+                </div>
+            );
+        };
+
+        // FAQ Item Component
+        const FaqItem = ({ question, answer }) => {
+            const [isOpen, setIsOpen] = React.useState(false);
+            
+            return (
+                <div className="border-b border-gray-200 pb-4 mb-4 last:border-b-0 last:mb-0 last:pb-0">
+                    <button 
+                        className="flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-green-600"
+                        onClick={() => setIsOpen(!isOpen)}
+                    >
+                        <span>{question}</span>
+                        <i className={`fas ${isOpen ? 'fa-chevron-up' : 'fa-chevron-down'} text-green-600`}></i>
+                    </button>
+                    {isOpen && (
+                        <div className="mt-2 text-gray-600">
+                            <p>{answer}</p>
+                        </div>
+                    )}
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
+                                

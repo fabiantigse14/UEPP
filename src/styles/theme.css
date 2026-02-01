@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&family=Teko:wght@300;400;500;600;700&display=swap');
+
+/* Theme tokens for tactical military aesthetic */
+:root {
+  /* Tactical Military Palette */
+  --olive: #4A5D3A;            /* olive green primary */
+  --olive-dark: #2E3F1F;
+  --olive-light: #6B8E5A;
+  --armor-gray: #5C6B73;        /* armored gray */
+  --armor-gray-dark: #3E4A51;
+  --armor-gray-light: #8A959A;
+  --matte-black: #0D0D0D;        /* deep matte black */
+  --charcoal: #1A1A1A;
+  --accent-red: #8B2C1B;         /* tactical accent */
+  --signal-orange: #D2691E;      /* warning/indicator */
+
+  /* Geometric Typography System */
+  --font-primary: "Rajdhani", "Teko", system-ui, sans-serif; /* geometric, wide */
+  --font-display: "Orbitron", "Rajdhani", monospace; /* angular, technical */
+  --font-mono: "Courier New", monospace; /* for coordinates/codes */
+
+  /* Text Colors */
+  --text-primary: #FFFFFF;         /* high contrast on dark */
+  --text-secondary: #B8C4BC;
+  --text-muted: #7A8478;
+  --text-on-olive: #E8F0E3;
+  --text-on-gray: #F0F4F7;
+
+  /* Surface & Background */
+  --surface-primary: var(--matte-black);
+  --surface-secondary: var(--charcoal);
+  --surface-olive: var(--olive);
+  --surface-armor: var(--armor-gray);
+  --surface-highlight: rgba(255,255,255,0.05);
+
+  /* Tactical Design Elements */
+  --border-angular: 2px solid var(--armor-gray);
+  --border-accent: 2px solid var(--accent-red);
+  --bevel-light: rgba(255,255,255,0.15);
+  --bevel-dark: rgba(0,0,0,0.4);
+  --grid-pattern: linear-gradient(rgba(138,149,154,0.1) 1px, transparent 1px),
+                   linear-gradient(90deg, rgba(138,149,154,0.1) 1px, transparent 1px);
+  
+  /* Shadows & Effects */
+  --shadow-tactical: 0 4px 8px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1);
+  --shadow-inset: inset 0 2px 4px rgba(0,0,0,0.5);
+  --glow-accent: 0 0 20px rgba(210,105,30,0.4);
+
+  /* Spacing & Dimensions */
+  --grid-size: 24px;
+  --border-width: 2px;
+  --bevel-size: 4px;
+  --angle-sharp: 0deg;
+  --angle-bevel: 8deg;
+}
+
+/* Global Tactical Reset */
+* { 
+  box-sizing: border-box;
+}
+
+html, body { 
+  margin: 0; 
+  padding: 0; 
+  font-family: var(--font-primary);
+  color: var(--text-primary);
+  background: var(--surface-primary);
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+}
+
+body { 
+  background: 
+    var(--grid-pattern),
+    linear-gradient(135deg, var(--surface-secondary) 0%, var(--olive) 35%, var(--armor-gray) 100%);
+  background-size: var(--grid-size) var(--grid-size), 100% 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 50px,
+      rgba(138,149,154,0.03) 50px,
+      rgba(138,149,154,0.03) 51px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 50px,
+      rgba(138,149,154,0.03) 50px,
+      rgba(138,149,154,0.03) 51px
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Tactical Typography System */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  position: relative;
+}
+
+h1 { 
+  font-size: 2.5rem; 
+  color: var(--text-primary);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+h2 { 
+  font-size: 2rem; 
+  color: var(--signal-orange);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+h3 { 
+  font-size: 1.5rem; 
+  color: var(--text-on-olive);
+}
+
+p, span, div {
+  font-family: var(--font-primary);
+  color: var(--text-secondary);
+}
+
+/* Angular Tactical Components */
+.tactical-card {
+  background: linear-gradient(135deg, var(--surface-armor) 0%, var(--olive-dark) 100%);
+  border: var(--border-angular);
+  position: relative;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: var(--shadow-tactical);
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tactical-card::before {
+  content: '';
+  position: absolute;
+  top: 2px; left: 2px; right: 2px; bottom: 2px;
+  background: linear-gradient(135deg, var(--bevel-light), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tactical-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--grid-pattern);
+  background-size: var(--grid-size) var(--grid-size);
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tactical-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-accent), var(--shadow-tactical);
+  border-color: var(--signal-orange);
+}
+
+.tactical-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Beveled Button System */
+.tactical-button {
+  background: linear-gradient(135deg, var(--olive) 0%, var(--olive-dark) 100%);
+  border: var(--border-angular);
+  color: var(--text-on-olive);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  position: relative;
+  cursor: pointer;
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
+  box-shadow: 
+    inset -2px -2px 4px rgba(0,0,0,0.5),
+    inset 2px 2px 4px var(--bevel-light);
+  transition: all 0.2s ease;
+}
+
+.tactical-button:hover {
+  background: linear-gradient(135deg, var(--olive-light) 0%, var(--olive) 100%);
+  transform: translateY(-1px);
+  box-shadow: 
+    inset -2px -2px 4px rgba(0,0,0,0.3),
+    inset 2px 2px 4px var(--bevel-light),
+    0 4px 8px rgba(0,0,0,0.4);
+}
+
+.tactical-button:active {
+  transform: translateY(0);
+  box-shadow: 
+    inset -1px -1px 2px rgba(0,0,0,0.6),
+    inset 1px 1px 2px rgba(255,255,255,0.1);
+}
+
+/* Coordinate Display System */
+.coord-display {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: rgba(0,0,0,0.4);
+  padding: 2px 6px;
+  border: 1px solid var(--armor-gray-dark);
+  letter-spacing: 1px;
+}
+
+/* Grid Overlay Effect */
+.grid-overlay {
+  position: relative;
+}
+
+.grid-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--grid-pattern);
+  background-size: var(--grid-size) var(--grid-size);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Tactical Header System */
+.tactical-header {
+  background: linear-gradient(135deg, var(--surface-secondary) 0%, var(--charcoal) 100%);
+  border-bottom: var(--border-accent);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-tactical);
+  position: relative;
+}
+
+.tactical-header::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--signal-orange), transparent);
+  animation: scan-line 3s linear infinite;
+}
+
+@keyframes scan-line {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.tactical-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.tactical-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.tactical-logo::after {
+  content: attr(data-coords);
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  font-size: 0.6rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.nav-menu-desktop {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link-desktop {
+  background: linear-gradient(135deg, var(--olive) 0%, var(--olive-dark) 100%);
+  border: var(--border-angular);
+  color: var(--text-on-olive);
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0 calc(100% - 4px), 0 4px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link-desktop::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.nav-link-desktop:hover::before {
+  left: 100%;
+}
+
+.nav-link-desktop:hover {
+  background: linear-gradient(135deg, var(--olive-light) 0%, var(--olive) 100%);
+  border-color: var(--signal-orange);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+/* Mobile Hamburger Menu */
+.hamburger-trigger {
+  display: none;
+  background: transparent;
+  border: var(--border-angular);
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0 calc(100% - 4px), 0 4px);
+  transition: all 0.3s ease;
+}
+
+.hamburger-trigger:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--signal-orange);
+}
+
+.tactical-drawer {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: 350px;
+  max-width: 90vw;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--surface-secondary) 0%, var(--charcoal) 100%);
+  border-left: var(--border-accent);
+  box-shadow: var(--shadow-tactical);
+  transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1001;
+  overflow-y: auto;
+  position: relative;
+}
+
+.tactical-drawer.open {
+  right: 0;
+}
+
+.tactical-drawer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--grid-pattern);
+  background-size: var(--grid-size) var(--grid-size);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.drawer-header {
+  background: var(--olive-dark);
+  padding: 1.5rem;
+  border-bottom: var(--border-angular);
+  position: relative;
+  z-index: 2;
+}
+
+.drawer-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-on-olive);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.drawer-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: transparent;
+  border: var(--border-angular);
+  color: var(--text-on-olive);
+  font-size: 1.25rem;
+  width: 36px; height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0 calc(100% - 4px), 0 4px);
+  transition: all 0.2s ease;
+}
+
+.drawer-close:hover {
+  background: var(--accent-red);
+  border-color: var(--signal-orange);
+}
+
+.drawer-nav {
+  padding: 1.5rem;
+  list-style: none;
+  margin: 0;
+}
+
+.drawer-nav-item {
+  margin-bottom: 0.75rem;
+}
+
+.drawer-nav-link {
+  display: block;
+  background: linear-gradient(135deg, var(--surface-armor) 0%, var(--olive-dark) 100%);
+  border: var(--border-angular);
+  color: var(--text-secondary);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1rem 1.25rem;
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.drawer-nav-link::after {
+  content: attr(data-section);
+  position: absolute;
+  top: 0.5rem; right: 1rem;
+  font-size: 0.6rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  background: rgba(0,0,0,0.4);
+  padding: 2px 6px;
+  border: 1px solid var(--armor-gray-dark);
+}
+
+.drawer-nav-link:hover {
+  background: linear-gradient(135deg, var(--olive) 0%, var(--olive-light) 100%);
+  color: var(--text-primary);
+  border-color: var(--signal-orange);
+  transform: translateX(4px);
+}
+
+.drawer-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.drawer-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive Navigation */
+@media (max-width: 900px) {
+  .nav-menu-desktop {
+    display: none;
+  }
+  
+  .hamburger-trigger {
+    display: block;
+  }
+}
+
+@media (min-width: 901px) {
+  .tactical-drawer {
+    transform: translateX(100%);
+  }
+  
+  .drawer-overlay {
+    display: none;
+  }
+}
+
+/* Accessible focus styles */

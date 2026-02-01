@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  /* Military Palette */
+  --color-military-navy: #0a192f;
+  --color-military-slate: #172a45;
+  --color-military-green: #64ffda;
+  --color-military-gold: #fbbf24;
+  --color-military-gray: #8892b0;
+  --color-military-light: #ccd6f6;
+
+  /* Typography */
+  --font-oswald: "Oswald", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+/* Global Styles */
+:root {
+  font-family: var(--font-inter);
+  background-color: var(--color-military-navy);
+  color: var(--color-military-light);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-oswald);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-military-green);
+  /* Default accent for headers */
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-military-navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-military-slate);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-military-green);
+}
+
+/* Floating WhatsApp Adjustment */
+.floating-wpp {
+  bottom: 90px !important;
+  right: 20px !important;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+@media (max-width: 767px) {
+  .floating-wpp {
+    bottom: 70px !important;
+    right: 12px !important;
+    width: 55px !important;
+    height: 55px !important;
+  }
+}
