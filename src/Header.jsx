@@ -9,6 +9,11 @@ const Header = () => {
     const [displayText, setDisplayText] = useState('');
     const [isShort, setIsShort] = useState(false);
     const [cursorVisible, setCursorVisible] = useState(true);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
     useEffect(() => {
         let index = 0;
@@ -86,11 +91,15 @@ const Header = () => {
                             <i className="fab fa-whatsapp"></i>
                         </a>
                     </div>
+                    {/* HAMBURGER BUTTON */}
+                    <button className="hamburger-menu" onClick={toggleMenu} aria-label="Menu">
+                        <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
+                    </button>
                 </div>
             </div>
 
-            {/* MENÚ DE NAVEGACIÓN */}
-            <nav className="nav-menu">
+            {/* MENÚ DE NAVEGACIÓN (Desktop) */}
+            <nav className="nav-menu desktop-nav">
                 {[
                     { to: "/", label: "Inicio" },
                     { to: "/admisiones", label: "Admisiones" },
@@ -109,6 +118,38 @@ const Header = () => {
                     </Link>
                 ))}
             </nav>
+
+            {/* MOBILE OFF-CANVAS NAV */}
+            <div className={`off-canvas-menu ${isMenuOpen ? 'open' : ''}`}>
+                <div className="off-canvas-header">
+                    <span className="off-canvas-title">Menú</span>
+                    <button className="close-menu-btn" onClick={toggleMenu}>
+                        <i className="fas fa-times"></i>
+                    </button>
+                </div>
+                <nav className="mobile-nav">
+                    {[
+                        { to: "/", label: "Inicio" },
+                        { to: "/admisiones", label: "Admisiones" },
+                        { to: "/ejetransversal", label: "Eje Transversal" },
+                        { to: "/clubs", label: "Clubs" },
+                        { to: "/nuestrahistoria", label: "Nuestra Historia" },
+                        { to: "/contacto", label: "Contacto" }
+                    ].map((item, i) => (
+                        <Link
+                            key={i}
+                            to={item.to}
+                            className="mobile-nav-link"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            {item.label}
+                        </Link>
+                    ))}
+                </nav>
+            </div>
+
+            {/* OVERLAY */}
+            {isMenuOpen && <div className="menu-overlay" onClick={() => setIsMenuOpen(false)}></div>}
         </header>
     );
 };
