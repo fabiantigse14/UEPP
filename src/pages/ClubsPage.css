@@ -1,4 +1,4 @@
-/* ClubsPage.css - Refactored for Official Palette */
+/* ClubsPage.css - Military Theme */
 
 :root {
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -6,9 +6,9 @@
 }
 
 .clubs-page {
-    background: var(--c-azul);
-    font-family: var(--font-inter);
-    color: var(--c-blanco);
+    background: var(--bg-dark);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-light);
     overflow-x: hidden;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .section-title {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 3rem;
     font-weight: 800;
     text-align: center;
@@ -29,7 +29,7 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     position: relative;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
 }
 
 .section-title::after {
@@ -41,13 +41,13 @@
     width: 60px;
     height: 4px;
     border-radius: 2px;
-    background: var(--c-verde);
+    background: var(--military-green);
 }
 
-/* --- HERO SECTION (Dark: Azul Alfaro) --- */
+/* --- HERO SECTION --- */
 .hero-section {
-    background: radial-gradient(circle at center, rgba(24, 38, 86, 0.8) 0%, rgba(10, 16, 37, 0.9) 100%);
-    color: var(--c-blanco);
+    background: radial-gradient(circle at center, rgba(75, 83, 32, 0.4) 0%, rgba(10, 15, 13, 0.9) 100%);
+    color: var(--text-light);
     padding: 8rem 0 10rem;
     text-align: center;
     position: relative;
@@ -57,15 +57,15 @@
 .hero-background {
     position: absolute;
     inset: 0;
-    background: var(--c-azul);
+    background: var(--bg-dark);
 }
 
 .hero-background img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.4;
-    filter: brightness(0.4) sepia(0.3);
+    opacity: 0.3;
+    filter: grayscale(100%) sepia(0.5);
 }
 
 .hero-content {
@@ -75,22 +75,22 @@
 }
 
 .hero-title {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 4.5rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     margin-bottom: 1.5rem;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
 }
 
 .hero-description {
     font-size: 1.25rem;
     max-width: 800px;
     margin: 0 auto 2rem;
-    color: var(--c-blanco);
-    background: rgba(24, 38, 86, 0.7);
+    color: var(--text-light);
+    background: rgba(20, 27, 22, 0.6);
     padding: 1.5rem;
     border-radius: 1rem;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(134, 239, 172, 0.1);
 }
 
 .hero-tags {
@@ -98,15 +98,16 @@
     justify-content: center;
     gap: 1rem;
     margin-bottom: 3rem;
+    flex-wrap: wrap;
 }
 
 .tag-pill {
-    background: var(--c-verde);
+    background: var(--military-green);
     color: white;
     padding: 0.6rem 1.2rem;
     border-radius: 9999px;
     font-weight: 600;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Stats in Hero */
@@ -115,6 +116,7 @@
     justify-content: center;
     gap: 4rem;
     margin-top: 3rem;
+    flex-wrap: wrap;
 }
 
 .stat-item {
@@ -122,37 +124,22 @@
 }
 
 .stat-number {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 3.5rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     font-weight: bold;
 }
 
 .stat-item p {
     font-size: 1rem;
-    color: var(--c-link-cream);
+    color: var(--pale-green);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Hero Divider - Leading to Filters (Green) */
-.hero-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23006837' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- FILTERS SECTION (Dark: Verde Laurel #006837) --- */
+/* --- FILTERS SECTION --- */
 .filters-section {
-    background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
+    background: linear-gradient(135deg, var(--military-dark) 0%, #0a0f0d 100%);
     padding: 4rem 0;
     position: relative;
     z-index: 1;
@@ -166,9 +153,9 @@
 }
 
 .filter-btn {
-    background: rgba(255,255,255,0.1);
-    border: 2px solid transparent;
-    color: var(--c-link-cream);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--military-green);
+    color: var(--text-light);
     padding: 0.8rem 1.5rem;
     border-radius: 9999px;
     cursor: pointer;
@@ -180,31 +167,18 @@
     transition: var(--transition);
 }
 
-.filter-btn:hover, .filter-btn.active {
-    background: var(--c-dorado);
-    color: var(--c-azul);
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--gold-accent);
+    color: var(--bg-dark);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(251, 191, 36, 0.3);
+    border-color: var(--gold-accent);
 }
 
-/* Filters Divider - Leading to Carousel (Cream) */
-.filters-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23E8ECD7' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- CAROUSEL SECTION (Light: Cream #E8ECD7) --- */
+/* --- CAROUSEL SECTION --- */
 .clubs-carousel-section {
-    background: var(--c-link-cream);
+    background: var(--bg-dark);
     padding: 6rem 0;
     position: relative;
     z-index: 1;
@@ -216,7 +190,7 @@
     gap: 2rem;
     padding-bottom: 2rem;
     scrollbar-width: thin;
-    scrollbar-color: var(--c-verde) var(--c-link-cream);
+    scrollbar-color: var(--military-green) var(--bg-dark);
 }
 
 .club-scroll-track {
@@ -234,13 +208,15 @@
     border-radius: 1.5rem;
     overflow: hidden;
     height: 400px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     transition: var(--transition);
+    border: 1px solid var(--military-green);
 }
 
 .club-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    border-color: var(--gold-accent);
 }
 
 .club-card img {
@@ -254,22 +230,22 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, var(--c-azul) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(10, 15, 13, 0.95) 0%, transparent 100%);
     padding: 2rem;
     color: white;
     text-align: center;
 }
 
 .club-overlay h3 {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
 }
 
 .join-btn {
-    background: var(--c-dorado);
-    color: var(--c-azul);
+    background: var(--gold-accent);
+    color: var(--bg-dark);
     padding: 0.5rem 1rem;
     border-radius: 1rem;
     font-weight: bold;
@@ -278,35 +254,16 @@
     cursor: pointer;
 }
 
-/* Carousel Divider - Leading to Benefits (Blue) */
-.clubs-carousel-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23182656' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- BENEFITS SECTION (Dark: Azul Alfaro #182656) --- */
+/* --- BENEFITS SECTION --- */
 .benefits-section {
-    background: linear-gradient(135deg, var(--c-azul) 0%, #0a1025 100%);
+    background: linear-gradient(135deg, var(--military-green) 0%, #1a2e22 100%);
     padding: 6rem 0;
     position: relative;
     z-index: 1;
 }
 
 .benefits-section .section-title {
-    color: var(--c-dorado);
-}
-
-.benefits-section .section-title::after {
-    background: var(--c-verde);
+    color: var(--gold-accent);
 }
 
 .benefits-grid {
@@ -316,55 +273,40 @@
 }
 
 .benefit-card {
-    background: rgba(0, 104, 55, 0.3); /* Verde transparent */
+    background: rgba(10, 15, 13, 0.3);
     padding: 2rem;
     border-radius: 1.5rem;
     text-align: center;
-    border: 1px solid rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(134, 239, 172, 0.1);
     transition: var(--transition);
 }
 
 .benefit-card:hover {
-    background: rgba(0, 104, 55, 0.6);
+    background: rgba(10, 15, 13, 0.6);
     transform: translateY(-5px);
-    border-color: var(--c-dorado);
+    border-color: var(--gold-accent);
 }
 
 .benefit-icon {
     font-size: 3rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     margin-bottom: 1.5rem;
 }
 
 .benefit-card h3 {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--c-blanco);
+    color: var(--pale-green);
 }
 
 .benefit-card p {
-    color: var(--c-link-cream);
+    color: var(--text-light);
 }
 
-/* Benefits Divider - Leading to Schedule (Green) */
-.benefits-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23006837' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- SCHEDULE SECTION (Dark: Verde Laurel #006837) --- */
+/* --- SCHEDULE SECTION --- */
 .schedule-section {
-    background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
+    background: var(--bg-card);
     padding: 6rem 0;
     text-align: center;
     position: relative;
@@ -372,56 +314,37 @@
 }
 
 .schedule-box {
-    background: rgba(24, 38, 86, 0.5); /* Azul transparent */
+    background: rgba(20, 27, 22, 0.6);
     display: inline-block;
     padding: 3rem;
     border-radius: 2rem;
-    border: 2px dashed var(--c-dorado);
+    border: 2px dashed var(--gold-accent);
 }
 
 .schedule-icon {
     font-size: 3rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     margin-bottom: 1rem;
 }
 
 .schedule-box h3 {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 2rem;
     color: white;
     margin-bottom: 1rem;
 }
 
-/* Schedule Divider - Leading to Inscription (Cream) */
-.schedule-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23E8ECD7' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- INSCRIPTION SECTION (Light: Cream #E8ECD7) --- */
+/* --- INSCRIPTION SECTION --- */
 .inscription-section {
-    background: var(--c-link-cream);
+    background: var(--bg-dark);
     padding: 6rem 0;
-    color: var(--c-azul);
+    color: var(--text-light);
     position: relative;
     z-index: 1;
 }
 
 .inscription-section .section-title {
-    color: var(--c-azul);
-}
-
-.inscription-section .section-title::after {
-    background: var(--c-verde);
+    color: var(--gold-accent);
 }
 
 .steps-grid {
@@ -431,20 +354,21 @@
 }
 
 .step-card {
-    background: white;
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: 1.5rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     text-align: center;
     position: relative;
     overflow: hidden;
+    border: 1px solid var(--military-green);
 }
 
 .step-number {
     width: 60px;
     height: 60px;
-    background: var(--c-azul);
-    color: var(--c-dorado);
+    background: var(--military-green);
+    color: var(--gold-accent);
     font-size: 2rem;
     font-weight: bold;
     border-radius: 50%;
@@ -455,13 +379,20 @@
 }
 
 .step-card h3 {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: var(--c-azul);
+    color: var(--pale-green);
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

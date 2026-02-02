@@ -105,7 +105,7 @@ const Header = () => {
                     { to: "/admisiones", label: "Admisiones" },
                     { to: "/ejetransversal", label: "Eje Transversal" },
                     { to: "/clubs", label: "Clubs" },
-                    { to: "/nuestrahistoria", label: "Nuestra Historia" },
+                    { to: "/nuestrahistoria", label: "Nosotros" },
                     { to: "/contacto", label: "Contacto" }
                 ].map((item, i) => (
                     <Link
@@ -140,7 +140,7 @@ const Header = () => {
                         { to: "/admisiones", label: "Admisiones" },
                         { to: "/ejetransversal", label: "Eje Transversal" },
                         { to: "/clubs", label: "Clubs" },
-                        { to: "/nuestrahistoria", label: "Nuestra Historia" },
+                        { to: "/nuestrahistoria", label: "Nosotros" },
                         { to: "/contacto", label: "Contacto" }
                     ].map((item, i) => (
                         <Link

@@ -1,42 +1,16 @@
-/* AdmissionsPage.css - Refactored for Official Palette */
-
-/* --- GLOBAL RESETS --- */
-:root {
-    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --radius: 1.5rem;
-}
+/* AdmissionsPage.css - Military Dark Theme */
 
 .admissions-page {
-    background: var(--c-azul);
+    background: var(--bg-dark);
+    color: var(--text-light);
     font-family: var(--font-inter);
-    color: var(--c-blanco);
-    overflow-x: hidden;
+    padding-top: 2rem;
+    min-height: 100vh;
 }
 
-.container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    position: relative;
-    z-index: 2;
-}
-
-.section-title {
-    font-family: var(--font-oswald);
-    font-size: 3rem;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    position: relative;
-    color: var(--c-dorado);
-}
-
-/* --- HERO SECTION (Dark: Azul Alfaro) --- */
 .hero-section {
-    background: radial-gradient(circle at center, rgba(24, 38, 86, 0.8) 0%, rgba(10, 16, 37, 0.9) 100%);
-    color: var(--c-blanco);
+    background: radial-gradient(circle at center, rgba(75, 83, 32, 0.4) 0%, rgba(10, 15, 13, 0.9) 100%);
+    color: var(--text-light);
     padding: 8rem 0 10rem;
     position: relative;
     overflow: hidden;
@@ -48,15 +22,15 @@
 .hero-background {
     position: absolute;
     inset: 0;
-    background: var(--c-azul);
+    background: var(--bg-dark);
 }
 
 .hero-background img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.4;
-    filter: brightness(0.4) sepia(0.3);
+    opacity: 0.2;
+    filter: grayscale(100%) sepia(0.5) hue-rotate(60deg);
 }
 
 .hero-content {
@@ -69,20 +43,20 @@
 .hero-title {
     font-family: var(--font-oswald);
     font-size: 4rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     margin-bottom: 1rem;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
 }
 
 .hero-subtitle {
     font-size: 2.2rem;
-    color: var(--c-blanco);
+    color: var(--pale-green);
     font-weight: 600;
 }
 
 .hero-small {
     font-size: 1.5rem;
-    color: var(--c-link-cream);
+    color: var(--text-light);
     margin: 0.5rem 0;
     opacity: 0.9;
 }
@@ -91,12 +65,12 @@
     font-size: 1.2rem;
     line-height: 1.8;
     margin: 2rem 0;
-    color: var(--c-blanco);
-    background: rgba(24, 38, 86, 0.6);
+    color: var(--text-light);
+    background: rgba(20, 27, 22, 0.6);
     padding: 1.5rem;
     border-radius: 1rem;
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(134, 239, 172, 0.1);
 }
 
 .hero-tags {
@@ -107,7 +81,7 @@
 }
 
 .tag-pill {
-    background: var(--c-verde);
+    background: var(--military-green);
     color: white;
     padding: 0.6rem 1.2rem;
     border-radius: 9999px;
@@ -117,27 +91,11 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Hero Divider - Leading to Niveles (Green) */
-.hero-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    /* Match next section: Verde */
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23006837' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- NIVELES SECTION (Dark: Verde Laurel #006837) --- */
+/* NIVELES SECTION */
 .niveles-section {
-    background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
+    background: linear-gradient(135deg, var(--military-dark) 0%, #0a0f0d 100%);
     padding: 6rem 0;
-    color: var(--c-blanco);
+    color: var(--text-light);
     position: relative;
     z-index: 1;
 }
@@ -174,18 +132,19 @@
     backface-visibility: hidden;
     border-radius: 1.5rem;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .flip-card-front {
-    background: var(--c-azul); /* Azul base for card front */
+    background: var(--bg-card);
+    border: 1px solid var(--military-green);
 }
 
 .flip-card-front img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 .card-overlay {
@@ -193,39 +152,40 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(24, 38, 86, 0.95));
+    background: linear-gradient(transparent, rgba(10, 15, 13, 0.95));
     padding: 2rem;
     text-align: center;
 }
 
 .card-icon {
     font-size: 3rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     margin-bottom: 0.5rem;
 }
 
 .card-overlay h3 {
     font-family: var(--font-oswald);
     font-size: 1.5rem;
-    color: var(--c-blanco);
+    color: var(--pale-green);
 }
 
 .flip-card-back {
-    background: var(--c-link-cream); /* Light Beige */
-    color: var(--c-azul); /* Dark Navy Text */
+    background: var(--bg-card);
+    color: var(--text-light);
     transform: rotateY(180deg);
     padding: 2rem;
-    border: 2px solid var(--c-verde);
+    border: 2px solid var(--gold-accent);
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .flip-card-back h3 {
-    color: var(--c-verde);
-    border-bottom: 2px solid var(--c-dorado);
+    color: var(--gold-accent);
+    border-bottom: 2px solid var(--military-green);
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
+    font-family: var(--font-oswald);
 }
 
 .flip-card-back li {
@@ -233,33 +193,13 @@
     font-weight: 500;
 }
 
-/* Niveles Divider - Leading to Proceso (Cream) */
-.niveles-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    /* Match next section: Cream */
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23E8ECD7' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- PROCESO SECTION (Light: Cream #E8ECD7) --- */
+/* PROCESO SECTION */
 .proceso-section {
-    background: var(--c-link-cream);
+    background: var(--bg-dark);
     padding: 6rem 0;
-    color: var(--c-azul);
+    color: var(--text-light);
     position: relative;
     z-index: 1;
-}
-
-.proceso-section .section-title {
-    color: var(--c-azul);
 }
 
 .timeline {
@@ -276,7 +216,7 @@
     bottom: 0;
     left: 50%;
     width: 4px;
-    background: var(--c-verde);
+    background: var(--military-green);
     transform: translateX(-50%);
 }
 
@@ -291,8 +231,8 @@
     transform: translateX(-50%);
     width: 50px;
     height: 50px;
-    background: var(--c-dorado);
-    color: var(--c-azul);
+    background: var(--gold-accent);
+    color: var(--bg-dark);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -300,15 +240,16 @@
     font-size: 1.5rem;
     font-weight: bold;
     z-index: 2;
-    box-shadow: 0 0 0 5px white;
+    box-shadow: 0 0 0 5px var(--bg-dark);
 }
 
 .timeline-content {
     width: 45%;
-    background: white;
+    background: var(--bg-card);
     padding: 1.5rem;
     border-radius: 1rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--military-green);
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
@@ -323,31 +264,15 @@
 
 .timeline-content h3 {
     font-family: var(--font-oswald);
-    color: var(--c-verde);
+    color: var(--pale-green);
     margin-bottom: 0.5rem;
 }
 
-/* Proceso Divider - Leading to Fechas (Blue) */
-.proceso-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    /* Match next section: Azul */
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23182656' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- FECHAS SECTION (Dark: Azul Alfaro #182656) --- */
+/* FECHAS SECTION */
 .fechas-section {
-    background: linear-gradient(135deg, var(--c-azul) 0%, #0a1025 100%);
+    background: linear-gradient(135deg, var(--military-green) 0%, #1a2e22 100%);
     padding: 6rem 0;
-    color: var(--c-blanco);
+    color: var(--text-light);
     position: relative;
     z-index: 1;
 }
@@ -359,45 +284,29 @@
 }
 
 .fecha-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(10, 15, 13, 0.3);
     padding: 2rem;
     border-radius: 1rem;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(134, 239, 172, 0.1);
     transition: transform 0.3s ease;
 }
 
 .fecha-card:hover {
     transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--c-dorado);
+    background: rgba(10, 15, 13, 0.6);
+    border-color: var(--gold-accent);
 }
 
 .fecha-icon {
     font-size: 3rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     margin-bottom: 1rem;
 }
 
-/* Fechas Divider - Leading to Form (Green) */
-.fechas-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    /* Match next section: Verde */
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23006837' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- FORM SECTION (Dark: Verde Laurel #006837) --- */
+/* FORM SECTION */
 .form-section {
-    background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1f1b 100%);
     padding: 6rem 0;
     position: relative;
     z-index: 1;
@@ -406,10 +315,10 @@
 .admissions-form {
     max-width: 700px;
     margin: 0 auto;
-    background: rgba(24, 38, 86, 0.6); /* Azul Transparente */
+    background: var(--bg-card);
     padding: 3rem;
     border-radius: 2rem;
-    border: 1px solid var(--c-dorado);
+    border: 1px solid var(--gold-accent);
 }
 
 .admissions-form input,
@@ -418,17 +327,18 @@
     width: 100%;
     padding: 1rem;
     margin: 0.5rem 0 1.5rem;
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
+    background: rgba(10, 15, 13, 0.8);
+    border: 1px solid var(--military-green);
     border-radius: 0.5rem;
     font-family: var(--font-inter);
+    color: var(--text-light);
 }
 
 .submit-btn {
     width: 100%;
     padding: 1rem;
-    background: var(--c-dorado);
-    color: var(--c-azul);
+    background: var(--gold-accent);
+    color: var(--bg-dark);
     font-weight: bold;
     border: none;
     border-radius: 0.5rem;
@@ -439,31 +349,17 @@
 }
 
 .submit-btn:hover {
-    background: white;
+    background: var(--pale-green);
+    color: var(--bg-dark);
 }
 
-/* Form Divider - Leading to Contacto (Blue) */
-.form-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    /* Match next section: Azul */
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23182656' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- CONTACT SECTION (Dark: Azul Alfaro #1f4529) --- */
+/* CONTACT SECTION */
 .contacto-section {
-    background: linear-gradient(135deg, var(--c-azul) 0%, #0a1025 100%);
+    background: var(--bg-dark);
     padding: 6rem 0;
-    color: var(--c-blanco);
+    color: var(--text-light);
     text-align: center;
+    border-top: 1px solid var(--military-green);
 }
 
 .contacto-grid {
@@ -475,31 +371,25 @@
 
 .contacto-item i {
     font-size: 2.5rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     margin-bottom: 1rem;
 }
 
 .contacto-item a {
-    color: var(--c-blanco);
+    color: var(--pale-green);
     text-decoration: underline;
 }
 
 .final-cta {
-    background: var(--c-verde);
+    background: var(--military-green);
     padding: 2rem;
     border-radius: 1rem;
     margin-top: 3rem;
-    border: 1px solid var(--c-dorado);
+    border: 1px solid var(--gold-accent);
 }
 
 .final-cta h3 {
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     font-family: var(--font-oswald);
     margin-bottom: 0.5rem;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
 }

@@ -45,8 +45,13 @@
     border-radius: 2px;
 }
 
-.text-center { text-align: center; }
-.mt-8 { margin-top: 2rem; }
+.text-center {
+    text-align: center;
+}
+
+.mt-8 {
+    margin-top: 2rem;
+}
 
 /* --- CAROUSEL SECTION (Hero) --- */
 .carousel-section {
@@ -65,8 +70,10 @@
 
 .carousel-item {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     opacity: 0;
     visibility: hidden;
     transition: opacity 1.2s ease-in-out, visibility 1.2s;
@@ -82,8 +89,10 @@
 /* Ken Burns Effect */
 .carousel-bg-image {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
     transform: scale(1);
@@ -96,22 +105,30 @@
 }
 
 @keyframes kenBurns {
-    0% { transform: scale(1) translate(0, 0); }
-    100% { transform: scale(1.15) translate(-10px, -5px); }
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    100% {
+        transform: scale(1.15) translate(-10px, -5px);
+    }
 }
 
-/* Gradient Overlay - Azul Alfaro based */
+/* Gradient Overlay - Military based */
 .carousel-overlay-gradient {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(24, 38, 86, 0.4) 0%, rgba(6, 30, 41, 0.9) 100%);
+    background: radial-gradient(circle at center, rgba(75, 83, 32, 0.4) 0%, rgba(10, 15, 13, 0.9) 100%);
     z-index: 2;
 }
+
+/* Unicode "Dog/Wolf" Background placeholder if needed explicitly in CSS, but handled in JSX mostly */
 
 /* Animated Text Content */
 .carousel-content-wrapper {
     position: absolute;
-    top: 50%; left: 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 3;
@@ -122,11 +139,11 @@
 .carousel-title-animated {
     font-family: var(--font-oswald);
     font-size: 4.5rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     line-height: 1.1;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
 }
 
 .carousel-title-animated span {
@@ -141,10 +158,11 @@
 
 .carousel-subtitle-animated {
     font-size: 1.8rem;
-    color: var(--c-blanco);
+    color: var(--text-light);
     font-weight: 300;
     opacity: 0;
     transform: translateY(20px);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 .carousel-item.active .carousel-subtitle-animated {
@@ -172,10 +190,11 @@
 }
 
 .carousel-nav-btn {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: var(--c-blanco);
-    width: 50px; height: 50px;
+    background: rgba(75, 83, 32, 0.3);
+    border: 1px solid rgba(134, 239, 172, 0.3);
+    color: var(--text-light);
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     cursor: pointer;
     font-size: 1.2rem;
@@ -184,9 +203,10 @@
 }
 
 .carousel-nav-btn:hover {
-    background: var(--c-dorado);
-    color: var(--c-azul);
+    background: var(--military-green);
+    color: var(--gold-accent);
     transform: scale(1.1);
+    border-color: var(--gold-accent);
 }
 
 .carousel-indicators {
@@ -195,21 +215,22 @@
 }
 
 .indicator-dot {
-    width: 12px; height: 12px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.3);
+    background: rgba(255, 255, 255, 0.3);
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .indicator-dot.active {
-    background: var(--c-dorado);
+    background: var(--gold-accent);
     transform: scale(1.4);
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
 }
 
-/* Carousel Divider - Leading to Cream Video Section */
+/* Carousel Divider - Leading to Video Section (Dark Card #141b16) */
 .carousel-section::after {
     content: '';
     position: absolute;
@@ -217,19 +238,18 @@
     left: 0;
     width: 100%;
     height: 100px;
-    /* Color matches next section: Cream */
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23E8ECD7' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23141b16' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
     background-size: 100% 100%;
     z-index: 5;
     pointer-events: none;
 }
 
 
-/* --- VIDEO SECTION (Light: Cream #E8ECD7) --- */
+/* --- VIDEO SECTION (Dark Card #141b16) --- */
 .video-section {
-    background: var(--c-link-cream);
+    background: var(--bg-card);
     padding: 8rem 0;
-    color: var(--c-azul);
+    color: var(--text-light);
     position: relative;
     z-index: 4;
 }
@@ -243,12 +263,13 @@
 
 .video-player-frame {
     padding: 15px;
-    background: linear-gradient(135deg, var(--c-azul) 0%, var(--c-verde) 100%);
+    background: linear-gradient(135deg, var(--military-dark) 0%, var(--bg-dark) 100%);
     border-radius: 2rem;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     position: relative;
     width: 100%;
     max-width: 850px;
+    border: 1px solid var(--military-green);
 }
 
 .video-player-frame::before {
@@ -256,7 +277,7 @@
     position: absolute;
     inset: -5px;
     border-radius: 2.2rem;
-    background: linear-gradient(45deg, var(--c-dorado), transparent, var(--c-dorado));
+    background: linear-gradient(45deg, var(--gold-accent), transparent, var(--military-green));
     z-index: -1;
     animation: rotateBorder 10s linear infinite;
 }
@@ -276,19 +297,19 @@
 .video-title {
     font-family: var(--font-oswald);
     font-size: 2.5rem;
-    color: var(--c-azul);
+    color: var(--gold-accent);
     margin-bottom: 1rem;
     line-height: 1.2;
 }
 
 .video-subtitle {
     font-size: 1.2rem;
-    color: var(--c-verde);
+    color: var(--pale-green);
     margin-bottom: 2rem;
     font-weight: 600;
 }
 
-/* Video Divider - Leading to Choose Us (Green) */
+/* Video Divider - Leading to Choose Us (Military Dark #3a4119) */
 .video-section::after {
     content: '';
     position: absolute;
@@ -296,19 +317,18 @@
     left: 0;
     width: 100%;
     height: 100px;
-    /* Color matches next section: Verde Laurel */
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23006837' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%233a4119' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
     background-size: 100% 100%;
     z-index: 2;
     pointer-events: none;
 }
 
 
-/* --- CHOOSE US SECTION (Dark: Verde Laurel #006837) --- */
+/* --- CHOOSE US SECTION (Military Dark #3a4119) --- */
 .choose-us-section {
-    background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
+    background: linear-gradient(135deg, var(--military-dark) 0%, #2a3015 100%);
     padding: 6rem 0;
-    color: var(--c-blanco);
+    color: var(--text-light);
     position: relative;
     z-index: 1;
 }
@@ -321,23 +341,24 @@
 }
 
 .choose-us-card {
-    background: rgba(24, 38, 86, 0.4); /* Azul glass */
+    background: rgba(10, 15, 13, 0.4);
+    /* Dark glass */
     border-radius: 1.5rem;
     overflow: hidden;
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(134, 239, 172, 0.1);
     transition: var(--transition);
 }
 
 .choose-us-card:hover {
-    background: rgba(24, 38, 86, 0.7);
+    background: rgba(10, 15, 13, 0.8);
     transform: translateY(-5px);
-    border-color: var(--c-dorado);
+    border-color: var(--gold-accent);
 }
 
 .card-icon-container {
     padding: 2rem;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .card-icon {
@@ -354,14 +375,14 @@
     font-family: var(--font-oswald);
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
 }
 
 .card-content p {
-    color: var(--c-blanco);
+    color: var(--text-light);
 }
 
-/* Choose Us Divider - Leading to Education Levels (Blue) */
+/* Choose Us Divider - Leading to Education Levels (Bg Dark #0a0f0d) */
 .choose-us-section::after {
     content: '';
     position: absolute;
@@ -369,19 +390,18 @@
     left: 0;
     width: 100%;
     height: 100px;
-    /* Color matches next section: Azul Alfaro */
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23182656' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%230a0f0d' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
     background-size: 100% 100%;
     z-index: 2;
     pointer-events: none;
 }
 
 
-/* --- EDUCATION LEVELS SECTION (Dark: Azul Alfaro #182656) --- */
+/* --- EDUCATION LEVELS SECTION (Bg Dark #0a0f0d) --- */
 .education-levels-section {
-    background: linear-gradient(135deg, var(--c-azul) 0%, #0a1025 100%);
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1f1b 100%);
     padding: 6rem 0;
-    color: var(--c-blanco);
+    color: var(--text-light);
     position: relative;
     z-index: 1;
 }
@@ -389,7 +409,7 @@
 .section-title-light {
     font-family: var(--font-oswald);
     font-size: 3rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     text-align: center;
     margin-bottom: 3rem;
 }
@@ -404,33 +424,34 @@
     border-radius: 1.5rem;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transition: var(--transition);
+    background: var(--bg-card);
+    border: 1px solid var(--military-green);
 }
 
 .level-card:hover {
     transform: translateY(-10px);
+    border-color: var(--pale-green);
 }
-
-/* Fallback background for level cards if images fail or for styling */
-.level-card { background: var(--c-verde); }
 
 .level-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    opacity: 0.8;
 }
 
 .level-content {
     padding: 2rem;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    background: rgba(20, 27, 22, 0.95);
 }
 
 .level-content h3 {
     font-family: var(--font-oswald);
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: var(--c-dorado);
+    color: var(--pale-green);
 }
 
 .level-content ul li {
@@ -440,15 +461,15 @@
     gap: 0.5rem;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
-    color: var(--c-blanco);
+    color: var(--text-light);
 }
 
 .level-content i {
     font-size: 0.5rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
 }
 
-/* Levels Divider - Leading to Clubs (Green) */
+/* Levels Divider - Leading to Clubs (Military Green #4b5320) */
 .education-levels-section::after {
     content: '';
     position: absolute;
@@ -456,26 +477,25 @@
     left: 0;
     width: 100%;
     height: 100px;
-    /* Color matches next section: Verde Laurel */
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23006837' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%234b5320' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
     background-size: 100% 100%;
     z-index: 2;
     pointer-events: none;
 }
 
 
-/* --- CLUBS SECTION (Dark: Verde Laurel #006837) --- */
+/* --- CLUBS SECTION (Military Green #4b5320) --- */
 .clubs-section {
-    background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
+    background: linear-gradient(135deg, var(--military-green) 0%, #3a4119 100%);
     padding: 6rem 0;
-    color: var(--c-blanco);
+    color: var(--text-light);
     position: relative;
     z-index: 1;
 }
 
 .icon-clubs {
     font-size: 3rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     display: block;
     margin: 0 auto 1rem;
 }
@@ -488,16 +508,17 @@
 }
 
 .club-card {
-    background: rgba(255,255,255,0.1);
+    background: rgba(10, 15, 13, 0.3);
     border-radius: 1.5rem;
     overflow: hidden;
     transition: var(--transition);
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .club-card:hover {
     transform: translateY(-5px);
-    border-color: var(--c-dorado);
+    border-color: var(--gold-accent);
+    background: rgba(10, 15, 13, 0.6);
 }
 
 .club-card img {
@@ -512,7 +533,7 @@
 }
 
 .club-content h3 {
-    color: var(--c-blanco);
+    color: var(--text-light);
     font-family: var(--font-oswald);
     font-size: 1.5rem;
 }
@@ -567,12 +588,25 @@
 }
 
 @media (min-width: 768px) {
-    .video-content { flex-direction: row; }
-    .carousel-section { height: 55rem; }
+    .video-content {
+        flex-direction: row;
+    }
+
+    .carousel-section {
+        height: 55rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .moments-grid { grid-template-columns: 1fr; }
-    .carousel-section { height: 40rem; }
-    .carousel-title-animated { font-size: 2.5rem; }
+    .moments-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel-section {
+        height: 40rem;
+    }
+
+    .carousel-title-animated {
+        font-size: 2.5rem;
+    }
 }

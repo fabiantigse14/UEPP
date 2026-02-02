@@ -1,26 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import './HomePage.css';
 import { FloatingWhatsApp } from 'react-floating-whatsapp';
-import FloatingFacebookFeed from '../components/FloatingFacebookFeed';
+// import FloatingFacebookFeed from '../components/FloatingFacebookFeed'; // Commented out if not available or causing issues
 
 const HomePage = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     
+    // Updated Slides based on "Informe"
     const slides = [
         {
-            image: "https://uegea.edu.ec/assets/misionyvision.png",
-            title: "Educamos para el Futuro",
-            subtitle: "Formando líderes con valores y excelencia académica"
+            image: "https://uegea.edu.ec/assets/misionyvision.png", // Keep original assets if available, or placeholders
+            title: "Campus Vivo y Sostenible",
+            subtitle: "Un laboratorio de innovación educativa en Salcedo"
         },
         {
             image: "https://uegea.edu.ec/assets/publi1.png",
-            title: "Innovación Educativa",
-            subtitle: "Tecnología y tradición en armonía"
+            title: "Disciplina con Propósito",
+            subtitle: "18 años formando líderes con carácter, visión y corazón"
         },
         {
             image: "https://uegea.edu.ec/assets/btpa.png",
             title: "Excelencia Técnica",
-            subtitle: "Preparándote para el mundo profesional"
+            subtitle: "Electromecánica y Agropecuaria con tecnología de punta"
         }
     ];
 
@@ -57,17 +58,20 @@ const HomePage = () => {
     return (
         <div className="home-page">
             <FloatingWhatsApp
-                phoneNumber="+593 99 988 8901"
-                accountName="Unidad Educativa General Eloy Alfaro"
+                phoneNumber="+593985432988" // Updated number
+                accountName="Adsmisiones UEGEA"
                 avatar="/UEGEA.png"
-                chatMessage="¡Hola! 👋 ¿En qué podemos ayudarte?"
+                chatMessage="¡Hola! 👋 ¿Te gustaría conocer nuestra oferta académica y costos?"
                 placeholder="Escribe un mensaje..."
-                statusMessage="Normalmente responde en 1 hora"
-                bottom={20}
+                statusMessage="Responde en menos de 1 hora"
+                darkMode={true}
+                allowEsc
+                allowClickAway
+                className="floating-wpp"
+                styles={{ backgroundColor: '#2a3015', color: '#f0fdf4' }}
             />
-            <FloatingFacebookFeed />
              
-            {/* SECCIÓN 1: CARRUSEL (Actualizado) */}
+            {/* SECCIÓN 1: CARRUSEL HERO */}
             <section id="inicio" className="carousel-section">
                 <div className="carousel-container">
                     {slides.map((slide, index) => (
@@ -109,16 +113,47 @@ const HomePage = () => {
                 </div>
             </section>
 
-            {/* SECCIÓN 2: FRASE + VIDEO */}
+            {/* SECCIÓN NUEVA: RECONOCIMIENTOS (AWARDS) */}
             <section className="video-section animate-on-scroll">
                 <div className="container">
+                     <h2 className="section-title">Reconocimiento Internacional</h2>
+                     <div className="choose-us-grid" style={{ marginBottom: '4rem' }}>
+                        <div className="choose-us-card animate-on-scroll">
+                             <div className="card-icon-container">
+                                <i className="fas fa-globe-americas card-icon" style={{ fontSize: '3rem', color: '#fbbf24' }}></i>
+                             </div>
+                             <div className="card-content">
+                                <h3>The Earth Prize 2025</h3>
+                                <p>Top 5 Finalist (Latinoamérica) - Proyecto SUELUX</p>
+                             </div>
+                        </div>
+                        <div className="choose-us-card animate-on-scroll">
+                             <div className="card-icon-container">
+                                <i className="fas fa-award card-icon" style={{ fontSize: '3rem', color: '#fbbf24' }}></i>
+                             </div>
+                             <div className="card-content">
+                                <h3>Premio Noûs 2025</h3>
+                                <p>Excelencia Educativa - Ganador Nacional</p>
+                             </div>
+                        </div>
+                        <div className="choose-us-card animate-on-scroll">
+                             <div className="card-icon-container">
+                                <i className="fas fa-seedling card-icon" style={{ fontSize: '3rem', color: '#fbbf24' }}></i>
+                             </div>
+                             <div className="card-content">
+                                <h3>School Enterprise Challenge</h3>
+                                <p>Ganador Nacional 2024 - EcoHuerto</p>
+                             </div>
+                        </div>
+                     </div>
+
                     <div className="video-content">
                         <div className="video-player-frame">
                             <div className="video-player-container">
                                 <iframe
                                     width="100%"
                                     height="315"
-                                    src="https://www.youtube.com/embed/lHvuRlerKkQ?autoplay=1&vq=hd1080&mute=1&loop=1&playlist=lHvuRlerKkQ"
+                                    src="https://www.youtube.com/embed/lHvuRlerKkQ?autoplay=0&vq=hd1080"
                                     title="Video UEGEA"
                                     frameBorder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -128,64 +163,79 @@ const HomePage = () => {
                         </div>
                         <div className="video-text">
                             <h2 className="video-title">
-                                Educamos para el FUTURO con valores y principios
+                                Educamos para la VIDA
                             </h2>
-                            <p className="video-subtitle">#EducaciónDeCalidad #SalcedoCotopaxi</p>
-                            <a href="https://uegea.edu.ec/index.php/inicio/index" target="_blank" rel="noopener noreferrer" className="btn-primary">Más información</a>
+                            <p className="video-subtitle">#Sostenibilidad #Innovación #Cotopaxi</p>
+                            <a href="/admisiones" className="btn-primary">Admisiones Abiertas</a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* SECCIÓN 3: PORQUE ELEGIRNOS */}
-            <section id="nosotros" className="choose-us-section animate-on-scroll">
+            {/* SECCIÓN 3: PORQUE ELEGIRNOS - 4 PILARES Y MASCOTA */}
+            <section id="nosotros" className="choose-us-section animate-on-scroll" style={{ position: 'relative', overflow: 'hidden' }}>
+                {/* Background Dog/Mascot Image - Fixed/Parallax feel */}
+                <div style={{
+                    position: 'absolute',
+                    right: '-100px',
+                    bottom: '-50px',
+                    width: '600px',
+                    height: '600px',
+                    backgroundImage: 'url(/ani.png)',
+                    backgroundSize: 'contain',
+                    backgroundRepeat: 'no-repeat',
+                    opacity: '0.15',
+                    pointerEvents: 'none',
+                    zIndex: '0'
+                }}></div>
+
                 <div className="container">
-                    <h2 className="section-title">¿Por qué elegirnos?</h2>
+                    <h2 className="section-title">Nuestros Pilares</h2>
                     
                     <div className="choose-us-grid">
                         <div className="choose-us-card animate-on-scroll">
                             <div className="card-icon-container">
-                                <img src="https://placehold.co/120x120/CCCCCC/666666?text=Valores" alt="Valores" className="card-icon" />
+                                <i className="fas fa-user-shield " style={{ fontSize: '3rem', color: '#fbbf24' }}></i>
                             </div>
                             <div className="card-content">
-                                <h3>Valores y Principios Militares</h3>
-                                <p>Fomentamos los valores eternos y el desarrollo integral</p>
+                                <h3>Formación en Valores</h3>
+                                <p>Disciplina con propósito, liderazgo y civismo.</p>
                             </div>
                         </div>
 
                         <div className="choose-us-card animate-on-scroll">
                             <div className="card-icon-container">
-                                <img src="https://placehold.co/120x120/CCCCCC/666666?text=Educación" alt="Educación" className="card-icon" />
+                                <i className="fas fa-chalkboard-teacher" style={{ fontSize: '3rem', color: '#fbbf24' }}></i>
                             </div>
                             <div className="card-content">
                                 <h3>Educación Personalizada</h3>
-                                <p>Educación individualizada para el talento de cada alumno</p>
+                                <p>Seguimiento individualizado para potenciar el talento.</p>
                             </div>
                         </div>
 
                         <div className="choose-us-card animate-on-scroll">
                             <div className="card-icon-container">
-                                <img src="https://placehold.co/120x120/CCCCCC/666666?text=Sostenibilidad" alt="Sostenibilidad" className="card-icon" />
+                                <i className="fas fa-leaf" style={{ fontSize: '3rem', color: '#fbbf24' }}></i>
                             </div>
                             <div className="card-content">
-                                <h3>Sostenibilidad</h3>
-                                <p>Comprometidos con el medioambiente y desarrollo sostenible</p>
+                                <h3>Sostenibilidad Real</h3>
+                                <p>Gestión de residuos 90%, Biodigestor y Huertos.</p>
                             </div>
                         </div>
 
                         <div className="choose-us-card animate-on-scroll">
                             <div className="card-icon-container">
-                                <img src="https://placehold.co/120x120/CCCCCC/666666?text=Tecnología" alt="Tecnología" className="card-icon" />
+                                <i className="fas fa-robot" style={{ fontSize: '3rem', color: '#fbbf24' }}></i>
                             </div>
                             <div className="card-content">
-                                <h3>Tecnología</h3>
-                                <p>Aulas equipadas con la última tecnología educativa</p>
+                                <h3>Innovación Tecnológica</h3>
+                                <p>Laboratorios STEM y Biotecnología (SUELUX).</p>
                             </div>
                         </div>
                     </div>
 
                     <div className="text-center">
-                        <a href="https://uegea.edu.ec/nosotros/" target="_blank" rel="noopener noreferrer" className="btn-secondary">Más información sobre nosotros</a>
+                        <a href="/nosotros" className="btn-secondary">Conoce nuestra Historia</a>
                     </div>
                 </div>
             </section>
@@ -193,115 +243,109 @@ const HomePage = () => {
             {/* SECCIÓN 4: NIVELES EDUCATIVOS */}
             <section id="admisiones" className="education-levels-section animate-on-scroll">
                 <div className="container">
-                    <h2 className="section-title-light">Niveles Educativos</h2>
+                    <h2 className="section-title-light">Oferta Académica</h2>
                     
                     <div className="levels-grid">
                         <div className="level-card animate-on-scroll">
-                            <img src="https://placehold.co/400x250/CCCCCC/000000?text=Educación+Inicial" alt="Educación Inicial" />
+                            <img src="https://placehold.co/400x250/164529/ffffff?text=Inicial" alt="Educación Inicial" />
                             <div className="level-content">
                                 <h3>EDUCACIÓN INICIAL</h3>
                                 <ul>
-                                    <li><i className="fas fa-circle"></i> Inicial I</li>
-                                    <li><i className="fas fa-circle"></i> Inicial II</li>
+                                    <li><i className="fas fa-circle"></i> Estimulación temprana</li>
+                                    <li><i className="fas fa-circle"></i> Conexión con la naturaleza</li>
                                 </ul>
                             </div>
                         </div>
 
                         <div className="level-card animate-on-scroll">
-                            <img src="https://placehold.co/400x250/CCCCCC/000000?text=Educación+Básica" alt="Educación Básica" />
+                            <img src="https://placehold.co/400x250/164529/ffffff?text=Básica" alt="Educación Básica" />
                             <div className="level-content">
                                 <h3>EDUCACIÓN GENERAL BÁSICA</h3>
                                 <ul>
-                                    <li><i className="fas fa-circle"></i> 1º a 10º de Básica</li>
-                                    <li><i className="fas fa-circle"></i> Formación integral</li>
-                                    <li><i className="fas fa-circle"></i> Desarrollo académico</li>
+                                    <li><i className="fas fa-circle"></i> 1º a 10º Grado</li>
+                                    <li><i className="fas fa-circle"></i> Ciclos naturales y responsabilidad</li>
                                 </ul>
                             </div>
                         </div>
 
                         <div className="level-card animate-on-scroll">
-                            <img src="/logbg.png" alt="BGU" />
+                            <img src="/log2.png" alt="BGU" style={{ objectFit: 'contain', padding: '1rem', background: '#fff' }} />
                             <div className="level-content">
-                                <h3>BACHILLERATO GENERAL UNIFICADO</h3>
+                                <h3>BACHILLERATO EN CIENCIAS</h3>
                                 <ul>
-                                    <li><i className="fas fa-circle"></i> 1º año BGU</li>
-                                    <li><i className="fas fa-circle"></i> 2º año BGU</li>
-                                    <li><i className="fas fa-circle"></i> 3º año BGU</li>
+                                    <li><i className="fas fa-circle"></i> Preparación universitaria</li>
+                                    <li><i className="fas fa-circle"></i> Investigación científica</li>
                                 </ul>
                             </div>
                         </div>
 
                         <div className="level-card animate-on-scroll">
-                            <img src="/logel.png" alt="Electromecánica" />
+                            <img src="/logel.png" alt="Electromecánica" style={{ objectFit: 'contain', padding: '1rem', background: '#fff' }} />
                             <div className="level-content">
-                                <h3>BACHILLERATO TÉCNICO</h3>
-                                <p>Electromecánica Automotriz</p>
+                                <h3>TÉCNICO: AUTOMOTRIZ</h3>
                                 <ul>
-                                    <li><i className="fas fa-circle"></i> Formación práctica</li>
-                                    <li><i className="fas fa-circle"></i> 1º a 3º año</li>
+                                    <li><i className="fas fa-circle"></i> Electromecánica Automotriz</li>
+                                    <li><i className="fas fa-circle"></i> Mantenimiento y diagnóstico</li>
                                 </ul>
                             </div>
                         </div>
 
                         <div className="level-card animate-on-scroll">
-                            <img src="/loga.png" alt="Agropecuaria" />
+                            <img src="/loga.png" alt="Agropecuaria" style={{ objectFit: 'contain', padding: '1rem', background: '#fff' }} />
                             <div className="level-content">
-                                <h3>BACHILLERATO TÉCNICO</h3>
-                                <p>Producción Agropecuaria Sostenible</p>
+                                <h3>TÉCNICO: AGROPECUARIA</h3>
                                 <ul>
-                                    <li><i className="fas fa-circle"></i> Formación práctica</li>
-                                    <li><i className="fas fa-circle"></i> 1º a 3º año</li>
+                                    <li><i className="fas fa-circle"></i> Producción Sostenible</li>
+                                    <li><i className="fas fa-circle"></i> Biotecnología y Emprendimiento</li>
                                 </ul>
                             </div>
                         </div>
-                    </div>
-
-                    <div className="text-center mt-8">
-                        <a href="https://uegea.edu.ec/index.php/inicio/index" target="_blank" rel="noopener noreferrer" className="btn-primary">Ver más información</a>
                     </div>
                 </div>
             </section>
 
-            {/* SECCIÓN 5: CLUBS/ACTIVIDADES EXTRACURRICULARES */}
+            {/* SECCIÓN 5: CLUBS/ACTIVIDADES */}
             <section className="clubs-section animate-on-scroll">
                 <div className="container">
                     <div className="text-center">
                         <i className="fas fa-users icon-clubs"></i>
-                        <h2 className="section-title">Clubs</h2>
+                        <h2 className="section-title">Vida Estudiantil y Clubs</h2>
                     </div>
 
                     <div className="clubs-grid">
                         <div className="club-card animate-on-scroll">
-                            <img src="https://placehold.co/400x250/FFFFFF/000000?text=Deportes" alt="Deportes" />
+                            <div className="card-icon-container text-center">
+                                <i className="fas fa-car" style={{ fontSize: '3rem', color: '#e2e8f0' }}></i>
+                            </div>
                             <div className="club-content">
-                                <h3>Deportes</h3>
+                                <h3>Club Automotriz</h3>
                             </div>
                         </div>
 
                         <div className="club-card animate-on-scroll">
-                            <img src="https://placehold.co/400x250/FFFFFF/000000?text=Arte" alt="Arte" />
+                             <div className="card-icon-container text-center">
+                                <i className="fas fa-music" style={{ fontSize: '3rem', color: '#e2e8f0' }}></i>
+                            </div>
                             <div className="club-content">
-                                <h3>Arte y Cultura</h3>
+                                <h3>Música y Danza</h3>
                             </div>
                         </div>
 
                         <div className="club-card animate-on-scroll">
-                            <img src="https://placehold.co/400x250/FFFFFF/000000?text=Tecnicos" alt="Técnicos" />
+                             <div className="card-icon-container text-center">
+                                <i className="fas fa-language" style={{ fontSize: '3rem', color: '#e2e8f0' }}></i>
+                            </div>
                             <div className="club-content">
-                                <h3>Técnicos</h3>
+                                <h3>Francés y Scout</h3>
                             </div>
                         </div>
                     </div>
 
                     <div className="text-center">
                         <h3>Descubre nuestros mejores momentos</h3>
-                        <a href="https://www.facebook.com/uegea/" target="_blank" rel="noopener noreferrer" className="btn-facebook">Ver Fotos en Facebook</a>
-                    </div>
-
-                    <div className="moments-grid">
-                        <img src="https://placehold.co/400x250/CCCCCC/000000?text=Momento+1" alt="Momento 1" className="animate-on-scroll" />
-                        <img src="https://placehold.co/400x250/CCCCCC/000000?text=Momento+2" alt="Momento 2" className="animate-on-scroll" />
-                        <img src="https://placehold.co/400x250/CCCCCC/000000?text=Momento+3" alt="Momento 3" className="animate-on-scroll" />
+                        <a href="https://www.facebook.com/uegea/" target="_blank" rel="noopener noreferrer" className="btn-facebook">
+                            <i className="fab fa-facebook-f"></i> Facebook Oficial
+                        </a>
                     </div>
                 </div>
             </section>

@@ -244,6 +244,31 @@ const NuestraHistoriaPage = () => {
                 </div>
             </section>
 
+            {/* AUTORIDADES */}
+            <section id="authorities" className="authorities-section py-16" style={{ background: 'var(--bg-card)', position: 'relative', zIndex: 1 }}>
+                <div className="container">
+                    <h2 className="section-title animate-on-scroll">Nuestras Autoridades</h2>
+                    <div className="grid md:grid-cols-2 gap-8 justify-center" style={{ maxWidth: '800px', margin: '0 auto' }}>
+                        <div className="philosophy-card animate-on-scroll">
+                            <div className="card-icon-placeholder">
+                                <i className="fas fa-user-tie"></i>
+                            </div>
+                            <h3>Rector</h3>
+                            <p><strong>Msc. Francisco Javier Paredes Proaño</strong></p>
+                            <p style={{ fontSize: '0.9rem', opacity: 0.8 }}>Liderazgo y Visión Institucional</p>
+                        </div>
+                        <div className="philosophy-card animate-on-scroll">
+                            <div className="card-icon-placeholder">
+                                <i className="fas fa-user-graduate"></i>
+                            </div>
+                            <h3>Vicerrectorado</h3>
+                            <p><strong>Msc. Vicerrector/a</strong></p>
+                            <p style={{ fontSize: '0.9rem', opacity: 0.8 }}>Excelencia Académica</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* UBICACIÓN */}
             <section className="location-section">
                 <div className="container">

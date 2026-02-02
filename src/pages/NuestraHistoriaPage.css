@@ -1,4 +1,4 @@
-/* NuestraHistoriaPage.css - Refactored for Official Palette */
+/* NuestraHistoriaPage.css - Refactored for Military Theme */
 
 :root {
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -6,9 +6,9 @@
 }
 
 .nuestra-historia-page {
-    background: var(--c-azul);
-    font-family: var(--font-inter);
-    color: var(--c-blanco);
+    background: var(--bg-dark);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-light);
     overflow-x: hidden;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .section-title {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 3rem;
     font-weight: 800;
     text-align: center;
@@ -29,13 +29,13 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     position: relative;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
 }
 
-/* --- HERO SECTION (Dark: Azul Alfaro) --- */
+/* --- HERO SECTION --- */
 .hero-section {
-    background: radial-gradient(circle at center, rgba(24, 38, 86, 0.8) 0%, rgba(10, 16, 37, 0.9) 100%);
-    color: var(--c-blanco);
+    background: radial-gradient(circle at center, rgba(75, 83, 32, 0.4) 0%, rgba(10, 15, 13, 0.9) 100%);
+    color: var(--text-light);
     padding: 8rem 0 10rem;
     position: relative;
     overflow: hidden;
@@ -44,15 +44,15 @@
 .hero-background {
     position: absolute;
     inset: 0;
-    background: var(--c-azul);
+    background: var(--bg-dark);
 }
 
 .hero-background img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.3;
-    filter: brightness(0.5) sepia(0.2);
+    opacity: 0.2;
+    filter: grayscale(100%) sepia(0.5) hue-rotate(60deg);
 }
 
 .hero-content {
@@ -63,17 +63,17 @@
 }
 
 .hero-title {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 4rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     margin-bottom: 1rem;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
 }
 
 .hero-subtitle-small {
     font-family: 'Alex Brush', cursive;
     font-size: 2.5rem;
-    color: #ffffff;
+    color: var(--pale-green);
     margin-bottom: 2rem;
 }
 
@@ -81,11 +81,11 @@
     font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto 2rem;
-    color: var(--c-blanco);
-    background: rgba(24, 38, 86, 0.6);
+    color: var(--text-light);
+    background: rgba(20, 27, 22, 0.6);
     padding: 2rem;
     border-radius: 1rem;
-    border: 1px solid rgba(238, 211, 177, 0.2);
+    border: 1px solid rgba(134, 239, 172, 0.1);
     backdrop-filter: blur(5px);
 }
 
@@ -98,49 +98,34 @@
 }
 
 .tag-pill {
-    background: var(--c-verde);
+    background: var(--military-green);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .quote-box {
-    background: rgba(238, 211, 177, 0.1);
-    border-left: 4px solid var(--c-dorado);
+    background: rgba(251, 191, 36, 0.1);
+    border-left: 4px solid var(--gold-accent);
     padding: 1.5rem;
     max-width: 800px;
     margin: 0 auto;
     font-style: italic;
-    color: var(--c-link-cream);
+    color: var(--pale-green);
 }
 
-/* Hero Divider - Leading to Philosophy (Green) */
-.hero-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23006837' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- PHILOSOPHY SECTION (Dark: Verde Laurel #006837) --- */
+/* --- PHILOSOPHY SECTION --- */
 .philosophy-section {
-    background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
+    background: linear-gradient(135deg, var(--military-dark) 0%, #0a0f0d 100%);
     padding: 6rem 0;
-    color: white;
+    color: var(--text-light);
     position: relative;
     z-index: 1;
 }
 
 .philosophy-section .section-title {
-    color: var(--c-dorado);
+    color: var(--gold-accent);
 }
 
 .philosophy-grid {
@@ -150,59 +135,40 @@
 }
 
 .philosophy-card {
-    background: rgba(24, 38, 86, 0.4);
+    background: var(--bg-card);
     padding: 2.5rem;
     border-radius: 1.5rem;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid var(--military-green);
     transition: var(--transition);
     text-align: center;
 }
 
 .philosophy-card:hover {
-    background: rgba(24, 38, 86, 0.7);
+    background: rgba(20, 27, 22, 0.9);
     transform: translateY(-5px);
-    border-color: var(--c-dorado);
+    border-color: var(--gold-accent);
 }
 
 .card-icon-placeholder {
     font-size: 3rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     margin-bottom: 1.5rem;
 }
 
 .philosophy-card h3 {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--c-blanco);
+    color: var(--pale-green);
 }
 
-/* Philosophy Divider - Leading to Timeline (Cream) */
-.philosophy-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23E8ECD7' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- TIMELINE SECTION (Light: Cream #E8ECD7) --- */
+/* --- TIMELINE SECTION --- */
 .timeline-section {
-    background: var(--c-link-cream);
+    background: var(--bg-dark);
     padding: 6rem 0;
-    color: var(--c-azul);
+    color: var(--text-light);
     position: relative;
     z-index: 1;
-}
-
-.timeline-section .section-title {
-    color: var(--c-azul);
 }
 
 .timeline-container {
@@ -218,7 +184,7 @@
     bottom: 0;
     left: 50%;
     width: 4px;
-    background: var(--c-verde);
+    background: var(--military-green);
     transform: translateX(-50%);
 }
 
@@ -229,10 +195,11 @@
 
 .timeline-content {
     width: 45%;
-    background: white;
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: 1.5rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--military-green);
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
@@ -246,9 +213,9 @@
 }
 
 .timeline-year {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 2rem;
-    color: var(--c-verde);
+    color: var(--gold-accent);
     font-weight: bold;
 }
 
@@ -256,6 +223,7 @@
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    color: var(--pale-green);
 }
 
 .timeline-dot {
@@ -265,38 +233,19 @@
     transform: translateX(-50%);
     width: 20px;
     height: 20px;
-    background: var(--c-dorado);
-    border: 4px solid var(--c-azul);
+    background: var(--gold-accent);
+    border: 4px solid var(--bg-dark);
     border-radius: 50%;
     z-index: 2;
 }
 
-/* Timeline Divider - Leading to Pillars (Blue) */
-.timeline-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23182656' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- PILLARS SECTION (Dark: Azul Alfaro #182656) --- */
+/* --- PILLARS SECTION --- */
 .pillars-section {
-    background: linear-gradient(135deg, var(--c-azul) 0%, #0a1025 100%);
+    background: linear-gradient(135deg, var(--military-green) 0%, #1a2e22 100%);
     padding: 6rem 0;
-    color: white;
+    color: var(--text-light);
     position: relative;
     z-index: 1;
-}
-
-.pillars-section .section-title {
-    color: var(--c-dorado);
 }
 
 .pillars-grid {
@@ -306,53 +255,38 @@
 }
 
 .pillar-card {
-    background: rgba(0, 104, 55, 0.3);
+    background: rgba(10, 15, 13, 0.3);
     padding: 2rem;
     border-radius: 1.5rem;
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(134, 239, 172, 0.1);
     transition: var(--transition);
 }
 
 .pillar-card:hover {
-    background: rgba(0, 104, 55, 0.5);
-    border-color: var(--c-dorado);
+    background: rgba(10, 15, 13, 0.6);
+    border-color: var(--gold-accent);
     transform: scale(1.02);
 }
 
 .pillar-icon {
     font-size: 3rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     margin-bottom: 1.5rem;
 }
 
 .pillar-card h3 {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--c-blanco);
+    color: var(--pale-green);
 }
 
-/* Pillars Divider - Leading to Awards (Green) */
-.pillars-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23006837' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- AWARDS SECTION (Dark: Verde Laurel #006837) --- */
+/* --- AWARDS SECTION --- */
 .awards-section {
-    background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
+    background: var(--bg-card);
     padding: 6rem 0;
-    color: white;
+    color: var(--text-light);
     position: relative;
     z-index: 1;
 }
@@ -364,41 +298,27 @@
 }
 
 .award-item {
-    background: rgba(24, 38, 86, 0.4);
+    background: rgba(20, 27, 22, 0.6);
     padding: 1.5rem;
     border-radius: 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
-    border-left: 5px solid var(--c-dorado);
+    border-left: 5px solid var(--gold-accent);
     font-weight: 500;
+    border: 1px solid var(--military-green);
 }
 
 .award-item i {
     font-size: 1.5rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
 }
 
-/* Awards Divider - Leading to Location (Blue) */
-.awards-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23182656' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- LOCATION SECTION (Dark: Azul Alfaro #182656) --- */
+/* --- LOCATION SECTION --- */
 .location-section {
-    background: linear-gradient(135deg, var(--c-azul) 0%, #0a1025 100%);
+    background: var(--bg-dark);
     padding: 6rem 0;
-    color: var(--c-link-cream);
+    color: var(--text-light);
     text-align: center;
 }
 
@@ -410,14 +330,15 @@
 }
 
 .location-item {
-    background: rgba(255,255,255,0.05);
+    background: var(--bg-card);
     padding: 1.5rem;
     border-radius: 1rem;
+    border: 1px solid var(--military-green);
 }
 
 .location-item i {
     font-size: 2rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     margin-bottom: 1rem;
 }
 
@@ -437,9 +358,9 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--c-azul);
-    border: 1px solid var(--c-dorado);
-    color: var(--c-dorado);
+    background: var(--military-green);
+    border: 1px solid var(--gold-accent);
+    color: var(--gold-accent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -448,11 +369,18 @@
 }
 
 .tab-btn:hover {
-    background: var(--c-dorado);
-    color: var(--c-azul);
+    background: var(--gold-accent);
+    color: var(--bg-dark);
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

@@ -21,31 +21,63 @@
 }
 
 /* Global Styles */
+/* Global Styles */
 :root {
   font-family: var(--font-inter);
-  background-color: var(--color-azul-alfaro);
-  color: var(--color-blanco-humo);
+
+  /* MILITARY DARK THEME PALETTE */
+  --bg-dark: #0a0f0d;
+  /* Very dark green/black background */
+  --bg-card: #141b16;
+  /* Slightly lighter for cards */
+  --military-green: #4b5320;
+  /* Classic Army Green */
+  --military-dark: #3a4119;
+  /* Darker shade */
+  --pale-green: #86efac;
+  /* Pale Green (Tailwind green-300) for accents/text */
+  --text-light: #f0fdf4;
+  /* Off-white with green tint */
+  --text-muted: #9ca3af;
+  /* Gray for secondary text */
+  --gold-accent: #fbbf24;
+  /* Gold for awards/stars */
+
+  /* Legacy Colors mapped if needed or kept for reference */
+  --c-azul: var(--bg-dark);
+  --c-verde: var(--military-green);
+  --c-dorado: var(--gold-accent);
+  --c-blanco: var(--text-light);
+
+  background-color: var(--bg-dark);
+  color: var(--text-light);
   line-height: 1.5;
   font-weight: 400;
 
-  /* CSS Variables for usage in non-Tailwind contexts */
-  --c-azul: #182656;
-  --c-verde: #006837;
-  --c-rojo: #CF202E;
-  --c-dorado: #D4AF37;
-  --c-blanco: #F4F6F7;
-
-  --c-link-dark: #1F4529;
-  --c-link-leaf: #47663B;
-  --c-link-cream: #E8ECD7;
-  --c-link-beige: #EED3B1;
+  color-scheme: dark;
 }
 
-h1, h2, h3, h4, h5, h6 {
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-oswald);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--color-dorado-honor);
+  color: var(--gold-accent);
+  /* Changed to Gold */
 }
 
 /* Utility Classes for Gradients & Backgrounds */
@@ -63,7 +95,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .bg-cream {
   background-color: var(--c-link-cream);
-  color: var(--c-azul); /* Ensure contrast on light bg */
+  color: var(--c-azul);
+  /* Ensure contrast on light bg */
 }
 
 /* Button Utilities */

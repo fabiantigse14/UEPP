@@ -1,4 +1,4 @@
-/* EjeTransversalPage.css - Refactored for Official Palette */
+/* EjeTransversalPage.css - Military Theme */
 
 :root {
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -6,9 +6,9 @@
 }
 
 .eje-transversal-page {
-    background: var(--c-azul);
-    font-family: var(--font-inter);
-    color: var(--c-blanco);
+    background: var(--bg-dark);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-light);
     overflow-x: hidden;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .section-title {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 3rem;
     font-weight: 800;
     text-align: center;
@@ -29,13 +29,13 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     position: relative;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
 }
 
-/* --- HERO SECTION (Dark: Azul Alfaro) --- */
+/* --- HERO SECTION --- */
 .hero-section {
-    background: radial-gradient(circle at center, rgba(24, 38, 86, 0.8) 0%, rgba(10, 16, 37, 0.9) 100%);
-    color: var(--c-blanco);
+    background: radial-gradient(circle at center, rgba(75, 83, 32, 0.4) 0%, rgba(10, 15, 13, 0.9) 100%);
+    color: var(--text-light);
     padding: 8rem 0 10rem;
     position: relative;
     overflow: hidden;
@@ -49,17 +49,17 @@
 }
 
 .hero-section-title {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 4.5rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     margin-bottom: 1rem;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
     text-transform: uppercase;
 }
 
 .hero-section-subtitle {
     font-size: 2rem;
-    color: white;
+    color: var(--pale-green);
     margin-bottom: 2rem;
 }
 
@@ -67,20 +67,21 @@
     font-size: 1.25rem;
     max-width: 800px;
     margin: 0 auto 2rem;
-    color: var(--c-blanco);
+    color: var(--text-light);
 }
 
 .hero-section-quote {
-    font-family: var(--font-inter);
+    font-family: 'Inter', sans-serif;
     font-style: italic;
     font-size: 1.5rem;
     margin: 3rem auto;
     max-width: 900px;
     padding: 2.5rem;
-    border-left: 5px solid var(--c-dorado);
-    background: rgba(255, 255, 255, 0.05);
+    border-left: 5px solid var(--gold-accent);
+    background: rgba(20, 27, 22, 0.6);
     border-radius: 1.2rem;
     backdrop-filter: blur(5px);
+    border: 1px solid rgba(134, 239, 172, 0.1);
 }
 
 .hero-tags {
@@ -92,40 +93,25 @@
 }
 
 .hero-section-tag {
-    background: var(--c-verde);
+    background: var(--military-green);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Hero Divider - Leading to Valores (Green) */
-.hero-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23006837' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- VALORES SECTION (Dark: Verde Laurel #006837) --- */
+/* --- VALORES SECTION --- */
 .valores-section {
-    background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
+    background: linear-gradient(135deg, var(--military-dark) 0%, #0a0f0d 100%);
     padding: 6rem 0;
-    color: white;
+    color: var(--text-light);
     position: relative;
     z-index: 1;
 }
 
 .valores-section-title {
-    font-family: var(--font-oswald);
-    color: var(--c-dorado);
+    font-family: 'Oswald', sans-serif;
+    color: var(--gold-accent);
     font-size: 3rem;
     text-align: center;
     margin-bottom: 1rem;
@@ -135,22 +121,22 @@
     text-align: center;
     margin-bottom: 3rem;
     font-size: 1.2rem;
-    color: var(--c-link-cream);
+    color: var(--pale-green);
 }
 
 .valor-card {
-    background: rgba(24, 38, 86, 0.4);
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: 1.5rem;
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid var(--military-green);
     transition: var(--transition);
 }
 
 .valor-card:hover {
-    background: rgba(24, 38, 86, 0.8);
+    background: rgba(20, 27, 22, 0.9);
     transform: translateY(-10px);
-    border-color: var(--c-dorado);
+    border-color: var(--gold-accent);
 }
 
 .valor-icon {
@@ -162,60 +148,46 @@
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    background: var(--c-dorado);
-    color: var(--c-azul);
+    background: var(--gold-accent);
+    color: var(--bg-dark);
 }
 
 .valor-title {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--c-blanco);
+    color: var(--pale-green);
 }
 
-/* Valores Divider - Leading to Educacion (Cream) */
-.valores-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23E8ECD7' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- EDUCACION SECTION (Light: Cream #E8ECD7) --- */
+/* --- EDUCACION SECTION --- */
 .educacion-integral-section {
-    background: var(--c-link-cream);
+    background: var(--bg-dark);
     padding: 6rem 0;
-    color: var(--c-azul);
+    color: var(--text-light);
     position: relative;
     z-index: 1;
 }
 
 .educacion-integral-section-title {
-    font-family: var(--font-oswald);
-    color: var(--c-azul);
+    font-family: 'Oswald', sans-serif;
+    color: var(--gold-accent);
     font-size: 3rem;
     text-align: center;
     margin-bottom: 1rem;
 }
 
 .educacion-integral-section .section-desc {
-    color: var(--c-verde);
+    color: var(--pale-green);
 }
 
 .programa-card {
-    background: white;
+    background: var(--bg-card);
     border-radius: 1.5rem;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
+    border: 1px solid var(--military-green);
 }
 
 .programa-img-wrapper {
@@ -228,14 +200,15 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0.6;
 }
 
 .programa-icon-overlay {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: var(--c-dorado);
-    color: var(--c-azul);
+    background: var(--gold-accent);
+    color: var(--bg-dark);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -250,9 +223,9 @@
 }
 
 .programa-title {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
-    color: var(--c-azul);
+    color: var(--white);
     margin-bottom: 1rem;
 }
 
@@ -262,54 +235,40 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    color: var(--text-light);
 }
 
 .programa-benefits i {
-    color: var(--c-verde);
+    color: var(--gold-accent);
 }
 
-/* Educacion Divider - Leading to Bachilleratos (Blue) */
-.educacion-integral-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23182656' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- BACHILLERATOS SECTION (Dark: Azul Alfaro #182656) --- */
+/* --- BACHILLERATOS SECTION --- */
 .bachilleratos-section {
-    background: linear-gradient(135deg, var(--c-azul) 0%, #0a1025 100%);
+    background: linear-gradient(135deg, var(--military-green) 0%, #1a2e22 100%);
     padding: 6rem 0;
-    color: white;
+    color: var(--text-light);
     position: relative;
     z-index: 1;
 }
 
 .bachilleratos-section-title {
-    font-family: var(--font-oswald);
-    color: var(--c-dorado);
+    font-family: 'Oswald', sans-serif;
+    color: var(--gold-accent);
     font-size: 3rem;
     text-align: center;
     margin-bottom: 1rem;
 }
 
 .bach-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(10, 15, 13, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 1.5rem;
     overflow: hidden;
     transition: var(--transition);
 }
 
 .bach-card:hover {
-    border-color: var(--c-dorado);
+    border-color: var(--gold-accent);
     transform: translateY(-10px);
 }
 
@@ -324,14 +283,14 @@
 }
 
 .bach-title {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
-    color: white;
+    color: var(--text-light);
     margin-bottom: 1rem;
 }
 
 .bach-type {
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     font-size: 0.9rem;
     text-transform: uppercase;
     display: block;
@@ -339,7 +298,7 @@
 }
 
 .specialty-tag {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     padding: 0.3rem 0.8rem;
     border-radius: 9999px;
     font-size: 0.85rem;
@@ -347,103 +306,80 @@
     margin: 0.25rem;
 }
 
-/* Bachilleratos Divider - Leading to Metodologia (Green) */
-.bachilleratos-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23006837' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- METODOLOGIA SECTION (Dark: Verde Laurel #006837) --- */
+/* --- METODOLOGIA SECTION --- */
 .metodologia-section {
-    background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
+    background: var(--bg-dark);
     padding: 6rem 0;
-    color: white;
+    color: var(--text-light);
     position: relative;
     z-index: 1;
 }
 
 .metodologia-section-title {
-    font-family: var(--font-oswald);
-    color: var(--c-dorado);
+    font-family: 'Oswald', sans-serif;
+    color: var(--gold-accent);
     font-size: 3rem;
     text-align: center;
     margin-bottom: 1rem;
 }
 
+.metodologia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
 .met-card {
-    background: rgba(24, 38, 86, 0.6);
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: 1.5rem;
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid var(--military-green);
 }
 
 .met-number {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 3rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     margin-bottom: 1rem;
 }
 
 .met-icon {
     font-size: 2.5rem;
-    color: white;
+    color: var(--pale-green);
     margin-bottom: 1.5rem;
 }
 
 .met-title {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
-    color: var(--c-blanco);
+    color: var(--text-light);
     margin-bottom: 1rem;
 }
 
-/* Metodologia Divider - Leading to Tecnologia (Cream) */
-.metodologia-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23E8ECD7' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- TECNOLOGIA SECTION (Light: Cream #E8ECD7) --- */
+/* --- TECNOLOGIA SECTION --- */
 .tecnologia-section {
-    background: var(--c-link-cream);
+    background: linear-gradient(135deg, var(--military-dark) 0%, #0a0f0d 100%);
     padding: 6rem 0;
-    color: var(--c-azul);
+    color: var(--text-light);
     position: relative;
     z-index: 1;
 }
 
 .tecnologia-section-title {
-    font-family: var(--font-oswald);
-    color: var(--c-azul);
+    font-family: 'Oswald', sans-serif;
+    color: var(--gold-accent);
     font-size: 3rem;
     text-align: center;
     margin-bottom: 1rem;
 }
 
 .tec-card {
-    background: white;
+    background: var(--bg-card);
     border-radius: 1.5rem;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--military-green);
 }
 
 .tec-icon {
@@ -455,53 +391,53 @@
     align-items: center;
     justify-content: center;
     font-size: 1.8rem;
-    background: var(--c-verde);
+    background: var(--military-green);
     color: white;
 }
 
 .tec-title {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
     text-align: center;
     margin-bottom: 1rem;
-    color: var(--c-azul);
+    color: var(--text-light);
 }
 
-/* Tecnologia Divider - Leading to Premio (Blue) */
-.tecnologia-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23182656' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
+.tec-tech {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
+.tech-tag {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.3rem 0.8rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-/* --- PREMIO SECTION (Dark: Azul Alfaro #182656) --- */
+/* --- PREMIO SECTION --- */
 .premio-section {
-    background: linear-gradient(135deg, var(--c-azul) 0%, #0a1025 100%);
+    background: var(--bg-dark);
     padding: 6rem 0;
-    color: white;
+    color: var(--text-light);
     position: relative;
     z-index: 1;
 }
 
 .premio-section-title {
-    font-family: var(--font-oswald);
-    color: var(--c-dorado);
+    font-family: 'Oswald', sans-serif;
+    color: var(--gold-accent);
     font-size: 3rem;
     margin-bottom: 1rem;
     text-align: center;
 }
 
 .award-content {
-    background: rgba(255,255,255,0.05);
-    border: 2px solid var(--c-dorado);
+    background: rgba(251, 191, 36, 0.05);
+    border: 2px solid var(--gold-accent);
     border-radius: 2rem;
     padding: 3rem;
     text-align: center;
@@ -509,43 +445,49 @@
 
 .award-icon {
     font-size: 4rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     margin-bottom: 1rem;
 }
 
-/* Premio Divider - Leading to CTA (Green) */
-.premio-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23006837' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- CTA SECTION (Dark: Verde Laurel #006837) --- */
+/* --- CTA SECTION --- */
 .cta-section {
-    background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
+    background: linear-gradient(135deg, var(--military-green) 0%, #1a2e22 100%);
     color: white;
     padding: 6rem 0;
     text-align: center;
 }
 
 .cta-section-title {
-    font-family: var(--font-oswald);
+    font-family: 'Oswald', sans-serif;
     font-size: 3rem;
-    color: var(--c-dorado);
+    color: var(--gold-accent);
     margin-bottom: 1rem;
 }
 
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
 .btn-primary {
-    background: var(--c-dorado);
-    color: var(--c-azul);
+    background: var(--gold-accent);
+    color: var(--bg-dark);
+}
+
+.btn-primary:hover {
+    background: white;
 }
 
 .btn-secondary {
@@ -553,8 +495,19 @@
     color: white;
 }
 
-/* Animations */
+.btn-secondary:hover {
+    background: white;
+    color: var(--bg-dark);
+}
+
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
