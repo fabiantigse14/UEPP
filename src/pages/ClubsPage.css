@@ -29,9 +29,6 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
     color: var(--c-dorado);
 }
 
