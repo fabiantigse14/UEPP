@@ -36,7 +36,7 @@
 
 /* --- HERO SECTION (Palette: Dark Navy #1f4529 & Gold #eed3b1) --- */
 .hero-section {
-    background: linear-gradient(135deg, #1f4529 0%, #1a3c24 100%);
+    background: var(--grad-military-main);
     color: #e8ecd7;
     padding: 8rem 0 10rem;
     position: relative;
@@ -132,7 +132,7 @@
 
 /* --- NIVELES SECTION (Palette: Medium Green #47663b) --- */
 .niveles-section {
-    background: #47663b; /* Medium Green */
+    background: var(--grad-military-lighter);
     padding: 6rem 0;
     color: white;
     position: relative;
@@ -175,7 +175,7 @@
 }
 
 .flip-card-front {
-    background: #1f4529; /* Dark Navy base for card front */
+    background: var(--grad-military-main);
 }
 
 .flip-card-front img {
@@ -208,7 +208,7 @@
 }
 
 .flip-card-back {
-    background: #e8ecd7; /* Light Beige */
+    background: var(--grad-light-sand);
     color: #1f4529; /* Dark Navy Text */
     transform: rotateY(180deg);
     padding: 2rem;
@@ -246,7 +246,7 @@
 
 /* --- PROCESO SECTION (Palette: Light Beige #e8ecd7) --- */
 .proceso-section {
-    background: #e8ecd7; /* Light Background */
+    background: var(--grad-light-sand);
     padding: 6rem 0;
     color: #1f4529; /* Dark Navy Text */
     position: relative;
@@ -286,7 +286,7 @@
     transform: translateX(-50%);
     width: 50px;
     height: 50px;
-    background: #eed3b1; /* Gold */
+    background: var(--grad-harvest-gold);
     color: #1f4529;
     border-radius: 50%;
     display: flex;
@@ -338,7 +338,7 @@
 
 /* --- FECHAS SECTION (Palette: Dark Navy #1f4529) --- */
 .fechas-section {
-    background: #1f4529; /* Dark Navy */
+    background: var(--grad-innovation-tech);
     padding: 6rem 0;
     color: white;
     position: relative;
@@ -388,7 +388,7 @@
 
 /* --- FORM SECTION (Palette: Medium Green #47663b) --- */
 .form-section {
-    background: #47663b; /* Medium Green */
+    background: var(--grad-agri-growth);
     padding: 6rem 0;
     position: relative;
     z-index: 1;
@@ -449,7 +449,7 @@
 
 /* --- CONTACT SECTION (Palette: Dark Navy #1f4529) --- */
 .contacto-section {
-    background: #1f4529; /* Dark Navy */
+    background: var(--grad-tactical-ops);
     padding: 6rem 0;
     color: white;
     text-align: center;
@@ -474,7 +474,7 @@
 }
 
 .final-cta {
-    background: #47663b; /* Medium Green */
+    background: var(--grad-military-main);
     padding: 2rem;
     border-radius: 1rem;
     margin-top: 3rem;

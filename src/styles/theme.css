@@ -52,6 +52,27 @@
   --bevel-size: 4px;
   --angle-sharp: 0deg;
   --angle-bevel: 8deg;
+
+  /* --- NEW GRADIENT SYSTEM (Military / Innovation / Agriculture) --- */
+
+  /* Military Gradients */
+  --grad-military-main: linear-gradient(135deg, #1f4529 0%, #0f2615 100%); /* Deep Navy Green to Black-Green */
+  --grad-military-lighter: linear-gradient(135deg, #47663b 0%, #2e4425 100%); /* Medium Green */
+  --grad-tactical-ops: linear-gradient(180deg, #2E3F1F 0%, #1a2312 100%); /* Olive Drab */
+
+  /* Innovation / Tech Gradients */
+  --grad-innovation-tech: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #1f4529 100%); /* Slate to Military Green */
+  --grad-cyber-security: linear-gradient(to right, #141E30, #243B55); /* Classic Dark Tech */
+  --grad-future-vision: linear-gradient(160deg, #111 0%, #1f4529 100%); /* Black to Green fade */
+
+  /* Agriculture / Earth Gradients */
+  --grad-agri-earth: linear-gradient(135deg, #3E2723 0%, #5D4037 60%, #47663b 100%); /* Dark Brown to Green */
+  --grad-agri-growth: linear-gradient(120deg, #2e4425 0%, #47663b 50%, #8d9b86 100%); /* Growth Green */
+  --grad-harvest-gold: linear-gradient(135deg, #996515 0%, #eed3b1 100%); /* Gold/Beige */
+
+  /* Light / Contrast Gradients */
+  --grad-light-sand: linear-gradient(135deg, #e8ecd7 0%, #f0f4c3 100%); /* Light Beige */
+  --grad-mist-gray: linear-gradient(135deg, #cfd8dc 0%, #eceff1 100%); /* Light Blue-Gray */
 }
 
 /* Global Tactical Reset */

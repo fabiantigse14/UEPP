@@ -54,7 +54,7 @@
     position: relative;
     height: 45rem;
     overflow: hidden;
-    background: #1f4529; /* Dark Navy */
+    background: var(--grad-military-main);
 }
 
 .carousel-slide {
@@ -172,7 +172,7 @@
 
 /* --- VIDEO SECTION (Palette: Light Beige #e8ecd7) --- */
 .video-section {
-    background: #e8ecd7; /* Light Background */
+    background: var(--grad-light-sand);
     padding: 6rem 0;
     color: #1f4529; /* Dark Navy Text */
     position: relative;
@@ -246,7 +246,7 @@
 
 /* --- CHOOSE US SECTION (Palette: Medium Green #47663b) --- */
 .choose-us-section {
-    background: #47663b; /* Medium Green */
+    background: var(--grad-military-lighter);
     padding: 6rem 0;
     color: white;
     position: relative;
@@ -337,7 +337,7 @@
 
 /* --- EDUCATION LEVELS SECTION (Palette: Dark Navy #1f4529) --- */
 .education-levels-section {
-    background: #1f4529; /* Dark Navy */
+    background: var(--grad-innovation-tech);
     padding: 6rem 0;
     color: white;
     position: relative;
@@ -426,7 +426,7 @@
 
 /* --- CLUBS SECTION (Palette: Medium Green #47663b) --- */
 .clubs-section {
-    background: #47663b; /* Medium Green */
+    background: var(--grad-agri-growth);
     padding: 6rem 0;
     color: white;
     position: relative;

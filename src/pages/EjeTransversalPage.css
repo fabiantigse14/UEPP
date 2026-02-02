@@ -36,7 +36,7 @@
 
 /* --- HERO SECTION (Palette: Dark Navy #1f4529 & Gold #eed3b1) --- */
 .hero-section {
-    background: linear-gradient(135deg, #1f4529 0%, #1a3c24 100%);
+    background: var(--grad-military-main);
     color: #e8ecd7;
     padding: 8rem 0 10rem;
     position: relative;
@@ -116,7 +116,7 @@
 
 /* --- VALORES SECTION (Palette: Medium Green #47663b) --- */
 .valores-section {
-    background: #47663b; /* Medium Green */
+    background: var(--grad-military-lighter);
     padding: 6rem 0;
     color: white;
     position: relative;
@@ -189,7 +189,7 @@
 
 /* --- EDUCACION SECTION (Palette: Light Beige #e8ecd7) --- */
 .educacion-integral-section {
-    background: #e8ecd7; /* Light Background */
+    background: var(--grad-light-sand);
     padding: 6rem 0;
     color: #1f4529; /* Dark Text */
     position: relative;
@@ -283,7 +283,7 @@
 
 /* --- BACHILLERATOS SECTION (Palette: Dark Navy #1f4529) --- */
 .bachilleratos-section {
-    background: #1f4529; /* Dark Navy */
+    background: var(--grad-innovation-tech);
     padding: 6rem 0;
     color: white;
     position: relative;
@@ -361,7 +361,7 @@
 
 /* --- METODOLOGIA SECTION (Palette: Medium Green #47663b) --- */
 .metodologia-section {
-    background: #47663b; /* Medium Green */
+    background: var(--grad-agri-growth);
     padding: 6rem 0;
     color: white;
     position: relative;
@@ -420,7 +420,7 @@
 
 /* --- TECNOLOGIA SECTION (Palette: Light Beige #e8ecd7) --- */
 .tecnologia-section {
-    background: #e8ecd7; /* Light Background */
+    background: var(--grad-mist-gray);
     padding: 6rem 0;
     color: #1f4529; /* Dark Navy Text */
     position: relative;
@@ -479,7 +479,7 @@
 
 /* --- PREMIO SECTION (Palette: Dark Navy #1f4529) --- */
 .premio-section {
-    background: #1f4529; /* Dark Navy */
+    background: var(--grad-military-main);
     padding: 6rem 0;
     color: white;
     position: relative;
@@ -524,7 +524,7 @@
 
 /* --- CTA SECTION (Palette: Medium Green #47663b) --- */
 .cta-section {
-    background: #47663b; /* Medium Green */
+    background: var(--grad-tactical-ops);
     color: white;
     padding: 6rem 0;
     text-align: center;
