@@ -1,38 +1,105 @@
 @import "tailwindcss";
 
 @theme {
-  /* Military Palette (Palette 1) */
-  --color-military-navy: #1f4529; /* Darkest Green */
-  --color-military-slate: #47663b; /* Medium Green */
-  --color-military-green: #47663b; /* Alias for compatibility */
-  --color-military-gold: #eed3b1; /* Beige Accent */
-  --color-military-light: #e8ecd7; /* Lightest Green/Beige */
-  --color-military-gray: #8d9b86; /* Derived Grayish Green for muted text */
+  /* Official Palette */
+  --color-azul-alfaro: #182656;
+  --color-verde-laurel: #006837;
+  --color-rojo-rayo: #CF202E;
+  --color-dorado-honor: #D4AF37;
+  --color-blanco-humo: #F4F6F7;
+
+  /* Link 1 Palette (Forest/Military) */
+  --color-verde-muy-oscuro: #1F4529;
+  --color-verde-hoja: #47663B;
+  --color-crema-suave: #E8ECD7;
+  --color-beige-arena: #EED3B1;
 
   /* Typography */
   --font-oswald: "Oswald", sans-serif;
   --font-inter: "Inter", sans-serif;
+  --font-alex: "Alex Brush", cursive;
 }
 
 /* Global Styles */
 :root {
   font-family: var(--font-inter);
-  background-color: var(--color-military-navy);
-  color: var(--color-military-light);
+  background-color: var(--color-azul-alfaro);
+  color: var(--color-blanco-humo);
   line-height: 1.5;
   font-weight: 400;
+
+  /* CSS Variables for usage in non-Tailwind contexts */
+  --c-azul: #182656;
+  --c-verde: #006837;
+  --c-rojo: #CF202E;
+  --c-dorado: #D4AF37;
+  --c-blanco: #F4F6F7;
+
+  --c-link-dark: #1F4529;
+  --c-link-leaf: #47663B;
+  --c-link-cream: #E8ECD7;
+  --c-link-beige: #EED3B1;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-oswald);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--color-military-gold);
+  color: var(--color-dorado-honor);
+}
+
+/* Utility Classes for Gradients & Backgrounds */
+.bg-gradient-alfaro {
+  background: linear-gradient(135deg, var(--c-azul) 0%, #0a1025 100%);
+}
+
+.bg-gradient-laurel {
+  background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
+}
+
+.bg-gradient-mixed {
+  background: linear-gradient(135deg, var(--c-azul) 0%, var(--c-verde) 100%);
+}
+
+.bg-cream {
+  background-color: var(--c-link-cream);
+  color: var(--c-azul); /* Ensure contrast on light bg */
+}
+
+/* Button Utilities */
+.btn-primary {
+  background-color: var(--c-rojo);
+  color: var(--c-blanco);
+  border: 1px solid var(--c-rojo);
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--c-rojo);
+  border-color: var(--c-rojo);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--c-dorado);
+  border: 1px solid var(--c-dorado);
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--c-dorado);
+  color: var(--c-azul);
 }
 
 /* Scrollbar Customization */
@@ -41,16 +108,16 @@ h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-military-navy);
+  background: var(--c-azul);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-military-slate);
+  background: var(--c-dorado);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-military-gold);
+  background: var(--c-verde);
 }
 
 /* Floating WhatsApp Adjustment */

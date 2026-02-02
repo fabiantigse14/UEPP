@@ -67,61 +67,71 @@ const HomePage = () => {
             />
             <FloatingFacebookFeed />
              
-            {/* SECCIÓN 1: CARRUSEL */}
+            {/* SECCIÓN 1: CARRUSEL (Actualizado) */}
             <section id="inicio" className="carousel-section">
-                <div className="carousel">
+                <div className="carousel-container">
                     {slides.map((slide, index) => (
                         <div
                             key={index}
-                            className={`carousel-slide slide-${index} ${index === currentSlide ? 'active' : ''}`}
+                            className={`carousel-item ${index === currentSlide ? 'active' : ''}`}
                         >
-                            <img src={slide.image} alt={slide.title} />
-                            <div className="carousel-overlay">
-                                <h2 className="carousel-title">{slide.title}</h2>
-                                <p className="carousel-subtitle">{slide.subtitle}</p>
+                            <div className="carousel-bg-image" style={{ backgroundImage: `url(${slide.image})` }}></div>
+                            <div className="carousel-overlay-gradient"></div>
+                            <div className="carousel-content-wrapper">
+                                <h2 className="carousel-title-animated">
+                                    {slide.title.split(" ").map((word, i) => (
+                                        <span key={i} style={{ animationDelay: `${i * 0.1}s` }}>{word} </span>
+                                    ))}
+                                </h2>
+                                <p className="carousel-subtitle-animated">{slide.subtitle}</p>
                             </div>
                         </div>
                     ))}
                 </div>
-                <div className="carousel-indicators">
-                    {slides.map((_, index) => (
-                        <button
-                            key={index}
-                            className={`carousel-indicator ${index === currentSlide ? 'active' : ''}`}
-                            onClick={() => goToSlide(index)}
-                            aria-label={`Ir a slide ${index + 1}`}
-                        />
-                    ))}
+
+                <div className="carousel-controls">
+                    <button onClick={prevSlide} className="carousel-nav-btn prev" aria-label="Anterior">
+                        <i className="fas fa-arrow-left"></i>
+                    </button>
+                    <div className="carousel-indicators">
+                        {slides.map((_, index) => (
+                            <button
+                                key={index}
+                                className={`indicator-dot ${index === currentSlide ? 'active' : ''}`}
+                                onClick={() => goToSlide(index)}
+                                aria-label={`Ir a slide ${index + 1}`}
+                            />
+                        ))}
+                    </div>
+                    <button onClick={nextSlide} className="carousel-nav-btn next" aria-label="Siguiente">
+                        <i className="fas fa-arrow-right"></i>
+                    </button>
                 </div>
-                <button onClick={prevSlide} className="carousel-button prev" aria-label="Slide anterior">
-                    <i className="fas fa-chevron-left"></i>
-                </button>
-                <button onClick={nextSlide} className="carousel-button next" aria-label="Siguiente slide">
-                    <i className="fas fa-chevron-right"></i>
-                </button>
             </section>
 
             {/* SECCIÓN 2: FRASE + VIDEO */}
             <section className="video-section animate-on-scroll">
                 <div className="container">
                     <div className="video-content">
-                        <div className="video-player-container">
-                            <iframe
-                                width="100%"
-                                height="315"
-                                src="https://www.youtube.com/embed/lHvuRlerKkQ?autoplay=1&vq=hd1080&mute=1&loop=1&playlist=lHvuRlerKkQ"
-                                title="Video UEGEA"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
+                        <div className="video-player-frame">
+                            <div className="video-player-container">
+                                <iframe
+                                    width="100%"
+                                    height="315"
+                                    src="https://www.youtube.com/embed/lHvuRlerKkQ?autoplay=1&vq=hd1080&mute=1&loop=1&playlist=lHvuRlerKkQ"
+                                    title="Video UEGEA"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                ></iframe>
+                            </div>
                         </div>
                         <div className="video-text">
                             <h2 className="video-title">
                                 Educamos para el FUTURO con valores y principios
                             </h2>
                             <p className="video-subtitle">#EducaciónDeCalidad #SalcedoCotopaxi</p>
-                            <a href="https://uegea.edu.ec/index.php/inicio/index" target="_blank" rel="noopener noreferrer" className="btn-more-info">Más información</a>
+                            <a href="https://uegea.edu.ec/index.php/inicio/index" target="_blank" rel="noopener noreferrer" className="btn-primary">Más información</a>
                         </div>
                     </div>
                 </div>
@@ -175,7 +185,7 @@ const HomePage = () => {
                     </div>
 
                     <div className="text-center">
-                        <a href="https://uegea.edu.ec/nosotros/" target="_blank" rel="noopener noreferrer" className="btn-more-info-dark">Más información sobre nosotros</a>
+                        <a href="https://uegea.edu.ec/nosotros/" target="_blank" rel="noopener noreferrer" className="btn-secondary">Más información sobre nosotros</a>
                     </div>
                 </div>
             </section>
@@ -186,7 +196,7 @@ const HomePage = () => {
                     <h2 className="section-title-light">Niveles Educativos</h2>
                     
                     <div className="levels-grid">
-                        <div className="level-card bg-blue-400 animate-on-scroll">
+                        <div className="level-card animate-on-scroll">
                             <img src="https://placehold.co/400x250/CCCCCC/000000?text=Educación+Inicial" alt="Educación Inicial" />
                             <div className="level-content">
                                 <h3>EDUCACIÓN INICIAL</h3>
@@ -197,7 +207,7 @@ const HomePage = () => {
                             </div>
                         </div>
 
-                        <div className="level-card bg-orange-500 animate-on-scroll">
+                        <div className="level-card animate-on-scroll">
                             <img src="https://placehold.co/400x250/CCCCCC/000000?text=Educación+Básica" alt="Educación Básica" />
                             <div className="level-content">
                                 <h3>EDUCACIÓN GENERAL BÁSICA</h3>
@@ -209,7 +219,7 @@ const HomePage = () => {
                             </div>
                         </div>
 
-                        <div className="level-card bg-teal-500 animate-on-scroll">
+                        <div className="level-card animate-on-scroll">
                             <img src="/logbg.png" alt="BGU" />
                             <div className="level-content">
                                 <h3>BACHILLERATO GENERAL UNIFICADO</h3>
@@ -221,7 +231,7 @@ const HomePage = () => {
                             </div>
                         </div>
 
-                        <div className="level-card bg-purple-600 animate-on-scroll">
+                        <div className="level-card animate-on-scroll">
                             <img src="/logel.png" alt="Electromecánica" />
                             <div className="level-content">
                                 <h3>BACHILLERATO TÉCNICO</h3>
@@ -233,7 +243,7 @@ const HomePage = () => {
                             </div>
                         </div>
 
-                        <div className="level-card bg-green-700 animate-on-scroll">
+                        <div className="level-card animate-on-scroll">
                             <img src="/loga.png" alt="Agropecuaria" />
                             <div className="level-content">
                                 <h3>BACHILLERATO TÉCNICO</h3>
@@ -247,7 +257,7 @@ const HomePage = () => {
                     </div>
 
                     <div className="text-center mt-8">
-                        <a href="https://uegea.edu.ec/index.php/inicio/index" target="_blank" rel="noopener noreferrer" className="btn-more-info">Ver más información</a>
+                        <a href="https://uegea.edu.ec/index.php/inicio/index" target="_blank" rel="noopener noreferrer" className="btn-primary">Ver más información</a>
                     </div>
                 </div>
             </section>

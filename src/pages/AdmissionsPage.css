@@ -1,17 +1,15 @@
-/* AdmissionsPage.css - Redesigned with Independent Color Palettes per Section */
+/* AdmissionsPage.css - Refactored for Official Palette */
 
 /* --- GLOBAL RESETS --- */
 :root {
-    --font-oswald: "Oswald", sans-serif;
-    --font-inter: "Inter", sans-serif;
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --radius: 1.5rem;
 }
 
 .admissions-page {
-    background: #1f4529; /* Global backup */
+    background: var(--c-azul);
     font-family: var(--font-inter);
-    color: white;
+    color: var(--c-blanco);
     overflow-x: hidden;
 }
 
@@ -32,12 +30,13 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     position: relative;
+    color: var(--c-dorado);
 }
 
-/* --- HERO SECTION (Palette: Dark Navy #1f4529 & Gold #eed3b1) --- */
+/* --- HERO SECTION (Dark: Azul Alfaro) --- */
 .hero-section {
-    background: linear-gradient(135deg, #1f4529 0%, #1a3c24 100%);
-    color: #e8ecd7;
+    background: radial-gradient(circle at center, rgba(24, 38, 86, 0.8) 0%, rgba(10, 16, 37, 0.9) 100%);
+    color: var(--c-blanco);
     padding: 8rem 0 10rem;
     position: relative;
     overflow: hidden;
@@ -49,6 +48,7 @@
 .hero-background {
     position: absolute;
     inset: 0;
+    background: var(--c-azul);
 }
 
 .hero-background img {
@@ -69,20 +69,20 @@
 .hero-title {
     font-family: var(--font-oswald);
     font-size: 4rem;
-    color: #eed3b1; /* Gold */
+    color: var(--c-dorado);
     margin-bottom: 1rem;
     text-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 .hero-subtitle {
     font-size: 2.2rem;
-    color: #ffffff;
+    color: var(--c-blanco);
     font-weight: 600;
 }
 
 .hero-small {
     font-size: 1.5rem;
-    color: #e8ecd7;
+    color: var(--c-link-cream);
     margin: 0.5rem 0;
     opacity: 0.9;
 }
@@ -91,8 +91,8 @@
     font-size: 1.2rem;
     line-height: 1.8;
     margin: 2rem 0;
-    color: #f0f0f0;
-    background: rgba(31, 69, 41, 0.6);
+    color: var(--c-blanco);
+    background: rgba(24, 38, 86, 0.6);
     padding: 1.5rem;
     border-radius: 1rem;
     backdrop-filter: blur(5px);
@@ -107,7 +107,7 @@
 }
 
 .tag-pill {
-    background: rgba(71, 102, 59, 0.8);
+    background: var(--c-verde);
     color: white;
     padding: 0.6rem 1.2rem;
     border-radius: 9999px;
@@ -117,24 +117,27 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Hero Divider */
+/* Hero Divider - Leading to Niveles (Green) */
 .hero-section::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: 80px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%2347663b'/%3E%3C/svg%3E");
-    background-size: cover;
+    height: 100px;
+    /* Match next section: Verde */
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23006837' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100%;
     z-index: 2;
+    pointer-events: none;
 }
 
-/* --- NIVELES SECTION (Palette: Medium Green #47663b) --- */
+
+/* --- NIVELES SECTION (Dark: Verde Laurel #006837) --- */
 .niveles-section {
-    background: #47663b; /* Medium Green */
+    background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
     padding: 6rem 0;
-    color: white;
+    color: var(--c-blanco);
     position: relative;
     z-index: 1;
 }
@@ -175,7 +178,7 @@
 }
 
 .flip-card-front {
-    background: #1f4529; /* Dark Navy base for card front */
+    background: var(--c-azul); /* Azul base for card front */
 }
 
 .flip-card-front img {
@@ -190,37 +193,37 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(31, 69, 41, 0.95));
+    background: linear-gradient(transparent, rgba(24, 38, 86, 0.95));
     padding: 2rem;
     text-align: center;
 }
 
 .card-icon {
     font-size: 3rem;
-    color: #eed3b1; /* Gold */
+    color: var(--c-dorado);
     margin-bottom: 0.5rem;
 }
 
 .card-overlay h3 {
     font-family: var(--font-oswald);
     font-size: 1.5rem;
-    color: white;
+    color: var(--c-blanco);
 }
 
 .flip-card-back {
-    background: #e8ecd7; /* Light Beige */
-    color: #1f4529; /* Dark Navy Text */
+    background: var(--c-link-cream); /* Light Beige */
+    color: var(--c-azul); /* Dark Navy Text */
     transform: rotateY(180deg);
     padding: 2rem;
-    border: 2px solid #1f4529;
+    border: 2px solid var(--c-verde);
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .flip-card-back h3 {
-    color: #47663b;
-    border-bottom: 2px solid #eed3b1;
+    color: var(--c-verde);
+    border-bottom: 2px solid var(--c-dorado);
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
 }
@@ -230,31 +233,33 @@
     font-weight: 500;
 }
 
-/* Niveles Divider */
+/* Niveles Divider - Leading to Proceso (Cream) */
 .niveles-section::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: 80px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z' fill='%23e8ecd7'/%3E%3C/svg%3E");
-    background-size: cover;
+    height: 100px;
+    /* Match next section: Cream */
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23E8ECD7' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100%;
     z-index: 2;
+    pointer-events: none;
 }
 
 
-/* --- PROCESO SECTION (Palette: Light Beige #e8ecd7) --- */
+/* --- PROCESO SECTION (Light: Cream #E8ECD7) --- */
 .proceso-section {
-    background: #e8ecd7; /* Light Background */
+    background: var(--c-link-cream);
     padding: 6rem 0;
-    color: #1f4529; /* Dark Navy Text */
+    color: var(--c-azul);
     position: relative;
     z-index: 1;
 }
 
 .proceso-section .section-title {
-    color: #1f4529;
+    color: var(--c-azul);
 }
 
 .timeline {
@@ -271,7 +276,7 @@
     bottom: 0;
     left: 50%;
     width: 4px;
-    background: #47663b;
+    background: var(--c-verde);
     transform: translateX(-50%);
 }
 
@@ -286,8 +291,8 @@
     transform: translateX(-50%);
     width: 50px;
     height: 50px;
-    background: #eed3b1; /* Gold */
-    color: #1f4529;
+    background: var(--c-dorado);
+    color: var(--c-azul);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -318,29 +323,31 @@
 
 .timeline-content h3 {
     font-family: var(--font-oswald);
-    color: #47663b;
+    color: var(--c-verde);
     margin-bottom: 0.5rem;
 }
 
-/* Proceso Divider */
+/* Proceso Divider - Leading to Fechas (Blue) */
 .proceso-section::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: 80px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%231f4529'/%3E%3C/svg%3E");
-    background-size: cover;
+    height: 100px;
+    /* Match next section: Azul */
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23182656' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100%;
     z-index: 2;
+    pointer-events: none;
 }
 
 
-/* --- FECHAS SECTION (Palette: Dark Navy #1f4529) --- */
+/* --- FECHAS SECTION (Dark: Azul Alfaro #182656) --- */
 .fechas-section {
-    background: #1f4529; /* Dark Navy */
+    background: linear-gradient(135deg, var(--c-azul) 0%, #0a1025 100%);
     padding: 6rem 0;
-    color: white;
+    color: var(--c-blanco);
     position: relative;
     z-index: 1;
 }
@@ -363,32 +370,34 @@
 .fecha-card:hover {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.1);
-    border-color: #eed3b1;
+    border-color: var(--c-dorado);
 }
 
 .fecha-icon {
     font-size: 3rem;
-    color: #eed3b1;
+    color: var(--c-dorado);
     margin-bottom: 1rem;
 }
 
-/* Fechas Divider */
+/* Fechas Divider - Leading to Form (Green) */
 .fechas-section::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: 80px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z' fill='%2347663b'/%3E%3C/svg%3E");
-    background-size: cover;
+    height: 100px;
+    /* Match next section: Verde */
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23006837' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100%;
     z-index: 2;
+    pointer-events: none;
 }
 
 
-/* --- FORM SECTION (Palette: Medium Green #47663b) --- */
+/* --- FORM SECTION (Dark: Verde Laurel #006837) --- */
 .form-section {
-    background: #47663b; /* Medium Green */
+    background: linear-gradient(135deg, var(--c-verde) 0%, #004d29 100%);
     padding: 6rem 0;
     position: relative;
     z-index: 1;
@@ -397,10 +406,10 @@
 .admissions-form {
     max-width: 700px;
     margin: 0 auto;
-    background: rgba(31, 69, 41, 0.6);
+    background: rgba(24, 38, 86, 0.6); /* Azul Transparente */
     padding: 3rem;
     border-radius: 2rem;
-    border: 1px solid #eed3b1;
+    border: 1px solid var(--c-dorado);
 }
 
 .admissions-form input,
@@ -418,8 +427,8 @@
 .submit-btn {
     width: 100%;
     padding: 1rem;
-    background: #eed3b1; /* Gold */
-    color: #1f4529; /* Navy Text */
+    background: var(--c-dorado);
+    color: var(--c-azul);
     font-weight: bold;
     border: none;
     border-radius: 0.5rem;
@@ -433,25 +442,27 @@
     background: white;
 }
 
-/* Form Divider */
+/* Form Divider - Leading to Contacto (Blue) */
 .form-section::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: 80px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%231f4529'/%3E%3C/svg%3E");
-    background-size: cover;
+    height: 100px;
+    /* Match next section: Azul */
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23182656' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% 100%;
     z-index: 2;
+    pointer-events: none;
 }
 
 
-/* --- CONTACT SECTION (Palette: Dark Navy #1f4529) --- */
+/* --- CONTACT SECTION (Dark: Azul Alfaro #1f4529) --- */
 .contacto-section {
-    background: #1f4529; /* Dark Navy */
+    background: linear-gradient(135deg, var(--c-azul) 0%, #0a1025 100%);
     padding: 6rem 0;
-    color: white;
+    color: var(--c-blanco);
     text-align: center;
 }
 
@@ -464,25 +475,25 @@
 
 .contacto-item i {
     font-size: 2.5rem;
-    color: #eed3b1;
+    color: var(--c-dorado);
     margin-bottom: 1rem;
 }
 
 .contacto-item a {
-    color: white;
+    color: var(--c-blanco);
     text-decoration: underline;
 }
 
 .final-cta {
-    background: #47663b; /* Medium Green */
+    background: var(--c-verde);
     padding: 2rem;
     border-radius: 1rem;
     margin-top: 3rem;
-    border: 1px solid #eed3b1;
+    border: 1px solid var(--c-dorado);
 }
 
 .final-cta h3 {
-    color: #eed3b1;
+    color: var(--c-dorado);
     font-family: var(--font-oswald);
     margin-bottom: 0.5rem;
 }
