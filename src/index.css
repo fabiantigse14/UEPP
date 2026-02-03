@@ -32,7 +32,8 @@
   --c-azul: #182656;
   --c-verde: #006837;
   --c-rojo: #CF202E;
-  --c-dorado: #D4AF37;
+  --c-dorado: #C5A028; /* Dorado oscuro y elegante */
+  --c-dorado-brillo: #D4AF37;
   --c-blanco: #F4F6F7;
 
   --c-link-dark: #1F4529;
@@ -45,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-oswald);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--color-dorado-honor);
+  color: var(--c-dorado);
 }
 
 /* Utility Classes for Gradients & Backgrounds */

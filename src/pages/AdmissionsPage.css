@@ -369,8 +369,9 @@
 
 .fecha-card:hover {
     transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.1);
+    /* Eliminado fondo oscuro al hover */
     border-color: var(--c-dorado);
+    box-shadow: 0 0 15px rgba(197, 160, 40, 0.3);
 }
 
 .fecha-icon {

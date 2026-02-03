@@ -330,9 +330,10 @@
 }
 
 .choose-us-card:hover {
-    background: rgba(24, 38, 86, 0.7);
+    /* Eliminado oscurecimiento de fondo */
     transform: translateY(-5px);
     border-color: var(--c-dorado);
+    box-shadow: 0 0 15px rgba(197, 160, 40, 0.3); /* Sutil brillo dorado */
 }
 
 .card-icon-container {

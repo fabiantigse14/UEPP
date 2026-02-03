@@ -240,7 +240,7 @@
 
 .club-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 0 15px rgba(197, 160, 40, 0.3);
 }
 
 .club-card img {
@@ -254,7 +254,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, var(--c-azul) 0%, transparent 100%);
+    /* Fondo oscuro mantenido para legibilidad del texto, pero sin oscurecer toda la imagen */
+    background: linear-gradient(to top, var(--c-azul) 10%, transparent 100%);
     padding: 2rem;
     color: white;
     text-align: center;
@@ -325,9 +326,10 @@
 }
 
 .benefit-card:hover {
-    background: rgba(0, 104, 55, 0.6);
+    /* Eliminado oscurecimiento de fondo */
     transform: translateY(-5px);
     border-color: var(--c-dorado);
+    box-shadow: 0 0 15px rgba(197, 160, 40, 0.3);
 }
 
 .benefit-icon {
