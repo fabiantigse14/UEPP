@@ -15,21 +15,20 @@ export default function AboutPage() {
         <div className="text-block">
           <h3>Nuestra Historia</h3>
           <p>
-            La Unidad Educativa General Eloy Alfaro (UEGEA) nació en 2020, fruto de la transformación
-            del Centro de Educación Inicial "Colorines", fundado en 2006. Con 18 años de experiencia
-            educativa en el cantón Salcedo, hemos evolucionado para responder a los desafíos del mundo moderno.
+            La <strong>Unidad Educativa General Eloy Alfaro (UEGEA)</strong> fue fundada en <strong>2007</strong> en el cantón Salcedo por la visionaria Aida Marlene Proaño Herrera.
+            Iniciamos con un enfoque disciplinar y cívico que forjó nuestro carácter.
           </p>
           <p>
-            Nos hemos consolidado como un referente de calidad y calidez, integrando la innovación
-            tecnológica con una sólida formación en valores. Nuestro compromiso es formar líderes
-            disciplinados, con conciencia ambiental y capacidad crítica.
+            Tras el punto de inflexión en 2020, bajo la nueva rectoría, hemos evolucionado hacia un modelo de "Campus Vivo",
+            integrando la sostenibilidad, la biotecnología y la innovación tecnológica sin perder nuestros valores fundacionales.
           </p>
         </div>
         <div className="image-block">
-          {/* Placeholder for School Building Image */}
           <img src="https://uegea.edu.ec/assets/misionyvision.png" alt="Instalaciones UEGEA" />
         </div>
       </section>
+
+      <div className="wavy-separator mx-auto"></div>
 
       {/* MISSION & VISION */}
       <section className="mision-vision-section animate-on-scroll">
@@ -40,20 +39,16 @@ export default function AboutPage() {
               <i className="fas fa-bullseye mv-icon"></i>
               <h3>Misión</h3>
               <p>
-                Formar niños y jóvenes con pensamiento crítico, reflexivo y valores sólidos.
-                Ofrecemos una educación de calidad y calidez, promoviendo el desarrollo de
-                potencialidades individuales y el cuidado del medio ambiente, para entregar
-                a la sociedad seres humanos capaces de transformar su entorno.
+                Brindar una educación integral, basada en valores, disciplina y compromiso social,
+                dirigida a la niñez y juventud rural para garantizar el acceso a oportunidades innovadoras.
               </p>
             </div>
             <div className="mv-card">
               <i className="fas fa-eye mv-icon"></i>
               <h3>Visión</h3>
               <p>
-                Ser una institución educativa referente a nivel nacional, reconocida por su
-                excelencia académica, innovación pedagógica y formación integral. Lideramos
-                procesos de cambio educativo con estándares de calidad, tecnología de punta
-                y un profundo compromiso social y ambiental.
+                Ser un referente de educación rural sostenible, fusionando la disciplina con el rigor científico
+                y la conciencia ambiental para formar líderes transformadores.
               </p>
             </div>
           </div>
@@ -64,17 +59,16 @@ export default function AboutPage() {
       <section className="values-section animate-on-scroll">
         <div className="container">
           <h2 className="section-title">Nuestros Valores</h2>
-          <p style={{ maxWidth: '800px', margin: '0 auto', color: '#cbd5e1' }}>
-            La familia UEGEA se fundamenta en principios que guían nuestro actuar diario dentro y fuera de las aulas.
+          <p style={{ maxWidth: '800px', margin: '0 auto', color: 'var(--text-secondary)' }}>
+            La familia UEGEA se fundamenta en principios que guían nuestro actuar diario.
           </p>
           <div className="values-grid">
-            <div className="value-item">Respeto</div>
-            <div className="value-item">Honradez</div>
-            <div className="value-item">Responsabilidad</div>
-            <div className="value-item">Solidaridad</div>
-            <div className="value-item">Justicia</div>
             <div className="value-item">Disciplina</div>
-            <div className="value-item">Patriotismo</div>
+            <div className="value-item">Honor</div>
+            <div className="value-item">Responsabilidad</div>
+            <div className="value-item">Sostenibilidad</div>
+            <div className="value-item">Innovación</div>
+            <div className="value-item">Resiliencia</div>
           </div>
         </div>
       </section>
@@ -82,17 +76,17 @@ export default function AboutPage() {
       {/* AUTHORITIES SECTION */}
       <section className="authorities-section animate-on-scroll">
         <div className="container">
-          <h2 className="section-title">Autoridades</h2>
+          <h2 className="section-title">Liderazgo</h2>
           <div className="auth-grid">
             <div className="auth-card">
-              <img src="https://placehold.co/200x200/1fd655/ffffff?text=Rectorado" alt="Rector" className="auth-img" />
-              <h3 className="auth-name">Msc. Nombre Rector</h3>
+              <img src="https://placehold.co/200x200/16A34A/ffffff?text=Rector" alt="Rector" className="auth-img" />
+              <h3 className="auth-name">Mg. Francisco Javier Paredes</h3>
               <p className="auth-role">Rector</p>
             </div>
             <div className="auth-card">
-              <img src="https://placehold.co/200x200/1fd655/ffffff?text=Vicerrectorado" alt="Vicerrector" className="auth-img" />
-              <h3 className="auth-name">Msc. Nombre Vicerrector</h3>
-              <p className="auth-role">Vicerrector Académico</p>
+              <img src="https://placehold.co/200x200/16A34A/ffffff?text=Vicerrector" alt="Vicerrector" className="auth-img" />
+              <h3 className="auth-name">Msc. Autoridad Académica</h3>
+              <p className="auth-role">Vicerrectorado</p>
             </div>
           </div>
         </div>

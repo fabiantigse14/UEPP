@@ -1,9 +1,7 @@
-/* ContactPage.css - Military Dark Theme */
+/* ContactPage.css - Light Military Theme Overrides */
 
 .contact-page {
-    background: var(--bg-dark);
-    color: var(--text-light);
-    font-family: var(--font-inter);
+    /* Background handled by global body */
     padding-top: 2rem;
     min-height: 100vh;
 }
@@ -11,22 +9,21 @@
 .contact-hero {
     text-align: center;
     padding: 6rem 1rem 4rem;
-    background: linear-gradient(180deg, var(--military-dark) 0%, var(--bg-dark) 100%);
+    background: transparent; /* Let global gradient show */
     position: relative;
     overflow: hidden;
 }
 
-.contact-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/ani.png') no-repeat right top;
-    background-size: 200px;
-    opacity: 0.1;
-    pointer-events: none;
+.contact-hero .section-title {
+    color: var(--text-primary);
+    text-shadow: none;
+    font-size: 3rem;
+}
+
+.contact-hero .section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    font-family: var(--font-alex);
 }
 
 .contact-content {
@@ -35,7 +32,7 @@
     gap: 4rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 1rem;
+    padding: 2rem 1rem 4rem;
 }
 
 @media (min-width: 900px) {
@@ -44,12 +41,12 @@
     }
 }
 
-.contact-info-card {
-    background: var(--bg-card);
+.contact-info-card, .contact-form-card {
+    background: var(--bg-card); /* White */
     padding: 3rem;
     border-radius: 1.5rem;
-    border: 1px solid var(--military-green);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--gold-accent); /* Gold Outline */
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15); /* Gold shadow */
 }
 
 .info-item {
@@ -67,31 +64,25 @@
 
 .info-item h3 {
     font-family: var(--font-oswald);
-    color: var(--pale-green);
+    color: var(--military-green); /* Dark Green for contrast */
     margin-bottom: 0.5rem;
     font-size: 1.4rem;
 }
 
 .info-item p {
-    color: var(--text-light);
+    color: var(--text-secondary);
     font-size: 1.1rem;
     line-height: 1.6;
 }
 
 .info-item a {
-    color: var(--text-light);
+    color: var(--text-primary);
     transition: color 0.3s ease;
+    font-weight: 500;
 }
 
 .info-item a:hover {
     color: var(--gold-accent);
-}
-
-.contact-form-card {
-    background: rgba(20, 27, 22, 0.4);
-    padding: 3rem;
-    border-radius: 1.5rem;
-    border: 1px solid rgba(134, 239, 172, 0.2);
 }
 
 .contact-form input,
@@ -99,10 +90,10 @@
     width: 100%;
     padding: 1rem;
     margin-bottom: 1.5rem;
-    background: rgba(10, 15, 13, 0.6);
-    border: 1px solid var(--military-green);
+    background: #f9fafb; /* Light grey input bg */
+    border: 1px solid #d1d5db;
     border-radius: 0.5rem;
-    color: var(--text-light);
+    color: var(--text-primary);
     font-family: var(--font-inter);
 }
 
@@ -110,11 +101,32 @@
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--gold-accent);
-    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+    background: white;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--military-green);
+    color: white;
+    font-family: var(--font-oswald);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    border: 2px solid var(--military-green);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: transparent;
+    color: var(--military-green);
 }
 
 .map-section {
-    padding: 4rem 1rem;
+    padding: 2rem 1rem 6rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -122,7 +134,7 @@
 .map-container {
     border-radius: 1.5rem;
     overflow: hidden;
-    border: 2px solid var(--military-green);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--gold-accent);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     height: 450px;
 }

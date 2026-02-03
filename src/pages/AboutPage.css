@@ -1,9 +1,7 @@
-/* AboutPage.css - Military Dark Theme */
+/* AboutPage.css - Light Military Theme Refactor */
 
 .about-page {
-    background: var(--bg-dark);
-    color: var(--text-light);
-    font-family: var(--font-inter);
+    /* Background handled by global */
     padding-top: 2rem;
     min-height: 100vh;
 }
@@ -11,27 +9,14 @@
 .about-hero {
     text-align: center;
     padding: 6rem 1rem 4rem;
-    background: linear-gradient(180deg, var(--military-dark) 0%, var(--bg-dark) 100%);
+    background: transparent;
     position: relative;
     overflow: hidden;
 }
 
-.about-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/ani.png') no-repeat right bottom;
-    background-size: 300px;
-    opacity: 0.1;
-    pointer-events: none;
-}
-
 .section-subtitle {
     font-family: var(--font-oswald);
-    color: var(--pale-green);
+    color: var(--gold-accent);
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 1rem;
@@ -57,13 +42,13 @@
 .text-block h3 {
     font-family: var(--font-oswald);
     font-size: 2rem;
-    color: var(--gold-accent);
+    color: var(--military-green);
     margin-bottom: 1.5rem;
 }
 
 .text-block p {
     line-height: 1.8;
-    color: #cbd5e1;
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
     text-align: justify;
 }
@@ -71,16 +56,14 @@
 .image-block img {
     width: 100%;
     border-radius: 1.5rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--military-green);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--gold-accent);
 }
 
 /* Mision Vision Section */
 .mision-vision-section {
-    background: var(--bg-card);
+    background: transparent;
     padding: 6rem 1rem;
-    border-top: 1px solid var(--military-green);
-    border-bottom: 1px solid var(--military-green);
 }
 
 .mv-grid {
@@ -92,37 +75,41 @@
 }
 
 .mv-card {
-    background: rgba(20, 27, 22, 0.6);
+    background: var(--bg-card);
     padding: 2.5rem;
     border-radius: 1.5rem;
-    border: 1px solid rgba(134, 239, 172, 0.1);
+    border: 2px solid var(--gold-accent);
     transition: transform 0.3s ease;
     text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 .mv-card:hover {
     transform: translateY(-10px);
-    border-color: var(--gold-accent);
-    background: rgba(20, 27, 22, 0.9);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
 }
 
 .mv-icon {
     font-size: 3rem;
-    color: var(--pale-green);
+    color: var(--gold-accent);
     margin-bottom: 1.5rem;
 }
 
 .mv-card h3 {
     font-family: var(--font-oswald);
-    color: var(--gold-accent);
+    color: var(--military-green);
     font-size: 1.8rem;
     margin-bottom: 1rem;
+}
+
+.mv-card p {
+    color: var(--text-secondary);
 }
 
 /* Values Section */
 .values-section {
     padding: 6rem 1rem;
-    background: linear-gradient(135deg, var(--bg-dark) 0%, #1a2e22 100%);
+    background: transparent;
     text-align: center;
 }
 
@@ -138,8 +125,8 @@
     background: var(--bg-card);
     padding: 1.5rem 2.5rem;
     border-radius: 9999px;
-    border: 1px solid var(--military-green);
-    color: var(--text-light);
+    border: 2px solid var(--military-green);
+    color: var(--military-green);
     font-family: var(--font-oswald);
     font-size: 1.2rem;
     transition: all 0.3s ease;
@@ -148,7 +135,7 @@
 
 .value-item:hover {
     background: var(--military-green);
-    color: var(--gold-accent);
+    color: white;
     transform: scale(1.1);
     border-color: var(--gold-accent);
 }
@@ -156,7 +143,7 @@
 /* Authorities Section */
 .authorities-section {
     padding: 6rem 1rem;
-    background: var(--bg-dark);
+    background: transparent;
 }
 
 .auth-grid {
@@ -169,6 +156,10 @@
 
 .auth-card {
     text-align: center;
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    border: 2px solid var(--gold-accent);
 }
 
 .auth-img {
@@ -188,13 +179,13 @@
 
 .auth-name {
     font-family: var(--font-oswald);
-    color: var(--pale-green);
+    color: var(--military-green);
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
 .auth-role {
-    color: var(--text-light);
+    color: var(--text-secondary);
     font-style: italic;
     opacity: 0.8;
 }

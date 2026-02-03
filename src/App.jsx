@@ -12,7 +12,7 @@ import NuestraHistoriaPage from './pages/NuestraHistoriaPage'; // New import
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <Header />
       <main>
         <Routes>
