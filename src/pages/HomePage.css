@@ -1,15 +1,14 @@
-/* HomePage.css - Refactored for Official Palette & Link 1 */
+/* HomePage.css - Light Military Theme Refactor */
 
-/* --- GLOBAL RESETS --- */
 :root {
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --radius: 1.5rem;
 }
 
 .home-page {
-    background: var(--c-azul);
+    /* Background handled by global */
     font-family: var(--font-inter);
-    color: var(--c-blanco);
+    color: var(--text-primary);
     overflow-x: hidden;
 }
 
@@ -30,18 +29,26 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     position: relative;
-    color: var(--c-dorado);
+    color: var(--military-green);
+}
+
+.section-title-light { /* Mapped to dark for light theme */
+    font-family: var(--font-oswald);
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    color: var(--military-green);
 }
 
 .section-title::after {
     content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
     width: 60px;
     height: 4px;
-    background: var(--c-dorado);
+    background: var(--gold-accent);
+    margin: 10px auto 0;
     border-radius: 2px;
 }
 
@@ -49,14 +56,10 @@
     text-align: center;
 }
 
-.mt-8 {
-    margin-top: 2rem;
-}
-
 /* --- CAROUSEL SECTION (Hero) --- */
 .carousel-section {
     position: relative;
-    height: 100vh;
+    height: 90vh;
     min-height: 600px;
     overflow: hidden;
     background: #000;
@@ -86,7 +89,6 @@
     z-index: 2;
 }
 
-/* Ken Burns Effect */
 .carousel-bg-image {
     position: absolute;
     top: 0;
@@ -105,26 +107,17 @@
 }
 
 @keyframes kenBurns {
-    0% {
-        transform: scale(1) translate(0, 0);
-    }
-
-    100% {
-        transform: scale(1.15) translate(-10px, -5px);
-    }
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.15) translate(-10px, -5px); }
 }
 
-/* Gradient Overlay - Military based */
 .carousel-overlay-gradient {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(75, 83, 32, 0.4) 0%, rgba(10, 15, 13, 0.9) 100%);
+    background: radial-gradient(circle at center, rgba(75, 83, 32, 0.4) 0%, rgba(10, 15, 13, 0.8) 100%);
     z-index: 2;
 }
 
-/* Unicode "Dog/Wolf" Background placeholder if needed explicitly in CSS, but handled in JSX mostly */
-
-/* Animated Text Content */
 .carousel-content-wrapper {
     position: absolute;
     top: 50%;
@@ -158,7 +151,7 @@
 
 .carousel-subtitle-animated {
     font-size: 1.8rem;
-    color: var(--text-light);
+    color: #f0fdf4; /* Keep light for dark hero */
     font-weight: 300;
     opacity: 0;
     transform: translateY(20px);
@@ -170,13 +163,9 @@
 }
 
 @keyframes slideUpFade {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Carousel Controls */
 .carousel-controls {
     position: absolute;
     bottom: 3rem;
@@ -190,9 +179,9 @@
 }
 
 .carousel-nav-btn {
-    background: rgba(75, 83, 32, 0.3);
-    border: 1px solid rgba(134, 239, 172, 0.3);
-    color: var(--text-light);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--gold-accent);
+    color: var(--gold-accent);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -203,10 +192,8 @@
 }
 
 .carousel-nav-btn:hover {
-    background: var(--military-green);
-    color: var(--gold-accent);
-    transform: scale(1.1);
-    border-color: var(--gold-accent);
+    background: var(--gold-accent);
+    color: var(--military-green);
 }
 
 .carousel-indicators {
@@ -230,30 +217,62 @@
     box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
 }
 
-/* Carousel Divider - Leading to Video Section (Dark Card #141b16) */
-.carousel-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23141b16' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 5;
-    pointer-events: none;
-}
-
-
-/* --- VIDEO SECTION (Dark Card #141b16) --- */
-.video-section {
-    background: var(--bg-card);
-    padding: 8rem 0;
-    color: var(--text-light);
+/* --- SECTIONS --- */
+.video-section, .choose-us-section, .education-levels-section, .clubs-section, .identity-section {
+    background: transparent; /* Global Gradient */
+    padding: 6rem 0;
+    color: var(--text-primary);
     position: relative;
-    z-index: 4;
+    z-index: 1;
 }
 
+/* Hide old separators */
+.carousel-section::after, .video-section::after, .choose-us-section::after, .education-levels-section::after {
+    display: none;
+}
+
+/* --- CARDS --- */
+.choose-us-card, .level-card, .club-card {
+    background: var(--bg-card); /* White */
+    border-radius: 1.5rem;
+    overflow: hidden;
+    text-align: center;
+    border: 2px solid var(--gold-accent); /* Gold Outline */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    color: var(--text-primary);
+}
+
+.choose-us-card:hover, .level-card:hover, .club-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
+}
+
+.card-icon-container {
+    padding: 2rem;
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.card-icon-container i {
+    color: var(--gold-accent) !important;
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.card-content h3, .level-content h3, .club-content h3 {
+    font-family: var(--font-oswald);
+    font-size: 1.5rem;
+    color: var(--military-green);
+    margin-bottom: 0.5rem;
+}
+
+.card-content p, .level-content ul li, .club-content p {
+    color: var(--text-secondary);
+}
+
+/* --- VIDEO --- */
 .video-content {
     display: flex;
     flex-direction: column;
@@ -262,31 +281,20 @@
 }
 
 .video-player-frame {
-    padding: 15px;
-    background: linear-gradient(135deg, var(--military-dark) 0%, var(--bg-dark) 100%);
+    padding: 10px;
+    background: var(--bg-card);
     border-radius: 2rem;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--gold-accent);
     width: 100%;
     max-width: 850px;
-    border: 1px solid var(--military-green);
 }
-
-.video-player-frame::before {
-    content: '';
-    position: absolute;
-    inset: -5px;
-    border-radius: 2.2rem;
-    background: linear-gradient(45deg, var(--gold-accent), transparent, var(--military-green));
-    z-index: -1;
-    animation: rotateBorder 10s linear infinite;
-}
+.video-player-frame::before { display: none; }
 
 .video-player-container {
     width: 100%;
     border-radius: 1.5rem;
     overflow: hidden;
-    background: #000;
 }
 
 .video-text {
@@ -297,161 +305,35 @@
 .video-title {
     font-family: var(--font-oswald);
     font-size: 2.5rem;
-    color: var(--gold-accent);
+    color: var(--military-green);
     margin-bottom: 1rem;
     line-height: 1.2;
 }
 
 .video-subtitle {
     font-size: 1.2rem;
-    color: var(--pale-green);
+    color: var(--text-secondary);
     margin-bottom: 2rem;
     font-weight: 600;
 }
 
-/* Video Divider - Leading to Choose Us (Military Dark #3a4119) */
-.video-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%233a4119' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- CHOOSE US SECTION (Military Dark #3a4119) --- */
-.choose-us-section {
-    background: linear-gradient(135deg, var(--military-dark) 0%, #2a3015 100%);
-    padding: 6rem 0;
-    color: var(--text-light);
-    position: relative;
-    z-index: 1;
-}
-
-.choose-us-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.choose-us-card {
-    background: rgba(10, 15, 13, 0.4);
-    /* Dark glass */
-    border-radius: 1.5rem;
-    overflow: hidden;
-    text-align: center;
-    border: 1px solid rgba(134, 239, 172, 0.1);
-    transition: var(--transition);
-}
-
-.choose-us-card:hover {
-    background: rgba(10, 15, 13, 0.8);
-    transform: translateY(-5px);
-    border-color: var(--gold-accent);
-}
-
-.card-icon-container {
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.card-icon {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-}
-
-.card-content {
-    padding: 2rem;
-}
-
-.card-content h3 {
-    font-family: var(--font-oswald);
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-    color: var(--gold-accent);
-}
-
-.card-content p {
-    color: var(--text-light);
-}
-
-/* Choose Us Divider - Leading to Education Levels (Bg Dark #0a0f0d) */
-.choose-us-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%230a0f0d' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-
-/* --- EDUCATION LEVELS SECTION (Bg Dark #0a0f0d) --- */
-.education-levels-section {
-    background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1f1b 100%);
-    padding: 6rem 0;
-    color: var(--text-light);
-    position: relative;
-    z-index: 1;
-}
-
-.section-title-light {
-    font-family: var(--font-oswald);
-    font-size: 3rem;
-    color: var(--gold-accent);
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
+/* --- LEVELS --- */
 .levels-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
-.level-card {
-    border-radius: 1.5rem;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: var(--transition);
-    background: var(--bg-card);
-    border: 1px solid var(--military-green);
-}
-
-.level-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--pale-green);
-}
-
 .level-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    opacity: 0.8;
+    border-bottom: 2px solid var(--gold-accent);
 }
 
 .level-content {
     padding: 2rem;
-    background: rgba(20, 27, 22, 0.95);
-}
-
-.level-content h3 {
-    font-family: var(--font-oswald);
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--pale-green);
+    background: var(--bg-card);
 }
 
 .level-content ul li {
@@ -461,7 +343,7 @@
     gap: 0.5rem;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: var(--text-secondary);
 }
 
 .level-content i {
@@ -469,28 +351,17 @@
     color: var(--gold-accent);
 }
 
-/* Levels Divider - Leading to Clubs (Military Green #4b5320) */
-.education-levels-section::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%234b5320' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    z-index: 2;
-    pointer-events: none;
+/* --- CLUBS --- */
+.clubs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
 }
 
-
-/* --- CLUBS SECTION (Military Green #4b5320) --- */
-.clubs-section {
-    background: linear-gradient(135deg, var(--military-green) 0%, #3a4119 100%);
-    padding: 6rem 0;
-    color: var(--text-light);
-    position: relative;
-    z-index: 1;
+.club-content {
+    padding: 1.5rem;
+    text-align: center;
 }
 
 .icon-clubs {
@@ -500,113 +371,28 @@
     margin: 0 auto 1rem;
 }
 
-.clubs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.club-card {
-    background: rgba(10, 15, 13, 0.3);
-    border-radius: 1.5rem;
-    overflow: hidden;
-    transition: var(--transition);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.club-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--gold-accent);
-    background: rgba(10, 15, 13, 0.6);
-}
-
-.club-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.club-content {
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.club-content h3 {
-    color: var(--text-light);
-    font-family: var(--font-oswald);
-    font-size: 1.5rem;
-}
-
-.btn-facebook {
-    display: inline-flex;
-    padding: 1rem 2.5rem;
-    background: #1877f2;
+/* --- BUTTONS --- */
+.btn-primary, .btn-secondary, .btn-facebook {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--military-green);
     color: white;
+    border: 2px solid var(--military-green);
     border-radius: 9999px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
     text-decoration: none;
-    font-weight: bold;
-    transition: var(--transition);
-    align-items: center;
-    gap: 0.5rem;
 }
 
-.btn-facebook:hover {
-    background: #166fe5;
-    transform: translateY(-3px);
+.btn-primary:hover, .btn-secondary:hover, .btn-facebook:hover {
+    background: transparent;
+    color: var(--military-green);
+    transform: translateY(-2px);
 }
 
-.moments-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 3rem;
-}
-
-.moments-grid img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 1rem;
-    transition: var(--transition);
-}
-
-.moments-grid img:hover {
-    transform: scale(1.05);
-}
-
-/* Animations & Responsive (Kept from original) */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.animate-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
+/* Responsive */
 @media (min-width: 768px) {
-    .video-content {
-        flex-direction: row;
-    }
-
-    .carousel-section {
-        height: 55rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .moments-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .carousel-section {
-        height: 40rem;
-    }
-
-    .carousel-title-animated {
-        font-size: 2.5rem;
-    }
+    .video-content { flex-direction: row; }
 }

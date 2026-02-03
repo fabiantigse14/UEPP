@@ -21,11 +21,8 @@ const AdmissionsPage = () => {
         <div className="admissions-page">
             {/* HERO */}
             <section id="hero" className="hero-section">
-                <div className="hero-background">
-                    <img src="https://placehold.co/1920x900/0f172a/86efac?text=¡Matrículas+Abiertas!" alt="Matrículas UEGEA" />
-                </div>
                 <div className="container hero-content">
-                    <h1 className="hero-title">¡Matrículas Abiertas en UEGEA!</h1>
+                    <h1 className="hero-title">¡Matrículas Abiertas!</h1>
                     <h2 className="hero-subtitle">Ciclo Sierra-Amazonía</h2>
                     <h3 className="hero-small">Desde Inicial hasta Bachillerato Técnico</h3>
                     <p className="hero-description">
@@ -39,19 +36,48 @@ const AdmissionsPage = () => {
                         <span className="tag-pill">#Valores</span>
                         <span className="tag-pill">#SalcedoCotopaxi</span>
                     </div>
+                     <div className="wavy-separator mx-auto mt-8" style={{ maxWidth: '300px' }}></div>
                 </div>
             </section>
 
-            {/* NIVELES EDUCATIVOS - TARJETAS GIRATORIAS (SOLO GIRO) */}
-            <section id="niveles" className="niveles-section py-16">
+            {/* NIVELES EDUCATIVOS - TARJETAS GIRATORIAS */}
+            <section id="niveles" className="niveles-section">
                 <div className="container">
-                    <h2 className="section-title">Niveles Educativos</h2>
+                    <h2 className="section-title">Oferta Académica</h2>
                     <div className="niveles-grid">
                         {[
-                            { id: 'inicial', title: 'Educación Inicial', edad: '4-5 años', img: 'https://placehold.co/500x350/16A34A/ffffff?text=Inicial', icon: 'fas fa-child' },
-                            { id: 'basica', title: 'Educación General Básica', edad: '6-15 años', img: 'https://placehold.co/500x350/803a08/ffffff?text=Básica', icon: 'fas fa-book-open' },
-                            { id: 'bgu', title: 'Bachillerato General Unificado', edad: '16-18 años', img: 'https://placehold.co/500x350/15202e/86efac?text=BGU', icon: 'fas fa-graduation-cap' },
-                            { id: 'tecnico', title: 'Bachillerato Técnico', edad: '16-18 años', img: 'https://placehold.co/500x350/16A34A/ffffff?text=Técnico', icon: 'fas fa-tools' }
+                            {
+                                id: 'inicial',
+                                title: 'Educación Inicial',
+                                edad: '3-5 años',
+                                img: 'https://placehold.co/500x350/16A34A/ffffff?text=Inicial',
+                                icon: 'fas fa-child',
+                                reqs: ['Cédula Estudiante', 'Cédula Representantes', 'Planilla Servicio Básico', 'Certificado Nacimiento']
+                            },
+                            {
+                                id: 'basica',
+                                title: 'Educación Básica',
+                                edad: '6-14 años',
+                                img: 'https://placehold.co/500x350/803a08/ffffff?text=Básica',
+                                icon: 'fas fa-book-open',
+                                reqs: ['Certificado de Promoción', 'Cédula de Identidad', 'Ficha Médica', 'Planilla Servicio Básico']
+                            },
+                            {
+                                id: 'bgu',
+                                title: 'BGU en Ciencias',
+                                edad: '15-18 años',
+                                img: 'https://placehold.co/500x350/15202e/86efac?text=Ciencias',
+                                icon: 'fas fa-flask',
+                                reqs: ['Pase de Año', 'Investigación "Aprendiendo para la Vida"', 'Vocación Universitaria']
+                            },
+                            {
+                                id: 'tecnico',
+                                title: 'Bachillerato Técnico',
+                                edad: '15-18 años',
+                                img: 'https://placehold.co/500x350/16A34A/ffffff?text=Técnico',
+                                icon: 'fas fa-tools',
+                                reqs: ['Especialidad: Electromecánica Automotriz', 'Especialidad: Producción Agropecuaria', 'Prácticas Pre-profesionales']
+                            }
                         ].map((nivel) => (
                             <div
                                 key={nivel.id}
@@ -73,15 +99,11 @@ const AdmissionsPage = () => {
                                     <div className="flip-card-back">
                                         <h3>Requisitos</h3>
                                         <ul>
-                                            <li>Certificado de nacimiento</li>
-                                            <li>Cédula de identidad</li>
-                                            <li>Certificado médico</li>
-                                            <li>Certificado de conducta</li>
-                                            <li>Fotos carnet (4)</li>
-                                            {nivel.id !== 'inicial' && <li>Certificado de estudios previos</li>}
+                                            {nivel.reqs.map((req, i) => (
+                                                <li key={i}><i className="fas fa-check-circle" style={{marginRight: '5px', color: 'var(--gold-accent)'}}></i> {req}</li>
+                                            ))}
                                         </ul>
-                                        <p><strong>Modalidad:</strong> Presencial</p>
-                                        <p><strong>Costo:</strong> Consultar en secretaría</p>
+                                        <p style={{marginTop: '1rem'}}><strong>Modalidad:</strong> Presencial Matutina</p>
                                     </div>
                                 </div>
                             </div>
@@ -91,15 +113,15 @@ const AdmissionsPage = () => {
             </section>
 
             {/* TIMELINE */}
-            <section id="proceso" className="proceso-section py-16">
+            <section id="proceso" className="proceso-section">
                 <div className="container">
                     <h2 className="section-title">Proceso de Admisión</h2>
                     <div className="timeline">
                         {[
-                            { step: 1, title: 'Solicitud de Información', desc: 'Contacta con nosotros para conocer el proceso.' },
-                            { step: 2, title: 'Entrevista Familiar', desc: 'Reunión con padres y estudiante.' },
-                            { step: 3, title: 'Evaluación Académica', desc: 'Prueba según nivel educativo.' },
-                            { step: 4, title: 'Proceso de Matrícula', desc: 'Entrega de documentos y formalización.' }
+                            { step: 1, title: 'Información e Inscripción', desc: 'Abril - Junio. Contacto inicial y registro de datos.' },
+                            { step: 2, title: 'Entrevista Familiar', desc: 'Alineación con nuestro modelo de sostenibilidad y valores.' },
+                            { step: 3, title: 'Matriculación Ordinaria', desc: 'Julio - Agosto. Entrega de carpeta y formalización.' },
+                            { step: 4, title: 'Inicio de Clases', desc: 'Septiembre. Inauguración del Año Lectivo.' }
                         ].map((paso, i) => (
                             <div key={i} className="timeline-item">
                                 <div className="timeline-number">{paso.step}</div>
@@ -110,19 +132,25 @@ const AdmissionsPage = () => {
                             </div>
                         ))}
                     </div>
+
+                    <div className="text-center mt-8">
+                         <p style={{color: 'var(--text-secondary)'}}>
+                            <em>* Costos accesibles de clase media. Consultar valores actualizados en secretaría.</em>
+                        </p>
+                    </div>
                 </div>
             </section>
 
-            {/* FECHAS IMPORTANTES - SIN FECHAS, CON ICONOS */}
-            <section id="fechas" className="fechas-section py-16">
+            {/* FECHAS IMPORTANTES */}
+            <section id="fechas" className="fechas-section">
                 <div className="container">
-                    <h2 className="section-title">Régimen Sierra-Amazonía</h2>
+                    <h2 className="section-title">Fechas Clave</h2>
                     <div className="fechas-grid">
                         {[
-                            { title: 'Pre-matrícula', icon: 'fas fa-calendar-check' },
+                            { title: 'Inscripciones Abiertas', icon: 'fas fa-calendar-check' },
                             { title: 'Matrículas Ordinarias', icon: 'fas fa-user-check' },
                             { title: 'Matrículas Extraordinarias', icon: 'fas fa-clock' },
-                            { title: 'Inicio del Año Lectivo', icon: 'fas fa-school' }
+                            { title: 'Inicio Clases: Septiembre', icon: 'fas fa-school' }
                         ].map((f, i) => (
                             <div key={i} className="fecha-card">
                                 <i className={`${f.icon} fecha-icon`}></i>
@@ -134,20 +162,20 @@ const AdmissionsPage = () => {
             </section>
 
             {/* FORMULARIO */}
-            <section id="formulario" className="form-section py-16">
+            <section id="formulario" className="form-section">
                 <div className="container">
-                    <h2 className="section-title">Inicia tu Pre-matrícula</h2>
+                    <h2 className="section-title">Solicita Información</h2>
                     <form onSubmit={handleSubmit} className="admissions-form">
-                        <input type="text" placeholder="Nombre Completo" required value={formData.nombre} onChange={e => setFormData({ ...formData, nombre: e.target.value })} />
+                        <input type="text" placeholder="Nombre del Representante" required value={formData.nombre} onChange={e => setFormData({ ...formData, nombre: e.target.value })} />
                         <input type="email" placeholder="Correo Electrónico" required value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} />
-                        <input type="tel" placeholder="Teléfono" required value={formData.telefono} onChange={e => setFormData({ ...formData, telefono: e.target.value })} />
+                        <input type="tel" placeholder="Teléfono de Contacto" required value={formData.telefono} onChange={e => setFormData({ ...formData, telefono: e.target.value })} />
                         <select value={formData.nivel} onChange={e => setFormData({ ...formData, nivel: e.target.value })}>
-                            <option>Inicial</option>
-                            <option>Básica</option>
-                            <option>BGU</option>
-                            <option>Técnico</option>
+                            <option value="Inicial">Educación Inicial</option>
+                            <option value="Basica">Educación Básica</option>
+                            <option value="BGU">Bachillerato Ciencias</option>
+                            <option value="Tecnico">Bachillerato Técnico</option>
                         </select>
-                        <textarea placeholder="Mensaje (opcional)" rows="4" value={formData.mensaje} onChange={e => setFormData({ ...formData, mensaje: e.target.value })}></textarea>
+                        <textarea placeholder="¿Alguna pregunta específica?" rows="4" value={formData.mensaje} onChange={e => setFormData({ ...formData, mensaje: e.target.value })}></textarea>
                         <button type="submit" className="submit-btn">Enviar Solicitud</button>
                     </form>
                 </div>
@@ -160,20 +188,20 @@ const AdmissionsPage = () => {
                     <div className="contacto-grid">
                         <div className="contacto-item">
                             <i className="fas fa-phone"></i>
-                            <p><strong>Teléfonos:</strong><br />032-729727<br />099-2534364<br />098-7780902</p>
+                            <p><strong>Teléfonos:</strong><br />03 2729 727 (Secretaría)</p>
                         </div>
                         <div className="contacto-item">
                             <i className="fab fa-whatsapp"></i>
-                            <p><a href="https://walink.co/caf1a0" target="_blank" rel="noopener noreferrer">Enviar mensaje por WhatsApp</a></p>
+                            <p><a href="https://wa.me/59332729727" target="_blank" rel="noopener noreferrer">Escríbenos al WhatsApp</a></p>
                         </div>
                         <div className="contacto-item">
                             <i className="fas fa-map-marker-alt"></i>
-                            <p><strong>Ubicación:</strong><br />Rumipamba Central, Río Napo y Río San Miguel, Salcedo, Cotopaxi</p>
+                            <p><strong>Ubicación:</strong><br />Rumipamba Central, Río Napo y Río San Miguel, Salcedo</p>
                         </div>
                     </div>
                     <div className="final-cta">
-                        <h3>¿Continúas tus estudios?</h3>
-                        <p><strong>¡Matricúlate YA!</strong></p>
+                        <h3>¿Listo para el futuro?</h3>
+                        <p style={{color: 'white'}}><strong>¡Únete a la Familia UEGEA!</strong></p>
                     </div>
                 </div>
             </section>

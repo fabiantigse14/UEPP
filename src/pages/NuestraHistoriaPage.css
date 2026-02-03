@@ -1,14 +1,8 @@
-/* NuestraHistoriaPage.css - Refactored for Military Theme */
-
-:root {
-    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --radius: 1.5rem;
-}
+/* NuestraHistoriaPage.css - Light Military Theme Refactor */
 
 .nuestra-historia-page {
-    background: var(--bg-dark);
-    font-family: 'Inter', sans-serif;
-    color: var(--text-light);
+    /* Background handled by global */
+    padding-top: 2rem;
     overflow-x: hidden;
 }
 
@@ -29,51 +23,31 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     position: relative;
-    color: var(--gold-accent);
+    color: var(--military-green); /* Dark Green */
 }
 
 /* --- HERO SECTION --- */
 .hero-section {
-    background: radial-gradient(circle at center, rgba(75, 83, 32, 0.4) 0%, rgba(10, 15, 13, 0.9) 100%);
-    color: var(--text-light);
-    padding: 8rem 0 10rem;
+    background: transparent;
+    color: var(--text-primary);
+    padding: 6rem 0 4rem;
     position: relative;
-    overflow: hidden;
-}
-
-.hero-background {
-    position: absolute;
-    inset: 0;
-    background: var(--bg-dark);
-}
-
-.hero-background img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.2;
-    filter: grayscale(100%) sepia(0.5) hue-rotate(60deg);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
     text-align: center;
-    animation: fadeInUp 1s ease;
 }
 
 .hero-title {
     font-family: 'Oswald', sans-serif;
     font-size: 4rem;
-    color: var(--gold-accent);
+    color: var(--text-primary);
     margin-bottom: 1rem;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    line-height: 1.1;
 }
 
 .hero-subtitle-small {
     font-family: 'Alex Brush', cursive;
     font-size: 2.5rem;
-    color: var(--pale-green);
+    color: var(--gold-accent);
     margin-bottom: 2rem;
 }
 
@@ -81,12 +55,12 @@
     font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto 2rem;
-    color: var(--text-light);
-    background: rgba(20, 27, 22, 0.6);
+    color: var(--text-secondary);
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: 1rem;
-    border: 1px solid rgba(134, 239, 172, 0.1);
-    backdrop-filter: blur(5px);
+    border: 2px solid var(--gold-accent); /* Gold Outline */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .hero-tags {
@@ -102,30 +76,23 @@
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
 .quote-box {
-    background: rgba(251, 191, 36, 0.1);
+    background: rgba(212, 175, 55, 0.1);
     border-left: 4px solid var(--gold-accent);
     padding: 1.5rem;
     max-width: 800px;
     margin: 0 auto;
     font-style: italic;
-    color: var(--pale-green);
+    color: var(--text-primary);
 }
 
 /* --- PHILOSOPHY SECTION --- */
 .philosophy-section {
-    background: linear-gradient(135deg, var(--military-dark) 0%, #0a0f0d 100%);
-    padding: 6rem 0;
-    color: var(--text-light);
-    position: relative;
-    z-index: 1;
-}
-
-.philosophy-section .section-title {
-    color: var(--gold-accent);
+    padding: 4rem 0;
 }
 
 .philosophy-grid {
@@ -138,15 +105,15 @@
     background: var(--bg-card);
     padding: 2.5rem;
     border-radius: 1.5rem;
-    border: 1px solid var(--military-green);
-    transition: var(--transition);
+    border: 2px solid var(--gold-accent); /* Gold Outline */
+    transition: all 0.3s ease;
     text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 .philosophy-card:hover {
-    background: rgba(20, 27, 22, 0.9);
     transform: translateY(-5px);
-    border-color: var(--gold-accent);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
 }
 
 .card-icon-placeholder {
@@ -159,16 +126,13 @@
     font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--pale-green);
+    color: var(--military-green);
 }
 
 /* --- TIMELINE SECTION --- */
 .timeline-section {
-    background: var(--bg-dark);
     padding: 6rem 0;
-    color: var(--text-light);
     position: relative;
-    z-index: 1;
 }
 
 .timeline-container {
@@ -177,20 +141,23 @@
     margin: 0 auto;
 }
 
+/* The Line */
 .timeline-container::before {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
     left: 50%;
-    width: 4px;
-    background: var(--military-green);
+    width: 6px;
+    background: var(--gold-accent); /* Gold Line */
     transform: translateX(-50%);
+    border-radius: 3px;
 }
 
 .timeline-item {
     position: relative;
     margin: 4rem 0;
+    clear: both;
 }
 
 .timeline-content {
@@ -198,75 +165,131 @@
     background: var(--bg-card);
     padding: 2rem;
     border-radius: 1.5rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--military-green);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--gold-accent); /* Gold Outline */
+    position: relative;
+}
+
+/* Connectors */
+.timeline-content::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
-    margin-left: auto;
+    float: left;
     text-align: right;
+    margin-right: auto;
+}
+.timeline-item:nth-child(odd) .timeline-content::after {
+    right: -12px;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--gold-accent);
 }
 
+
 .timeline-item:nth-child(even) .timeline-content {
-    margin-right: auto;
+    float: right;
     text-align: left;
+    margin-left: auto;
+}
+.timeline-item:nth-child(even) .timeline-content::after {
+    left: -12px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--gold-accent) transparent transparent;
+}
+
+/* Clearfix */
+.timeline-item::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .timeline-year {
     font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--gold-accent);
     font-weight: bold;
+    line-height: 1;
+    margin-bottom: 0.5rem;
 }
 
 .timeline-title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    color: var(--pale-green);
+    color: var(--military-green);
 }
 
 .timeline-dot {
     position: absolute;
-    top: 0;
+    top: 20px; /* Align with top of card */
     left: 50%;
     transform: translateX(-50%);
-    width: 20px;
-    height: 20px;
-    background: var(--gold-accent);
-    border: 4px solid var(--bg-dark);
+    width: 24px;
+    height: 24px;
+    background: var(--bg-card);
+    border: 6px solid var(--military-green);
     border-radius: 50%;
     z-index: 2;
+    box-shadow: 0 0 0 4px var(--gold-accent);
 }
 
-/* --- PILLARS SECTION --- */
-.pillars-section {
-    background: linear-gradient(135deg, var(--military-green) 0%, #1a2e22 100%);
+/* Mobile Timeline */
+@media (max-width: 768px) {
+    .timeline-container::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        margin: 3rem 0;
+    }
+
+    .timeline-content {
+        width: calc(100% - 60px);
+        float: right !important;
+        text-align: left !important;
+        margin-left: 60px !important;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::after,
+    .timeline-item:nth-child(even) .timeline-content::after {
+        left: -12px;
+        right: auto;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--gold-accent) transparent transparent;
+    }
+
+    .timeline-dot {
+        left: 20px;
+    }
+}
+
+/* --- AWARDS & PILLARS (Shared Card Style) --- */
+.pillars-section, .awards-section {
     padding: 6rem 0;
-    color: var(--text-light);
-    position: relative;
-    z-index: 1;
-}
-
-.pillars-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
 }
 
 .pillar-card {
-    background: rgba(10, 15, 13, 0.3);
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: 1.5rem;
     text-align: center;
-    border: 1px solid rgba(134, 239, 172, 0.1);
-    transition: var(--transition);
+    border: 2px solid var(--gold-accent);
+    transition: all 0.3s ease;
 }
 
 .pillar-card:hover {
-    background: rgba(10, 15, 13, 0.6);
-    border-color: var(--gold-accent);
-    transform: scale(1.02);
+    background: var(--gold-accent);
+    transform: translateY(-5px);
+}
+.pillar-card:hover h3, .pillar-card:hover p, .pillar-card:hover i {
+    color: var(--military-green); /* Contrast on Gold */
 }
 
 .pillar-icon {
@@ -279,34 +302,20 @@
     font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--pale-green);
-}
-
-/* --- AWARDS SECTION --- */
-.awards-section {
-    background: var(--bg-card);
-    padding: 6rem 0;
-    color: var(--text-light);
-    position: relative;
-    z-index: 1;
-}
-
-.awards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    color: var(--military-green);
 }
 
 .award-item {
-    background: rgba(20, 27, 22, 0.6);
+    background: var(--bg-card);
     padding: 1.5rem;
     border-radius: 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
-    border-left: 5px solid var(--gold-accent);
+    border: 2px solid var(--gold-accent);
     font-weight: 500;
-    border: 1px solid var(--military-green);
+    color: var(--text-primary);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .award-item i {
@@ -314,32 +323,9 @@
     color: var(--gold-accent);
 }
 
-/* --- LOCATION SECTION --- */
-.location-section {
-    background: var(--bg-dark);
-    padding: 6rem 0;
-    color: var(--text-light);
-    text-align: center;
-}
-
-.location-details {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.location-item {
-    background: var(--bg-card);
-    padding: 1.5rem;
-    border-radius: 1rem;
-    border: 1px solid var(--military-green);
-}
-
-.location-item i {
-    font-size: 2rem;
-    color: var(--gold-accent);
-    margin-bottom: 1rem;
+/* Authorities */
+.authorities-section .philosophy-card {
+    border-color: var(--military-green);
 }
 
 /* Floating Tabs */
@@ -358,29 +344,18 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--military-green);
-    border: 1px solid var(--gold-accent);
+    background: var(--bg-card);
+    border: 2px solid var(--gold-accent);
     color: var(--gold-accent);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .tab-btn:hover {
     background: var(--gold-accent);
-    color: var(--bg-dark);
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    color: white;
 }

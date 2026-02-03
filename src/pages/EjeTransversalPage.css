@@ -1,95 +1,54 @@
-/* EjeTransversalPage.css - Military Theme */
-
-:root {
-    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --radius: 1.5rem;
-}
+/* EjeTransversalPage.css - Light Military Theme Refactor */
 
 .eje-transversal-page {
-    background: var(--bg-dark);
-    font-family: 'Inter', sans-serif;
-    color: var(--text-light);
-    overflow-x: hidden;
+    padding-top: 2rem;
+    min-height: 100vh;
 }
 
-.container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    position: relative;
-    z-index: 2;
-}
-
-.section-title {
-    font-family: 'Oswald', sans-serif;
-    font-size: 3rem;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    position: relative;
-    color: var(--gold-accent);
-}
-
-/* --- HERO SECTION --- */
 .hero-section {
-    background: radial-gradient(circle at center, rgba(75, 83, 32, 0.4) 0%, rgba(10, 15, 13, 0.9) 100%);
-    color: var(--text-light);
-    padding: 8rem 0 10rem;
-    position: relative;
-    overflow: hidden;
+    background: transparent;
+    color: var(--text-primary);
+    padding: 6rem 0 4rem;
+    text-align: center;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    animation: fadeInUp 1s ease;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    padding: 3rem;
+    border-radius: 1.5rem;
+    border: 2px solid var(--gold-accent);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .hero-section-title {
-    font-family: 'Oswald', sans-serif;
-    font-size: 4.5rem;
-    color: var(--gold-accent);
+    font-family: var(--font-oswald);
+    font-size: 3.5rem;
+    color: var(--military-green);
     margin-bottom: 1rem;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    line-height: 1.1;
     text-transform: uppercase;
 }
 
 .hero-section-subtitle {
     font-size: 2rem;
-    color: var(--pale-green);
-    margin-bottom: 2rem;
+    color: var(--gold-accent);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-oswald);
 }
 
 .hero-desc {
-    font-size: 1.25rem;
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    color: var(--text-light);
-}
-
-.hero-section-quote {
-    font-family: 'Inter', sans-serif;
-    font-style: italic;
-    font-size: 1.5rem;
-    margin: 3rem auto;
-    max-width: 900px;
-    padding: 2.5rem;
-    border-left: 5px solid var(--gold-accent);
-    background: rgba(20, 27, 22, 0.6);
-    border-radius: 1.2rem;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(134, 239, 172, 0.1);
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
 }
 
 .hero-tags {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.75rem;
     flex-wrap: wrap;
-    margin-top: 2rem;
 }
 
 .hero-section-tag {
@@ -97,417 +56,89 @@
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
 }
 
-/* --- VALORES SECTION --- */
-.valores-section {
-    background: linear-gradient(135deg, var(--military-dark) 0%, #0a0f0d 100%);
+/* SECTIONS GENERAL */
+.curriculum-section, .infrastructure-section, .projects-section, .cta-section {
     padding: 6rem 0;
-    color: var(--text-light);
-    position: relative;
-    z-index: 1;
+    background: transparent;
 }
 
-.valores-section-title {
-    font-family: 'Oswald', sans-serif;
-    color: var(--gold-accent);
+.section-title {
+    font-family: var(--font-oswald);
     font-size: 3rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.section-desc {
+    color: var(--military-green);
     text-align: center;
     margin-bottom: 3rem;
-    font-size: 1.2rem;
-    color: var(--pale-green);
-}
-
-.valor-card {
-    background: var(--bg-card);
-    padding: 2rem;
-    border-radius: 1.5rem;
-    text-align: center;
-    border: 1px solid var(--military-green);
-    transition: var(--transition);
-}
-
-.valor-card:hover {
-    background: rgba(20, 27, 22, 0.9);
-    transform: translateY(-10px);
-    border-color: var(--gold-accent);
-}
-
-.valor-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    background: var(--gold-accent);
-    color: var(--bg-dark);
-}
-
-.valor-title {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--pale-green);
-}
-
-/* --- EDUCACION SECTION --- */
-.educacion-integral-section {
-    background: var(--bg-dark);
-    padding: 6rem 0;
-    color: var(--text-light);
-    position: relative;
-    z-index: 1;
-}
-
-.educacion-integral-section-title {
-    font-family: 'Oswald', sans-serif;
-    color: var(--gold-accent);
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.educacion-integral-section .section-desc {
-    color: var(--pale-green);
-}
-
-.programa-card {
-    background: var(--bg-card);
-    border-radius: 1.5rem;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--military-green);
-}
-
-.programa-img-wrapper {
-    height: 200px;
-    overflow: hidden;
-    position: relative;
-}
-
-.programa-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.6;
-}
-
-.programa-icon-overlay {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: var(--gold-accent);
-    color: var(--bg-dark);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-}
-
-.programa-content {
-    padding: 2rem;
-}
-
-.programa-title {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
-    color: var(--white);
-    margin-bottom: 1rem;
-}
-
-.programa-benefits li {
-    list-style: none;
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--text-light);
-}
-
-.programa-benefits i {
-    color: var(--gold-accent);
-}
-
-/* --- BACHILLERATOS SECTION --- */
-.bachilleratos-section {
-    background: linear-gradient(135deg, var(--military-green) 0%, #1a2e22 100%);
-    padding: 6rem 0;
-    color: var(--text-light);
-    position: relative;
-    z-index: 1;
-}
-
-.bachilleratos-section-title {
-    font-family: 'Oswald', sans-serif;
-    color: var(--gold-accent);
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.bach-card {
-    background: rgba(10, 15, 13, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 1.5rem;
-    overflow: hidden;
-    transition: var(--transition);
-}
-
-.bach-card:hover {
-    border-color: var(--gold-accent);
-    transform: translateY(-10px);
-}
-
-.bach-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.bach-content {
-    padding: 2rem;
-}
-
-.bach-title {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
-    color: var(--text-light);
-    margin-bottom: 1rem;
-}
-
-.bach-type {
-    color: var(--gold-accent);
-    font-size: 0.9rem;
     text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.5rem;
 }
 
-.specialty-tag {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0.3rem 0.8rem;
-    border-radius: 9999px;
-    font-size: 0.85rem;
-    display: inline-block;
-    margin: 0.25rem;
-}
-
-/* --- METODOLOGIA SECTION --- */
-.metodologia-section {
-    background: var(--bg-dark);
-    padding: 6rem 0;
-    color: var(--text-light);
-    position: relative;
-    z-index: 1;
-}
-
-.metodologia-section-title {
-    font-family: 'Oswald', sans-serif;
-    color: var(--gold-accent);
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.metodologia-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.met-card {
+/* CARDS */
+.info-card, .project-card {
     background: var(--bg-card);
     padding: 2rem;
     border-radius: 1.5rem;
+    border: 2px solid var(--gold-accent);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
     text-align: center;
-    border: 1px solid var(--military-green);
 }
 
-.met-number {
-    font-family: 'Oswald', sans-serif;
+.info-card:hover, .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
+}
+
+.card-icon {
     font-size: 3rem;
     color: var(--gold-accent);
-    margin-bottom: 1rem;
-}
-
-.met-icon {
-    font-size: 2.5rem;
-    color: var(--pale-green);
     margin-bottom: 1.5rem;
 }
 
-.met-title {
-    font-family: 'Oswald', sans-serif;
+.card-title {
+    font-family: var(--font-oswald);
     font-size: 1.5rem;
-    color: var(--text-light);
+    color: var(--military-green);
     margin-bottom: 1rem;
 }
 
-/* --- TECNOLOGIA SECTION --- */
-.tecnologia-section {
-    background: linear-gradient(135deg, var(--military-dark) 0%, #0a0f0d 100%);
-    padding: 6rem 0;
-    color: var(--text-light);
-    position: relative;
-    z-index: 1;
+.card-desc {
+    color: var(--text-secondary);
+    line-height: 1.6;
 }
 
-.tecnologia-section-title {
-    font-family: 'Oswald', sans-serif;
-    color: var(--gold-accent);
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 1rem;
+/* GRID */
+.grid {
+    display: grid;
+    gap: 2rem;
 }
 
-.tec-card {
-    background: var(--bg-card);
-    border-radius: 1.5rem;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--military-green);
+@media (min-width: 768px) {
+    .grid.md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid.md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
 }
 
-.tec-icon {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 1.5rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
+/* CTA */
+.cta-content {
     background: var(--military-green);
     color: white;
-}
-
-.tec-title {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 1rem;
-    color: var(--text-light);
-}
-
-.tec-tech {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-
-.tech-tag {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 0.3rem 0.8rem;
-    border-radius: 9999px;
-    font-size: 0.85rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* --- PREMIO SECTION --- */
-.premio-section {
-    background: var(--bg-dark);
-    padding: 6rem 0;
-    color: var(--text-light);
-    position: relative;
-    z-index: 1;
-}
-
-.premio-section-title {
-    font-family: 'Oswald', sans-serif;
-    color: var(--gold-accent);
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.award-content {
-    background: rgba(251, 191, 36, 0.05);
-    border: 2px solid var(--gold-accent);
+    padding: 4rem;
     border-radius: 2rem;
-    padding: 3rem;
     text-align: center;
+    border: 2px solid var(--gold-accent);
 }
 
-.award-icon {
-    font-size: 4rem;
-    color: var(--gold-accent);
-    margin-bottom: 1rem;
-}
-
-/* --- CTA SECTION --- */
-.cta-section {
-    background: linear-gradient(135deg, var(--military-green) 0%, #1a2e22 100%);
-    color: white;
-    padding: 6rem 0;
-    text-align: center;
-}
-
-.cta-section-title {
-    font-family: 'Oswald', sans-serif;
-    font-size: 3rem;
+.cta-title {
+    font-family: var(--font-oswald);
+    font-size: 2.5rem;
     color: var(--gold-accent);
     margin-bottom: 1rem;
 }
 
 .cta-buttons {
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    border-radius: 9999px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.btn-primary {
-    background: var(--gold-accent);
-    color: var(--bg-dark);
-}
-
-.btn-primary:hover {
-    background: white;
-}
-
-.btn-secondary {
-    border: 2px solid white;
-    color: white;
-}
-
-.btn-secondary:hover {
-    background: white;
-    color: var(--bg-dark);
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }

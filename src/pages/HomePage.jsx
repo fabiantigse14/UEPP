@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './HomePage.css';
 import { FloatingWhatsApp } from 'react-floating-whatsapp';
-// import FloatingFacebookFeed from '../components/FloatingFacebookFeed'; // Commented out if not available or causing issues
 
 const HomePage = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -9,7 +8,7 @@ const HomePage = () => {
     // Updated Slides based on "Informe"
     const slides = [
         {
-            image: "https://uegea.edu.ec/assets/misionyvision.png", // Keep original assets if available, or placeholders
+            image: "https://uegea.edu.ec/assets/misionyvision.png",
             title: "Campus Vivo y Sostenible",
             subtitle: "Un laboratorio de innovación educativa en Salcedo"
         },
@@ -58,17 +57,17 @@ const HomePage = () => {
     return (
         <div className="home-page">
             <FloatingWhatsApp
-                phoneNumber="+593985432988" // Updated number
-                accountName="Adsmisiones UEGEA"
+                phoneNumber="+59332729727"
+                accountName="Admisiones UEGEA"
                 avatar="/UEGEA.png"
                 chatMessage="¡Hola! 👋 ¿Te gustaría conocer nuestra oferta académica y costos?"
                 placeholder="Escribe un mensaje..."
                 statusMessage="Responde en menos de 1 hora"
-                darkMode={true}
+                darkMode={false}
                 allowEsc
                 allowClickAway
                 className="floating-wpp"
-                styles={{ backgroundColor: '#2a3015', color: '#f0fdf4' }}
+                styles={{ backgroundColor: '#4b5320', color: '#fff' }}
             />
              
             {/* SECCIÓN 1: CARRUSEL HERO */}
@@ -113,14 +112,45 @@ const HomePage = () => {
                 </div>
             </section>
 
-            {/* SECCIÓN NUEVA: RECONOCIMIENTOS (AWARDS) */}
+            <div className="wavy-separator mx-auto" style={{ marginTop: '-20px', zIndex: 10, position: 'relative' }}></div>
+
+            {/* SECCIÓN 2: IDENTIDAD & MISIÓN (NEW) */}
+            <section className="identity-section animate-on-scroll py-16">
+                <div className="container text-center">
+                    <h2 className="section-title">Nuestra Identidad</h2>
+                    <div className="max-w-4xl mx-auto">
+                        <p className="text-xl mb-8" style={{ color: 'var(--text-secondary)' }}>
+                            La <strong>Unidad Educativa General Eloy Alfaro</strong> se define como un "Campus Vivo".
+                            Somos más que una escuela; somos un nodo de innovación comunitaria en Salcedo.
+                        </p>
+                        <div className="grid md:grid-cols-2 gap-8 text-left">
+                            <div className="choose-us-card p-8">
+                                <div className="card-content">
+                                    <h3>Misión</h3>
+                                    <p>Brindar una educación integral, basada en valores, disciplina y compromiso social, dirigida a niñas, niños y jóvenes de comunidades rurales que históricamente han tenido acceso limitado a oportunidades educativas innovadoras.</p>
+                                </div>
+                            </div>
+                            <div className="choose-us-card p-8">
+                                <div className="card-content">
+                                    <h3>Visión</h3>
+                                    <p>Ser un referente latinoamericano de educación rural sostenible, donde la disciplina tradicional se fusiona con la innovación científica para formar agentes de cambio.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div className="wavy-separator mx-auto"></div>
+
+            {/* SECCIÓN 3: RECONOCIMIENTOS (AWARDS) */}
             <section className="video-section animate-on-scroll">
                 <div className="container">
                      <h2 className="section-title">Reconocimiento Internacional</h2>
                      <div className="choose-us-grid" style={{ marginBottom: '4rem' }}>
                         <div className="choose-us-card animate-on-scroll">
                              <div className="card-icon-container">
-                                <i className="fas fa-globe-americas card-icon" style={{ fontSize: '3rem', color: '#fbbf24' }}></i>
+                                <i className="fas fa-globe-americas card-icon" style={{ fontSize: '3rem' }}></i>
                              </div>
                              <div className="card-content">
                                 <h3>The Earth Prize 2025</h3>
@@ -129,7 +159,7 @@ const HomePage = () => {
                         </div>
                         <div className="choose-us-card animate-on-scroll">
                              <div className="card-icon-container">
-                                <i className="fas fa-award card-icon" style={{ fontSize: '3rem', color: '#fbbf24' }}></i>
+                                <i className="fas fa-award card-icon" style={{ fontSize: '3rem' }}></i>
                              </div>
                              <div className="card-content">
                                 <h3>Premio Noûs 2025</h3>
@@ -138,7 +168,7 @@ const HomePage = () => {
                         </div>
                         <div className="choose-us-card animate-on-scroll">
                              <div className="card-icon-container">
-                                <i className="fas fa-seedling card-icon" style={{ fontSize: '3rem', color: '#fbbf24' }}></i>
+                                <i className="fas fa-seedling card-icon" style={{ fontSize: '3rem' }}></i>
                              </div>
                              <div className="card-content">
                                 <h3>School Enterprise Challenge</h3>
@@ -172,30 +202,17 @@ const HomePage = () => {
                 </div>
             </section>
 
-            {/* SECCIÓN 3: PORQUE ELEGIRNOS - 4 PILARES Y MASCOTA */}
-            <section id="nosotros" className="choose-us-section animate-on-scroll" style={{ position: 'relative', overflow: 'hidden' }}>
-                {/* Background Dog/Mascot Image - Fixed/Parallax feel */}
-                <div style={{
-                    position: 'absolute',
-                    right: '-100px',
-                    bottom: '-50px',
-                    width: '600px',
-                    height: '600px',
-                    backgroundImage: 'url(/ani.png)',
-                    backgroundSize: 'contain',
-                    backgroundRepeat: 'no-repeat',
-                    opacity: '0.15',
-                    pointerEvents: 'none',
-                    zIndex: '0'
-                }}></div>
+            <div className="wavy-separator mx-auto"></div>
 
+            {/* SECCIÓN 4: PORQUE ELEGIRNOS - 4 PILARES */}
+            <section id="nosotros" className="choose-us-section animate-on-scroll" style={{ position: 'relative', overflow: 'hidden' }}>
                 <div className="container">
                     <h2 className="section-title">Nuestros Pilares</h2>
                     
                     <div className="choose-us-grid">
                         <div className="choose-us-card animate-on-scroll">
                             <div className="card-icon-container">
-                                <i className="fas fa-user-shield " style={{ fontSize: '3rem', color: '#fbbf24' }}></i>
+                                <i className="fas fa-user-shield card-icon" style={{ fontSize: '3rem' }}></i>
                             </div>
                             <div className="card-content">
                                 <h3>Formación en Valores</h3>
@@ -205,7 +222,7 @@ const HomePage = () => {
 
                         <div className="choose-us-card animate-on-scroll">
                             <div className="card-icon-container">
-                                <i className="fas fa-chalkboard-teacher" style={{ fontSize: '3rem', color: '#fbbf24' }}></i>
+                                <i className="fas fa-chalkboard-teacher card-icon" style={{ fontSize: '3rem' }}></i>
                             </div>
                             <div className="card-content">
                                 <h3>Educación Personalizada</h3>
@@ -215,7 +232,7 @@ const HomePage = () => {
 
                         <div className="choose-us-card animate-on-scroll">
                             <div className="card-icon-container">
-                                <i className="fas fa-leaf" style={{ fontSize: '3rem', color: '#fbbf24' }}></i>
+                                <i className="fas fa-leaf card-icon" style={{ fontSize: '3rem' }}></i>
                             </div>
                             <div className="card-content">
                                 <h3>Sostenibilidad Real</h3>
@@ -225,7 +242,7 @@ const HomePage = () => {
 
                         <div className="choose-us-card animate-on-scroll">
                             <div className="card-icon-container">
-                                <i className="fas fa-robot" style={{ fontSize: '3rem', color: '#fbbf24' }}></i>
+                                <i className="fas fa-robot card-icon" style={{ fontSize: '3rem' }}></i>
                             </div>
                             <div className="card-content">
                                 <h3>Innovación Tecnológica</h3>
@@ -240,10 +257,12 @@ const HomePage = () => {
                 </div>
             </section>
 
-            {/* SECCIÓN 4: NIVELES EDUCATIVOS */}
+            <div className="wavy-separator mx-auto"></div>
+
+            {/* SECCIÓN 5: NIVELES EDUCATIVOS */}
             <section id="admisiones" className="education-levels-section animate-on-scroll">
                 <div className="container">
-                    <h2 className="section-title-light">Oferta Académica</h2>
+                    <h2 className="section-title">Oferta Académica</h2>
                     
                     <div className="levels-grid">
                         <div className="level-card animate-on-scroll">
@@ -304,7 +323,9 @@ const HomePage = () => {
                 </div>
             </section>
 
-            {/* SECCIÓN 5: CLUBS/ACTIVIDADES */}
+            <div className="wavy-separator mx-auto"></div>
+
+            {/* SECCIÓN 6: CLUBS/ACTIVIDADES */}
             <section className="clubs-section animate-on-scroll">
                 <div className="container">
                     <div className="text-center">
@@ -315,7 +336,7 @@ const HomePage = () => {
                     <div className="clubs-grid">
                         <div className="club-card animate-on-scroll">
                             <div className="card-icon-container text-center">
-                                <i className="fas fa-car" style={{ fontSize: '3rem', color: '#e2e8f0' }}></i>
+                                <i className="fas fa-car" style={{ fontSize: '3rem' }}></i>
                             </div>
                             <div className="club-content">
                                 <h3>Club Automotriz</h3>
@@ -324,7 +345,7 @@ const HomePage = () => {
 
                         <div className="club-card animate-on-scroll">
                              <div className="card-icon-container text-center">
-                                <i className="fas fa-music" style={{ fontSize: '3rem', color: '#e2e8f0' }}></i>
+                                <i className="fas fa-music" style={{ fontSize: '3rem' }}></i>
                             </div>
                             <div className="club-content">
                                 <h3>Música y Danza</h3>
@@ -333,7 +354,7 @@ const HomePage = () => {
 
                         <div className="club-card animate-on-scroll">
                              <div className="card-icon-container text-center">
-                                <i className="fas fa-language" style={{ fontSize: '3rem', color: '#e2e8f0' }}></i>
+                                <i className="fas fa-language" style={{ fontSize: '3rem' }}></i>
                             </div>
                             <div className="club-content">
                                 <h3>Francés y Scout</h3>
@@ -342,7 +363,7 @@ const HomePage = () => {
                     </div>
 
                     <div className="text-center">
-                        <h3>Descubre nuestros mejores momentos</h3>
+                        <h3 className="mb-8" style={{ color: 'var(--text-primary)' }}>Descubre nuestros mejores momentos</h3>
                         <a href="https://www.facebook.com/uegea/" target="_blank" rel="noopener noreferrer" className="btn-facebook">
                             <i className="fab fa-facebook-f"></i> Facebook Oficial
                         </a>

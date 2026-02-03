@@ -1,4 +1,3 @@
-// EjeTransversalPage.jsx - VERSIÓN FINAL PREMIUM: Fondos, Tarjetas, Imágenes, Colores, Responsive
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './EjeTransversalPage.css';
@@ -8,223 +7,96 @@ const EjeTransversalPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const valores = [
-    { icon: "fas fa-shield-alt", title: "Disciplina", desc: "Hábitos de orden, responsabilidad y perseverancia." },
-    { icon: "fas fa-handshake", title: "Respeto", desc: "Convivencia armónica con compañeros y docentes." },
-    { icon: "fas fa-flag", title: "Lealtad", desc: "A la institución, valores patrios y principios ciudadanos." },
-    { icon: "fas fa-medal", title: "Honor", desc: "Integridad personal y búsqueda constante de excelencia." },
-    { icon: "fas fa-fist-raised", title: "Coraje", desc: "Valentía para enfrentar desafíos académicos y personales." },
-    { icon: "fas fa-hands-helping", title: "Servicio", desc: "Espíritu altruista y compromiso con la comunidad." }
-  ];
-
-  const programas = [
-    { title: "Clubs Rotativos", icon: "fas fa-sync-alt", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", benefits: ["Habilidades múltiples", "Liderazgo", "Trabajo en equipo", "Exploración de intereses"] },
-    { title: "Idiomas por Niveles", icon: "fas fa-language", img: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", benefits: ["Inglés desde inicial", "Certificaciones internacionales", "Intercambios culturales", "Clases prácticas"] },
-    { title: "Formación en Valores", icon: "fas fa-heart", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", benefits: ["Ética aplicada", "Ciudadanía activa", "Responsabilidad social", "Valores permanentes"] },
-    { title: "Innovación y Sostenibilidad", icon: "fas fa-seedling", img: "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", benefits: ["Pensamiento crítico", "Creatividad", "Conciencia ambiental", "Tecnología sostenible"] }
-  ];
-
-  const bachilleratos = [
-    { name: "Bachillerato General Unificado (BGU)", type: "Académico", specialties: ["Ciencias", "Técnico", "Humanidades"], img: "https://images.unsplash.com/photo-1523050858586-3d433d341f25?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-    { name: "Bachillerato Técnico - Electromecánica Automotriz", type: "Técnico", specialties: ["Electromecánica", "Sistemas Vehiculares", "Diagnóstico"], img: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-    { name: "Bachillerato Técnico - Producción Agropecuaria Sostenible", type: "Técnico", specialties: ["Producción Agrícola", "Ganadería", "Sostenibilidad"], img: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }
-  ];
-
-  const metodologia = [
-    { step: "01", title: "Educación Personalizada", desc: "Diagnóstico individual y plan personalizado", icon: "fas fa-user-graduate", color: "#3b82f6" },
-    { step: "02", title: "Aprendizaje Activo", desc: "Proyectos prácticos e investigación guiada", icon: "fas fa-lightbulb", color: "#8b5cf6" },
-    { step: "03", title: "Formación Integral", desc: "Desarrollo cognitivo, físico y emocional", icon: "fas fa-users-cog", color: "#10b981" }
-  ];
-
-  const tecnologia = [
-    { title: "Laboratorios de Biotecnología", icon: "fas fa-flask", tech: ["Hidropónicos", "Análisis de suelos", "Biotecnología"], img: "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-    { title: "Tecnología Agrícola", icon: "fas fa-tractor", tech: ["Drones", "Sensores IoT", "Automatización"], img: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-    { title: "Centro de Innovación", icon: "fas fa-cogs", tech: ["Robótica", "Programación", "Maker Space"], img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }
-  ];
-
   return (
-    <>
-      {/* HERO - Fondo sólido */}
-      <section className="py-16 hero-section">
+    <div className="eje-transversal-page">
+      {/* HERO */}
+      <section className="hero-section">
         <div className="container">
           <div className="hero-content">
-            <h1 className="hero-section-title">
-              Ejes Transversales
-            </h1>
-            <p className="hero-section-subtitle">Filosofía Educativa Integral</p>
+            <h1 className="hero-section-title">Aprendiendo para la Vida</h1>
+            <p className="hero-section-subtitle">Eje Transversal de Innovación y Sostenibilidad</p>
             <p className="hero-desc">
-              Formación basada en tres pilares: <strong>valores militares</strong>, <strong>excelencia académica</strong> y <strong>formación integral</strong>.
+                Nuestro proyecto pedagógico integra la biotecnología, la agricultura regenerativa y el emprendimiento
+                en cada etapa del aprendizaje, transformando a la UEGEA en un "Campus Vivo".
             </p>
-            <blockquote className="hero-section-quote">
-              “Formamos líderes integrales con valores eternos y principios militares que perduran toda la vida”
-            </blockquote>
             <div className="hero-tags">
-              {["#ValoresMilitares", "#EducaciónIntegral", "#FormaciónCompleta", "#ExcelenciaAcadémica"].map((tag, i) => (
-                <span key={i} className="hero-section-tag">{tag}</span>
-              ))}
+              <span className="hero-section-tag">#CampusVivo</span>
+              <span className="hero-section-tag">#SUELUX</span>
+              <span className="hero-section-tag">#EconomíaCircular</span>
             </div>
+             <div className="wavy-separator mx-auto mt-8" style={{ maxWidth: '300px' }}></div>
           </div>
         </div>
       </section>
 
-      {/* VALORES - Fondo gris claro */}
-      <section className="py-16 valores-section">
+      {/* CURRICULUM PROGRESSION */}
+      <section className="curriculum-section">
         <div className="container">
-          <div className="section-header">
-            <h2 className="section-title valores-section-title">Valores y Principios Militares</h2>
-            <p className="section-desc">Fortalecemos el carácter con disciplina y honor</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {valores.map((valor, i) => (
-              <div key={i} className="valor-card bg-white/95 backdrop-blur-sm" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="valor-icon bg-gradient-to-br from-green-600 to-emerald-600">
-                  <i className={valor.icon}></i>
+            <h2 className="section-title">Progresión Curricular</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+                <div className="info-card">
+                    <i className="fas fa-seedling card-icon"></i>
+                    <h3 className="card-title">Nivel Inicial (3-5 años)</h3>
+                    <p className="card-desc">Asombro y conexión sensorial. Contacto directo con la tierra, identificación de semillas y cuidado básico de plantas.</p>
                 </div>
-                <h3 className="valor-title text-gray-800">{valor.title}</h3>
-                <p className="valor-desc">{valor.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* EDUCACIÓN INTEGRAL - Fondo azul claro */}
-      <section className="py-16 educacion-integral-section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title educacion-integral-section-title">Educación Integral</h2>
-            <p className="section-desc">Desarrollo armonioso del ser humano</p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {programas.map((prog, i) => (
-              <div key={i} className="programa-card bg-white/95 backdrop-blur-sm" style={{ animationDelay: `${i * 0.15}s` }}>
-                <div className="programa-img-wrapper">
-                  <img src={prog.img} alt={prog.title} className="programa-img" />
-                  <div className="programa-icon-overlay">
-                    <i className={prog.icon}></i>
-                  </div>
+                <div className="info-card">
+                    <i className="fas fa-recycle card-icon"></i>
+                    <h3 className="card-title">Educación Básica (6-14 años)</h3>
+                    <p className="card-desc">Ciclos naturales y responsabilidad. Gestión de residuos, composteras, siembra en huertos y ciclo del agua.</p>
                 </div>
-                <div className="programa-content">
-                  <h3 className="programa-title">{prog.title}</h3>
-                  <ul className="programa-benefits">
-                    {prog.benefits.map((ben, j) => (
-                      <li key={j}><i className="fas fa-check text-green-600"></i> {ben}</li>
-                    ))}
-                  </ul>
+                <div className="info-card">
+                    <i className="fas fa-microscope card-icon"></i>
+                    <h3 className="card-title">Bachillerato (15-17 años)</h3>
+                    <p className="card-desc">Ciencia aplicada y emprendimiento. Laboratorio SUELUX, EcoHuerto, análisis de suelos y negocios verdes.</p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* BACHILLERATOS - Fondo verde militar */}
-      <section className="py-16 bachilleratos-section">
-        <div className="container">
-          <div className="section-header text-white">
-            <h2 className="section-title bachilleratos-section-title">Bachilleratos con Visión de Futuro</h2>
-            <p className="section-desc">Opciones especializadas para el siglo XXI</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {bachilleratos.map((bach, i) => (
-              <div key={i} className="bach-card bg-white/10 backdrop-blur-md border border-white/20">
-                <img src={bach.img} alt={bach.name} className="bach-img" />
-                <div className="bach-content p-6">
-                  <span className="bach-type text-green-200">{bach.type}</span>
-                  <h3 className="bach-title text-white">{bach.name}</h3>
-                  <div className="bach-specialties">
-                    {bach.specialties.map((esp, j) => (
-                      <span key={j} className="specialty-tag bg-white/20 text-white border border-white/30">{esp}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* METODOLOGÍA - Fondo morado claro */}
-      <section className="py-16 metodologia-section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title metodologia-section-title">Metodología Educativa</h2>
-            <p className="section-desc">El estudiante como protagonista de su formación</p>
-          </div>
-          <div className="metodologia-grid">
-            {metodologia.map((met, i) => (
-              <div key={i} className="met-card bg-white/95 backdrop-blur-sm">
-                <div className="met-number" style={{ color: met.color }}>{met.step}</div>
-                <div className="met-icon" style={{ color: met.color }}>
-                  <i className={met.icon}></i>
-                </div>
-                <h3 className="met-title">{met.title}</h3>
-                <p className="met-desc">{met.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TECNOLOGÍA - Fondo gris azulado */}
-      <section className="py-16 tecnologia-section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title tecnologia-section-title">Compromiso Ambiental y Tecnológico</h2>
-            <p className="section-desc">Preparados para el futuro sostenible</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {tecnologia.map((tec, i) => (
-              <div key={i} className="tec-card bg-white/95 backdrop-blur-sm">
-                <div className="tec-img-wrapper">
-                  <img src={tec.img} alt={tec.title} className="tec-img" />
-                </div>
-                <div className="tec-content p-6">
-                  <div className="tec-icon bg-gradient-to-br from-green-600 to-emerald-600">
-                    <i className={tec.icon}></i>
-                  </div>
-                  <h3 className="tec-title">{tec.title}</h3>
-                  <div className="tec-tech">
-                    {tec.tech.map((t, j) => (
-                      <span key={j} className="tech-tag">{t}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PREMIO - Fondo dorado */}
-      <section className="py-16 premio-section">
-        <div className="container">
-          <div className="award-content bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-            <div className="award-icon">
-              <i className="fas fa-trophy"></i>
             </div>
-            <h2 className="award-title premio-section-title">Premio Noûs a la Excelencia Educativa 2025</h2>
-            <p className="award-desc">
-              Reconocimiento nacional que confirma nuestro liderazgo en educación de calidad, innovación pedagógica y formación integral.
-            </p>
-          </div>
         </div>
       </section>
 
-      {/* CTA - Fondo oscuro */}
-      <section className="py-16 cta-section">
+      <div className="wavy-separator mx-auto"></div>
+
+      {/* PROJECTS */}
+      <section className="projects-section">
+        <div className="container">
+            <h2 className="section-title">Proyectos Insignia</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+                <div className="project-card">
+                    <i className="fas fa-flask card-icon"></i>
+                    <h3 className="card-title">Proyecto SUELUX</h3>
+                    <p className="card-desc">Biotecnología de regeneración de suelos mediante microorganismos de montaña. Finalista <strong>The Earth Prize 2025</strong>.</p>
+                </div>
+                <div className="project-card">
+                    <i className="fas fa-shopping-basket card-icon"></i>
+                    <h3 className="card-title">EcoMercados</h3>
+                    <p className="card-desc">Red de economía circular comunitaria. Recolección de residuos orgánicos de mercados locales para compostaje. Ganador <strong>Premios GOAT 2025</strong>.</p>
+                </div>
+                 <div className="project-card">
+                    <i className="fas fa-store card-icon"></i>
+                    <h3 className="card-title">EcoHuerto</h3>
+                    <p className="card-desc">Emprendimiento social de venta de kits de huertos caseros. Ganador Nacional <strong>School Enterprise Challenge</strong>.</p>
+                </div>
+                 <div className="project-card">
+                    <i className="fas fa-burn card-icon"></i>
+                    <h3 className="card-title">Energía Renovable</h3>
+                    <p className="card-desc">Biodigestor activo que transforma residuos en biogás y biol, cerrando el ciclo energético del campus.</p>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="cta-section">
         <div className="container">
           <div className="cta-content">
-            <h2 className="cta-title cta-section-title">¡Forma parte de la excelencia!</h2>
-            <p className="cta-desc">Inscribe a tu hijo en la institución que forma líderes del mañana</p>
+            <h2 className="cta-title">Únete a la Revolución Educativa</h2>
+            <p className="text-white mb-8">Sé parte de una comunidad que educa para el futuro.</p>
             <div className="cta-buttons">
-              <Link to="/admisiones" className="btn btn-primary">Inscribirse Ahora</Link>
-              <Link to="/contacto" className="btn btn-secondary">Solicitar Información</Link>
+              <Link to="/admisiones" className="btn btn-primary" style={{background: 'var(--gold-accent)', color: 'var(--military-green)', border: 'none'}}>Inscripciones</Link>
             </div>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

@@ -19,6 +19,7 @@ export default function ContactPage() {
             <section className="contact-hero animate-on-scroll">
                 <h1 className="section-title">Contáctanos</h1>
                 <span className="section-subtitle">Estamos aquí para ayudarte</span>
+                <div className="wavy-separator mx-auto mt-4" style={{ maxWidth: '200px' }}></div>
             </section>
 
             <section className="container contact-content">
@@ -37,8 +38,7 @@ export default function ContactPage() {
                         <i className="fas fa-phone"></i>
                         <div>
                             <h3>Teléfonos</h3>
-                            <p><a href="tel:+593985432988">098 543 2988</a> (Rectorado)</p>
-                            <p><a href="tel:+59332729727">032 729 727</a> (Secretaría)</p>
+                            <p><a href="tel:+59332729727">03 2729 727</a> (Institucional)</p>
                         </div>
                     </div>
 
@@ -46,13 +46,25 @@ export default function ContactPage() {
                         <i className="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <p><a href="mailto:uegea.cotopaxi@gmail.com">uegea.cotopaxi@gmail.com</a></p>
+                            <p><a href="mailto:info@uegea.edu.ec">info@uegea.edu.ec</a></p>
+                            <p><a href="mailto:pachocarabocico@gmail.com">pachocarabocico@gmail.com</a> (Rectorado)</p>
+                        </div>
+                    </div>
+
+                    <div className="info-item">
+                        <i className="fas fa-share-alt"></i>
+                        <div>
+                            <h3>Redes Sociales</h3>
+                            <p><a href="https://facebook.com/uegea" target="_blank" rel="noopener noreferrer">Facebook (Noticias)</a></p>
+                            <p><a href="https://instagram.com/ue.gea" target="_blank" rel="noopener noreferrer">Instagram (Galería)</a></p>
+                            <p><a href="https://tiktok.com/@uegeateam" target="_blank" rel="noopener noreferrer">TikTok (Estudiantil)</a></p>
+                            <p><a href="https://youtube.com/@uegeaSalcedo" target="_blank" rel="noopener noreferrer">YouTube (Documentales)</a></p>
                         </div>
                     </div>
                 </div>
 
                 <div className="contact-form-card animate-on-scroll">
-                    <h2 style={{ fontFamily: 'var(--font-oswald)', color: 'var(--gold-accent)', marginBottom: '1.5rem' }}>Envíanos un mensaje</h2>
+                    <h2 style={{ fontFamily: 'var(--font-oswald)', color: 'var(--military-green)', marginBottom: '1.5rem', textTransform: 'uppercase' }}>Envíanos un mensaje</h2>
                     <form onSubmit={handleSubmit} className="contact-form">
                         <input
                             type="text"
